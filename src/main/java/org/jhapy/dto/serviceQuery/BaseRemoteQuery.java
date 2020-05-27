@@ -13,17 +13,17 @@ import org.jhapy.dto.utils.LatLng;
 @Data
 public class BaseRemoteQuery implements Serializable {
 
-  private String _username;
-  private String _securityUserId;
-  private String _sessionId;
-  private String _iso3Language;
-  private LatLng _currentPosition;
+  private String queryUsername;
+  private String querySecurityUserId;
+  private String querySessionId;
+  private String queryIso3Language;
+  private LatLng queryCurrentPosition;
 
   public BaseRemoteQuery() {
-    _username = AppContext.getInstance().getCurrentUsername();
-    _securityUserId = AppContext.getInstance().getCurrentSecurityUserId();
-    _sessionId = AppContext.getInstance().getCurrentSessionId();
-    _iso3Language = AppContext.getInstance().getCurrentIso3Language();
-    _currentPosition = AppContext.getInstance().getCurrentPosition();
+    queryUsername = AppContext.getInstance().getCurrentUsername();
+    querySecurityUserId = AppContext.getInstance().getCurrentSecurityUserId();
+    querySessionId = AppContext.getInstance().getCurrentSessionId();
+    queryIso3Language = AppContext.getInstance().getCurrentIso3Language();
+    queryCurrentPosition = AppContext.getInstance().getCurrentPosition();
   }
 }

@@ -1,6 +1,7 @@
 package org.jhapy.dto.serviceQuery;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 import lombok.Data;
 
 /**
@@ -63,5 +64,27 @@ public class ServiceResult<T> implements Serializable {
     setIsSuccess(isSuccess);
     setMessage(message);
     setData(data);
+  }
+
+  public void ifSuccess(Consumer<? super T> action) {
+    if (isSuccess && data != null) {
+      action.accept(data);
+    }
+  }
+
+  public void ifSuccessOrElse(Consumer<? super T> action, Runnable emptyAction) {
+    if (isSuccess && data != null) {
+      action.accept(data);
+    } else {
+      emptyAction.run();
+    }
+  }
+
+  public T ifSuccessOrElse(T other) {
+    if (isSuccess && data != null) {
+      return data;
+    } else {
+      return other;
+    }
   }
 }
