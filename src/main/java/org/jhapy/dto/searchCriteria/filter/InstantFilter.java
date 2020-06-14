@@ -1,14 +1,13 @@
 /*
- * Copyright 2016-2020 the original author or authors from the JHipster project.
+ * Copyright 2020-2020 the original author or authors from the JHapy project.
  *
- * This file is part of the JHipster project, see https://www.jhipster.tech/
- * for more information.
+ * This file is part of the JHapy project, see https://www.jhapy.org/ for more information.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ *       http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -31,113 +30,133 @@ import org.springframework.format.annotation.DateTimeFormat.ISO;
  */
 public class InstantFilter extends RangeFilter<Instant> {
 
-    private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L;
 
-    /**
-     * <p>Constructor for InstantFilter.</p>
-     */
-    public InstantFilter() {
-    }
+  /**
+   * <p>Constructor for InstantFilter.</p>
+   */
+  public InstantFilter() {
+  }
 
-    /**
-     * <p>Constructor for InstantFilter.</p>
-     *
-     * @param filter a {@link InstantFilter} object.
-     */
-    public InstantFilter(final InstantFilter filter) {
-        super(filter);
-    }
+  /**
+   * <p>Constructor for InstantFilter.</p>
+   *
+   * @param filter a {@link InstantFilter} object.
+   */
+  public InstantFilter(final InstantFilter filter) {
+    super(filter);
+  }
 
-    /**
-     * <p>copy.</p>
-     *
-     * @return a {@link InstantFilter} object.
-     */
-    @Override
-    public InstantFilter copy() {
-        return new InstantFilter(this);
-    }
+  /**
+   * <p>copy.</p>
+   *
+   * @return a {@link InstantFilter} object.
+   */
+  @Override
+  public InstantFilter copy() {
+    return new InstantFilter(this);
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    @DateTimeFormat(iso = ISO.DATE_TIME)
-    public InstantFilter setEquals(Instant equals) {
-        super.setEquals(equals);
-        return this;
-    }
+  /**
+   * {@inheritDoc}
+   */
+  @Override
+  @DateTimeFormat(iso = ISO.DATE_TIME)
+  public InstantFilter setEquals(Instant equals) {
+    super.setEquals(equals);
+    return this;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    @DateTimeFormat(iso = ISO.DATE_TIME)
-    public InstantFilter setNotEquals(Instant equals) {
-        super.setNotEquals(equals);
-        return this;
-    }
+  /**
+   * {@inheritDoc}
+   */
+  @Override
+  @DateTimeFormat(iso = ISO.DATE_TIME)
+  public InstantFilter setNotEquals(Instant equals) {
+    super.setNotEquals(equals);
+    return this;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    @DateTimeFormat(iso = ISO.DATE_TIME)
-    public InstantFilter setIn(List<Instant> in) {
-        super.setIn(in);
-        return this;
-    }
+  /**
+   * {@inheritDoc}
+   */
+  @Override
+  @DateTimeFormat(iso = ISO.DATE_TIME)
+  public InstantFilter setIn(List<Instant> in) {
+    super.setIn(in);
+    return this;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    @DateTimeFormat(iso = ISO.DATE_TIME)
-    public InstantFilter setNotIn(List<Instant> notIn) {
-        super.setNotIn(notIn);
-        return this;
-    }
+  /**
+   * {@inheritDoc}
+   */
+  @Override
+  @DateTimeFormat(iso = ISO.DATE_TIME)
+  public InstantFilter setNotIn(List<Instant> notIn) {
+    super.setNotIn(notIn);
+    return this;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    @DateTimeFormat(iso = ISO.DATE_TIME)
-    public InstantFilter setGreaterThan(Instant equals) {
-        super.setGreaterThan(equals);
-        return this;
-    }
+  /**
+   * {@inheritDoc}
+   */
+  @Override
+  @DateTimeFormat(iso = ISO.DATE_TIME)
+  public InstantFilter setGreaterThan(Instant equals) {
+    super.setGreaterThan(equals);
+    return this;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    @DateTimeFormat(iso = ISO.DATE_TIME)
-    public InstantFilter setLessThan(Instant equals) {
-        super.setLessThan(equals);
-        return this;
-    }
+  /**
+   * {@inheritDoc}
+   */
+  @Override
+  @DateTimeFormat(iso = ISO.DATE_TIME)
+  public InstantFilter setLessThan(Instant equals) {
+    super.setLessThan(equals);
+    return this;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    @DateTimeFormat(iso = ISO.DATE_TIME)
-    public InstantFilter setGreaterThanOrEqual(Instant equals) {
-        super.setGreaterThanOrEqual(equals);
-        return this;
-    }
+  /**
+   * {@inheritDoc}
+   */
+  @Override
+  @DateTimeFormat(iso = ISO.DATE_TIME)
+  public InstantFilter setGreaterThanOrEqual(Instant equals) {
+    super.setGreaterThanOrEqual(equals);
+    return this;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    @DateTimeFormat(iso = ISO.DATE_TIME)
-    @Deprecated
-    public InstantFilter setGreaterOrEqualThan(Instant equals) {
-        super.setGreaterOrEqualThan(equals);
-        return this;
-    }
+  /**
+   * {@inheritDoc}
+   */
+  @Override
+  @DateTimeFormat(iso = ISO.DATE_TIME)
+  @Deprecated
+  public InstantFilter setGreaterOrEqualThan(Instant equals) {
+    super.setGreaterOrEqualThan(equals);
+    return this;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    @DateTimeFormat(iso = ISO.DATE_TIME)
-    public InstantFilter setLessThanOrEqual(Instant equals) {
-        super.setLessThanOrEqual(equals);
-        return this;
-    }
+  /**
+   * {@inheritDoc}
+   */
+  @Override
+  @DateTimeFormat(iso = ISO.DATE_TIME)
+  public InstantFilter setLessThanOrEqual(Instant equals) {
+    super.setLessThanOrEqual(equals);
+    return this;
+  }
 
-    /** {@inheritDoc} */
-    @Override
-    @DateTimeFormat(iso = ISO.DATE_TIME)
-    @Deprecated
-    public InstantFilter setLessOrEqualThan(Instant equals) {
-        super.setLessOrEqualThan(equals);
-        return this;
-    }
+  /**
+   * {@inheritDoc}
+   */
+  @Override
+  @DateTimeFormat(iso = ISO.DATE_TIME)
+  @Deprecated
+  public InstantFilter setLessOrEqualThan(Instant equals) {
+    super.setLessOrEqualThan(equals);
+    return this;
+  }
 
 }

@@ -1,14 +1,13 @@
 /*
- * Copyright 2016-2020 the original author or authors from the JHipster project.
+ * Copyright 2020-2020 the original author or authors from the JHapy project.
  *
- * This file is part of the JHipster project, see https://www.jhipster.tech/
- * for more information.
+ * This file is part of the JHapy project, see https://www.jhapy.org/ for more information.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ *       http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -26,34 +25,34 @@ package org.jhapy.dto.searchCriteria.filter;
  */
 public class LongFilter extends RangeFilter<Long> {
 
-    private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L;
 
-    /**
-     * <p>Constructor for LongFilter.</p>
-     */
-    public LongFilter() {
-    }
+  /**
+   * <p>Constructor for LongFilter.</p>
+   */
+  public LongFilter() {
+  }
 
-    public LongFilter(Long filter) {
-        setEquals(filter);
-    }
+  public LongFilter(Long filter) {
+    setEquals(filter);
+  }
 
-    /**
-     * <p>Constructor for LongFilter.</p>
-     *
-     * @param filter a {@link LongFilter} object.
-     */
-    public LongFilter(final LongFilter filter) {
-        super(filter);
-    }
+  /**
+   * <p>Constructor for LongFilter.</p>
+   *
+   * @param filter a {@link LongFilter} object.
+   */
+  public LongFilter(final LongFilter filter) {
+    super(filter);
+  }
 
-    /**
-     * <p>copy.</p>
-     *
-     * @return a {@link LongFilter} object.
-     */
-    public LongFilter copy() {
-        return new LongFilter(this);
-    }
+  /**
+   * <p>copy.</p>
+   *
+   * @return a {@link LongFilter} object.
+   */
+  public LongFilter copy() {
+    return new LongFilter(this);
+  }
 
 }

@@ -1,14 +1,13 @@
 /*
- * Copyright 2016-2020 the original author or authors from the JHipster project.
+ * Copyright 2020-2020 the original author or authors from the JHapy project.
  *
- * This file is part of the JHipster project, see https://www.jhipster.tech/
- * for more information.
+ * This file is part of the JHapy project, see https://www.jhapy.org/ for more information.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ *       http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -27,30 +26,30 @@ import java.util.UUID;
  */
 public class UUIDFilter extends Filter<UUID> {
 
-    private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L;
 
-    /**
-     * <p>Constructor for UUIDFilter.</p>
-     */
-    public UUIDFilter() {
-    }
+  /**
+   * <p>Constructor for UUIDFilter.</p>
+   */
+  public UUIDFilter() {
+  }
 
-    /**
-     * <p>Constructor for UUIDFilter.</p>
-     *
-     * @param filter a {@link UUIDFilter} object.
-     */
-    public UUIDFilter(final UUIDFilter filter) {
-        super(filter);
-    }
+  /**
+   * <p>Constructor for UUIDFilter.</p>
+   *
+   * @param filter a {@link UUIDFilter} object.
+   */
+  public UUIDFilter(final UUIDFilter filter) {
+    super(filter);
+  }
 
-    /**
-     * <p>copy.</p>
-     *
-     * @return a {@link UUIDFilter} object.
-     */
-    public UUIDFilter copy() {
-        return new UUIDFilter(this);
-    }
+  /**
+   * <p>copy.</p>
+   *
+   * @return a {@link UUIDFilter} object.
+   */
+  public UUIDFilter copy() {
+    return new UUIDFilter(this);
+  }
 
 }
