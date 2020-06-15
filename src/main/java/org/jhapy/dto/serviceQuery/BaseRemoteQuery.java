@@ -37,8 +37,8 @@ public class BaseRemoteQuery implements Serializable {
   @ApiModelProperty("Username of the caller")
   private String queryUsername;
 
-  @ApiModelProperty("Security User Id of the caller")
-  private String querySecurityUserId;
+  @ApiModelProperty("User Id of the caller")
+  private String queryUserId;
 
   @ApiModelProperty("Session Id of the caller")
   private String querySessionId;
@@ -51,7 +51,7 @@ public class BaseRemoteQuery implements Serializable {
 
   public BaseRemoteQuery() {
     queryUsername = AppContext.getInstance().getCurrentUsername();
-    querySecurityUserId = AppContext.getInstance().getCurrentSecurityUserId();
+    queryUserId = AppContext.getInstance().getCurrentUserId();
     querySessionId = AppContext.getInstance().getCurrentSessionId();
     queryIso3Language = AppContext.getInstance().getCurrentIso3Language();
     queryCurrentPosition = AppContext.getInstance().getCurrentPosition();

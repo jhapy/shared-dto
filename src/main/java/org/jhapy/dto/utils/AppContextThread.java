@@ -26,7 +26,7 @@ package org.jhapy.dto.utils;
 public class AppContextThread {
 
   private static final ThreadLocal<String> currentUsername = new ThreadLocal<>();
-  private static final ThreadLocal<String> currentSecurityUserId = new ThreadLocal<>();
+  private static final ThreadLocal<String> currentUserId = new ThreadLocal<>();
   private static final ThreadLocal<String> currentSessionId = new ThreadLocal<>();
   private static final ThreadLocal<String> currentIso3Language = new ThreadLocal<>();
   private static final ThreadLocal<LatLng> currentPosition = new ThreadLocal<>();
@@ -39,12 +39,12 @@ public class AppContextThread {
     currentUsername.set(_currentUsername);
   }
 
-  public static String getCurrentSecurityUserId() {
-    return currentSecurityUserId.get();
+  public static String getCurrentUserId() {
+    return currentUserId.get();
   }
 
-  public static void setCurrentSecurityUserId(String _currentSecurityUserId) {
-    currentSecurityUserId.set(_currentSecurityUserId);
+  public static void setCurrentUserId(String _currentUserId) {
+    currentUserId.set(_currentUserId);
   }
 
   public static String getCurrentSessionId() {

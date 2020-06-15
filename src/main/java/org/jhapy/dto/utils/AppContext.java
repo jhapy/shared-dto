@@ -32,7 +32,7 @@ public class AppContext {
   private static AppContext instance;
 
   private Supplier<String> currentUsernameProvider;
-  private Supplier<String> currentSecurityUserIdProvider;
+  private Supplier<String> currentUserId;
   private Supplier<String> currentSessionIdProvider;
   private Supplier<String> currentIso3LanguageProvider;
   private Supplier<StoredFile> currentAvatarProvider;
@@ -51,12 +51,12 @@ public class AppContext {
   }
 
   public void init(Supplier<String> currentUsernameProvider,
-      Supplier<String> currentSecurityUserIdProvider, Supplier<String> currentSessionIdProvider,
+      Supplier<String> currentUserIdProvider, Supplier<String> currentSessionIdProvider,
       Supplier<String> currentIso3LanguageProvider, Supplier<LatLng> currentPositionProvider,
       Supplier<StoredFile> currentAvatarProvider,
       Supplier<List<Long>> currentUserActivitiesIds) {
     this.currentUsernameProvider = currentUsernameProvider;
-    this.currentSecurityUserIdProvider = currentSecurityUserIdProvider;
+    this.currentUserId = currentUserIdProvider;
     this.currentIso3LanguageProvider = currentIso3LanguageProvider;
     this.currentSessionIdProvider = currentSessionIdProvider;
     this.currentPositionProvider = currentPositionProvider;
@@ -68,8 +68,8 @@ public class AppContext {
     return currentUsernameProvider == null ? null : currentUsernameProvider.get();
   }
 
-  public String getCurrentSecurityUserId() {
-    return currentSecurityUserIdProvider == null ? null : currentSecurityUserIdProvider.get();
+  public String getCurrentUserId() {
+    return currentUserId == null ? null : currentUserId.get();
   }
 
   public String getCurrentSessionId() {
