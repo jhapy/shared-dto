@@ -18,8 +18,8 @@
 
 package org.jhapy.dto.serviceQuery;
 
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+
+import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.Serializable;
 import lombok.Data;
 import org.jhapy.dto.utils.AppContext;
@@ -31,22 +31,22 @@ import org.jhapy.dto.utils.LatLng;
  * @since 2019-06-02
  */
 @Data
-@ApiModel
+@Schema
 public class BaseRemoteQuery implements Serializable {
 
-  @ApiModelProperty("Username of the caller")
+  @Schema(description = "Username of the caller")
   private String queryUsername;
 
-  @ApiModelProperty("User Id of the caller")
+  @Schema(description = "User Id of the caller")
   private String queryUserId;
 
-  @ApiModelProperty("Session Id of the caller")
+  @Schema(description = "Session Id of the caller")
   private String querySessionId;
 
-  @ApiModelProperty("ISO3 Language of the caller")
+  @Schema(description = "ISO3 Language of the caller")
   private String queryIso3Language;
 
-  @ApiModelProperty("GPS position of the caller")
+  @Schema(description = "GPS position of the caller")
   private LatLng queryCurrentPosition;
 
   public BaseRemoteQuery() {

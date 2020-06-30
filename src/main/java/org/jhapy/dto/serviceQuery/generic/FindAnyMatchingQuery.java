@@ -18,8 +18,7 @@
 
 package org.jhapy.dto.serviceQuery.generic;
 
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.Serializable;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -37,15 +36,15 @@ import org.jhapy.dto.utils.Pageable;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
-@ApiModel
+@Schema
 public class FindAnyMatchingQuery extends BaseRemoteQuery implements Serializable {
 
-  @ApiModelProperty(position = 1, value = "Query filter")
+  @Schema(description = "Query filter")
   protected String filter;
 
-  @ApiModelProperty(position = 2, value = "Show inactive records")
+  @Schema(description = "Show inactive records")
   protected Boolean showInactive;
 
-  @ApiModelProperty(position = 3, value = "Paging info")
+  @Schema(description = "Paging info")
   protected Pageable pageable;
 }

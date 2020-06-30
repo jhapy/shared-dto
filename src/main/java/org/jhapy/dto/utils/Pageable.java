@@ -18,8 +18,7 @@
 
 package org.jhapy.dto.utils;
 
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
+import io.swagger.v3.oas.annotations.media.Schema;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.List;
@@ -30,19 +29,19 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@ApiModel
+@Schema
 public class Pageable implements Serializable {
 
-  @ApiModelProperty(position = 1, value = "Requested page")
+  @Schema(description = "Requested page")
   protected Integer page;
 
-  @ApiModelProperty(position = 2, value = "Page size")
+  @Schema(description = "Page size")
   protected Integer size;
 
-  @ApiModelProperty(position = 3, value = "Page offset")
+  @Schema(description = "Page offset")
   protected Integer offset;
 
-  @ApiModelProperty(position = 4, value = "Sorting")
+  @Schema(description = "Sorting")
   protected Collection<Order> sort;
 
   /**
