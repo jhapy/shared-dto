@@ -41,7 +41,7 @@ public class FindAuditLogQuery extends BaseRemoteQuery implements Serializable {
   @NotNull
   private String className;
   @NotNull
-  private Long recordId;
+  private String recordId;
 
   protected Pageable pageable;
 }

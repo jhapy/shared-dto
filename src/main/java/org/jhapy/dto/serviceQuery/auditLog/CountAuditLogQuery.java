@@ -40,5 +40,5 @@ public class CountAuditLogQuery extends BaseRemoteQuery implements Serializable 
   @NotNull
   private String className;
   @NotNull
-  private Long recordId;
+  private String recordId;
 }
