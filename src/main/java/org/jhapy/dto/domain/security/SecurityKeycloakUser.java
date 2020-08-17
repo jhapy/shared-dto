@@ -22,6 +22,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import java.time.Instant;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 import java.util.Map;
@@ -70,6 +71,8 @@ public class SecurityKeycloakUser extends BaseEntityStrId implements OAuth2User,
 
   private Boolean isLocal;
 
+  private String locale;
+
   /**
    * Password for login using internal authentication
    */
@@ -107,7 +110,7 @@ public class SecurityKeycloakUser extends BaseEntityStrId implements OAuth2User,
    */
   private Boolean isCredentialsExpired;
 
-  private Map<String, Object> attributes;
+  private Map<String, Object> attributes = new HashMap<>();
 
   private List<SecurityKeycloakGroup> groups;
 
