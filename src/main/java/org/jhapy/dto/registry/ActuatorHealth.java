@@ -35,7 +35,9 @@ import org.jhapy.dto.registry.actuate.LdapHealthIndicator;
 import org.jhapy.dto.registry.actuate.MongoHealthIndicator;
 import org.jhapy.dto.registry.actuate.Neo4jHealthIndicator;
 import org.jhapy.dto.registry.actuate.PingHealthIndicator;
+import org.jhapy.dto.registry.actuate.RabbitHealthIndicator;
 import org.jhapy.dto.registry.actuate.RefreshScopeHealthIndicator;
+import org.jhapy.dto.registry.actuate.SolrHealthIndicator;
 
 /**
  * @author jHapy Lead Dev.
@@ -103,6 +105,14 @@ public class ActuatorHealth implements Serializable {
       components.getLdap().setName("Ldap");
       result.add(components.getLdap());
     }
+    if (components.getRabbit() != null) {
+      components.getRabbit().setName("Rabbit");
+      result.add(components.getRabbit());
+    }
+    if (components.getSolr() != null) {
+      components.getSolr().setName("Solr");
+      result.add(components.getSolr());
+    }
 
     return result;
   }
@@ -123,5 +133,7 @@ public class ActuatorHealth implements Serializable {
     private RefreshScopeHealthIndicator refreshScope;
     private Neo4jHealthIndicator neo4j;
     private LdapHealthIndicator ldap;
+    private RabbitHealthIndicator rabbit;
+    private SolrHealthIndicator solr;
   }
 }

@@ -18,9 +18,22 @@
 
 package org.jhapy.dto.serviceQuery;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.Module;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.module.SimpleModule;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import java.io.Serializable;
+import java.time.Instant;
 import java.util.function.Consumer;
 import lombok.Data;
+import org.apache.commons.lang3.StringUtils;
+import org.jhapy.dto.utils.DateConverter;
+import org.jhapy.dto.utils.DateConverter.Deserialize;
+import org.jhapy.dto.utils.DateConverter.Serialize;
+import org.springframework.context.annotation.Bean;
+import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 
 /**
  * Represents the result of a remote Service call (using Feign)
@@ -31,7 +44,8 @@ import lombok.Data;
  */
 @Data
 public class ServiceResult<T> implements Serializable {
-
+  private String exceptionString;
+  private String exceptionClass;
   private Boolean isSuccess;
   private String message;
   private T data;
@@ -67,10 +81,30 @@ public class ServiceResult<T> implements Serializable {
    * @param throwable Service Result Exception
    */
   public ServiceResult(Throwable throwable) {
+    setExceptionClass(throwable.getClass().getName());
+    try {
+      setExceptionString(jsonObjectMapper().writeValueAsString(throwable));
+    } catch (JsonProcessingException e) {
+      e.printStackTrace();
+    }
     setIsSuccess(false);
     setMessage(throwable.getMessage());
   }
 
+  @JsonIgnore
+  private ObjectMapper jsonObjectMapper() {
+    return Jackson2ObjectMapperBuilder.json()
+        .modules(module(), new JavaTimeModule())
+        .build();
+  }
+
+  @JsonIgnore
+  private Module module() {
+    SimpleModule module = new SimpleModule();
+    module.addSerializer(Instant.class, new Serialize());
+    module.addDeserializer(Instant.class, new Deserialize());
+    return module;
+  }
   /**
    * Create a new Service Result
    *
@@ -82,6 +116,18 @@ public class ServiceResult<T> implements Serializable {
     setIsSuccess(isSuccess);
     setMessage(message);
     setData(data);
+  }
+
+  @JsonIgnore
+  public Object getException() {
+    if (StringUtils.isNotBlank(exceptionString) && StringUtils.isNotBlank(exceptionClass)) {
+      try {
+        return jsonObjectMapper().readValue(exceptionString, Class.forName(exceptionClass));
+      } catch (JsonProcessingException | ClassNotFoundException e) {
+        e.printStackTrace();
+      }
+    }
+    return null;
   }
 
   public void ifSuccess(Consumer<? super T> action) {

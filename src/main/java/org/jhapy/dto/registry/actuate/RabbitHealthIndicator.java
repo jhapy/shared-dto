@@ -16,30 +16,37 @@
  * limitations under the License.
  */
 
-package org.jhapy.dto.serviceQuery;
+package org.jhapy.dto.registry.actuate;
 
-import java.io.Serializable;
 import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
 
+/**
+ * @author jHapy Lead Dev.
+ * @version 1.0
+ * @since 03/06/2020
+ */
 @Data
-@EqualsAndHashCode(callSuper = true)
-@ToString(callSuper = true)
-public class ServiceExceptionResult extends ServiceResult implements Serializable {
+public class RabbitHealthIndicator extends AbstractHealthIndicator {
 
-  private Throwable exception;
+  private Details details;
 
-  public ServiceExceptionResult() {
-    setIsSuccess(Boolean.FALSE);
-  }
-  public ServiceExceptionResult(Throwable t) {
-    this(t, t.getLocalizedMessage());
+  @Override
+  public boolean hasDetails() {
+    return true;
   }
 
-  public ServiceExceptionResult(Throwable t, String message) {
-    this();
-    setMessage(message);
-    setException(t);
+  @Override
+  public boolean hasComponents() {
+    return false;
+  }
+
+  @Override
+  public Object getComponents() {
+    return null;
+  }
+
+  @Data
+  public static class Details {
+    private String version;
   }
 }
