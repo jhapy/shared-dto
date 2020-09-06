@@ -40,8 +40,12 @@ public class StoredFile extends BaseEntityStrId implements Serializable {
 
   private byte[] content;
   private byte[] orginalContent;
+  private PdfConvert pdfConvertStatus;
+  private byte[] pdfContent;
 
   private Float zoom;
+
+  private String copperData;
 
   private Long relatedObjectId;
   private String relatedObjectClass;
