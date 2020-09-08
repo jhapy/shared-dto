@@ -19,6 +19,8 @@
 package org.jhapy.dto.utils;
 
 import java.io.Serializable;
+import java.util.HashMap;
+import java.util.Map;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
@@ -31,7 +33,7 @@ import org.jhapy.dto.domain.BaseEntityStrId;
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
-@ToString(callSuper = true, exclude = {"content", "orginalContent"})
+@ToString(callSuper = true, exclude = {"content", "orginalContent", "pdfContent"})
 public class StoredFile extends BaseEntityStrId implements Serializable {
 
   private String filename;
@@ -43,9 +45,7 @@ public class StoredFile extends BaseEntityStrId implements Serializable {
   private PdfConvert pdfConvertStatus;
   private byte[] pdfContent;
 
-  private Float zoom;
-
-  private String copperData;
+  private Map<String,String> metadata = new HashMap<>();
 
   private Long relatedObjectId;
   private String relatedObjectClass;
