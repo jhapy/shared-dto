@@ -47,6 +47,7 @@ public class RabbitHealthIndicator extends AbstractHealthIndicator {
 
   @Data
   public static class Details {
+
     private String version;
   }
 }

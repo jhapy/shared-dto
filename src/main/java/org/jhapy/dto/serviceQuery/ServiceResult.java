@@ -29,10 +29,8 @@ import java.time.Instant;
 import java.util.function.Consumer;
 import lombok.Data;
 import org.apache.commons.lang3.StringUtils;
-import org.jhapy.dto.utils.DateConverter;
 import org.jhapy.dto.utils.DateConverter.Deserialize;
 import org.jhapy.dto.utils.DateConverter.Serialize;
-import org.springframework.context.annotation.Bean;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 
 /**
@@ -44,6 +42,7 @@ import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
  */
 @Data
 public class ServiceResult<T> implements Serializable {
+
   private String exceptionString;
   private String exceptionClass;
   private Boolean isSuccess;
@@ -105,6 +104,7 @@ public class ServiceResult<T> implements Serializable {
     module.addDeserializer(Instant.class, new Deserialize());
     return module;
   }
+
   /**
    * Create a new Service Result
    *

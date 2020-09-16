@@ -16,7 +16,8 @@ import lombok.ToString;
 @EqualsAndHashCode
 @ToString
 public class SearchQueryResult implements Serializable {
+
   private String id;
-private List<String> highlight= new ArrayList<>();
-private String score;
+  private List<String> highlight = new ArrayList<>();
+  private String score;
 }

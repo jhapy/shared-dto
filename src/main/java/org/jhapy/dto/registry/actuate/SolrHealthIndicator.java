@@ -47,6 +47,7 @@ public class SolrHealthIndicator extends AbstractHealthIndicator {
 
   @Data
   public static class Details {
+
     private String status;
     private String detectedPathType;
   }

@@ -33,6 +33,7 @@ public class ServiceExceptionResult extends ServiceResult implements Serializabl
   public ServiceExceptionResult() {
     setIsSuccess(Boolean.FALSE);
   }
+
   public ServiceExceptionResult(Throwable t) {
     this(t, t.getLocalizedMessage());
   }

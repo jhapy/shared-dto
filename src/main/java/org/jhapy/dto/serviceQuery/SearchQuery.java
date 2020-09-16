@@ -5,7 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.jhapy.dto.serviceQuery.BaseRemoteQuery;
 
 /**
  * @author Alexandre Clavaud.
@@ -17,5 +16,6 @@ import org.jhapy.dto.serviceQuery.BaseRemoteQuery;
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 public class SearchQuery extends BaseRemoteQuery implements Serializable {
+
   String filter;
 }

@@ -45,7 +45,7 @@ public class StoredFile extends BaseEntityStrId implements Serializable {
   private PdfConvert pdfConvertStatus;
   private byte[] pdfContent;
 
-  private Map<String,String> metadata = new HashMap<>();
+  private Map<String, String> metadata = new HashMap<>();
 
   private Long relatedObjectId;
   private String relatedObjectClass;

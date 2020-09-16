@@ -126,9 +126,9 @@ public class DateConverter {
      */
       if (_params.length > 0) {
         for (Object p : _params) {
-          if ( p == null )
+          if (p == null) {
             params.append("null").append(", ");
-          else if (p.getClass().isArray()) {
+          } else if (p.getClass().isArray()) {
             params.append(Arrays.asList((Object[]) p)).append(", ");
           } else {
             params.append(p).append(", ");
