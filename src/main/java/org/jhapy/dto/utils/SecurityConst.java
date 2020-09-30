@@ -22,6 +22,7 @@ public interface SecurityConst {
 
   String ROLE_SYSTEM = "SYSTEM";
   String ROLE_ADMIN = "ROLE_ADMIN";
+  String ROLE_SWAGGER = "ROLE_SWAGGER";
   String ROLE_I18N_READ = "ROLE_I18N_READ";
   String ROLE_I18N_WRITE = "ROLE_I18N_WRITE";
 }
