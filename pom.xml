@@ -41,7 +41,7 @@
   </issueManagement>
 
   <properties>
-    <java.version>14</java.version>
+    <java.version>15</java.version>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -55,10 +55,10 @@
     <sonar-maven-plugin.version>3.6.1.1688</sonar-maven-plugin.version>
     <nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
     <wagon-webdav-jackrabbit.version>2.10</wagon-webdav-jackrabbit.version>
+    <lombok.version>1.18.14</lombok.version>
     <lombok-maven-plugin.version>1.18.12.0</lombok-maven-plugin.version>
 
     <!-- Dependencies -->
-    <lombok.version>1.18.12</lombok.version>
     <validation-api.version>2.0.1.Final</validation-api.version>
     <jackson-annotations.version>2.9.9</jackson-annotations.version>
     <spring-security-oauth2.version>5.1.6.RELEASE</spring-security-oauth2.version>
@@ -100,7 +100,7 @@
   <build>
     <finalName>${project.artifactId}</finalName>
     <plugins>
-      <plugin>
+      <!--plugin>
         <groupId>org.projectlombok</groupId>
         <artifactId>lombok-maven-plugin</artifactId>
         <version>${lombok-maven-plugin.version}</version>
@@ -123,7 +123,7 @@
           <outputDirectory>${project.build.directory}/delombok</outputDirectory>
           <addOutputDirectory>false</addOutputDirectory>
         </configuration>
-      </plugin>
+      </plugin-->
       <plugin>
         <groupId>org.sonarsource.scanner.maven</groupId>
         <artifactId>sonar-maven-plugin</artifactId>
