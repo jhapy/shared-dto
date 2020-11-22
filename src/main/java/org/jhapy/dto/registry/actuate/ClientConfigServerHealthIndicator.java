@@ -41,6 +41,11 @@ public class ClientConfigServerHealthIndicator extends AbstractHealthIndicator {
   }
 
   @Override
+  public Object getDetails() {
+    return details;
+  }
+
+  @Override
   public Object getComponents() {
     return null;
   }
