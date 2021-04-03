@@ -22,6 +22,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.io.Serializable;
 import java.time.Instant;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Locale;
 import java.util.Map;
@@ -102,7 +103,7 @@ public class SecurityUser extends BaseEntityStrId implements OAuth2User, UserDet
    */
   private Boolean isCredentialsExpired;
 
-  private Map<String, Object> attributes;
+  private Map<String, Object> attributes = new HashMap<>();
 
   /**
    * Define the kind of user : Internal, System, External

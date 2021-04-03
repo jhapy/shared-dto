@@ -16,28 +16,24 @@
  * limitations under the License.
  */
 
-package org.jhapy.dto.serviceQuery.i18n;
+package org.jhapy.dto.domain;
 
 import java.io.Serializable;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
+import java.time.Instant;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import org.jhapy.dto.serviceQuery.BaseRemoteQuery;
 
 /**
  * @author jHapy Lead Dev.
  * @version 1.0
- * @since 2019-06-02
+ * @since 2019-03-06
  */
 @Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Builder
-@EqualsAndHashCode(callSuper = true)
-public class GetByNameAndIso3Query extends BaseRemoteQuery implements Serializable {
+@EqualsAndHashCode
+public abstract class BaseInnerEntity implements Serializable {
 
-  private String name;
-  private String iso3Language;
+  /**
+   * Manual Generated ID
+   */
+  private Long temporaryId;
 }

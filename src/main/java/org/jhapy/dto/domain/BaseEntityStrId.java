@@ -18,6 +18,7 @@
 
 package org.jhapy.dto.domain;
 
+import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
@@ -28,7 +29,9 @@ import lombok.ToString;
  */
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
+@Data
 public abstract class BaseEntityStrId extends BaseEntity {
+  private Long temporaryId;
 
   public String getId() {
     return (String) super.getId();
