@@ -10,8 +10,9 @@ import lombok.Data;
  * @since 27/03/2021
  */
 @Data
-public class I18NIsoLangValues  implements Serializable  {
-private Integer recordVersion;
-private String isoLang;
-private Map<String,String> values;
+public class I18NIsoLangValues implements Serializable {
+
+  private Integer recordVersion;
+  private String isoLang;
+  private Map<String, String> values;
 }

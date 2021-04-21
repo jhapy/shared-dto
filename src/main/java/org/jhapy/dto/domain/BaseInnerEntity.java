@@ -19,7 +19,6 @@
 package org.jhapy.dto.domain;
 
 import java.io.Serializable;
-import java.time.Instant;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 

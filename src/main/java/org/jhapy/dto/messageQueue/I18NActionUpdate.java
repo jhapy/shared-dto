@@ -3,7 +3,6 @@ package org.jhapy.dto.messageQueue;
 import java.io.Serializable;
 import lombok.Data;
 import org.jhapy.dto.domain.i18n.Action;
-import org.jhapy.dto.domain.i18n.Element;
 
 /**
  * @author Alexandre Clavaud.
@@ -12,6 +11,7 @@ import org.jhapy.dto.domain.i18n.Element;
  */
 @Data
 public class I18NActionUpdate implements Serializable {
+
   private I18NUpdateTypeEnum updateType;
   private Action action;
 }

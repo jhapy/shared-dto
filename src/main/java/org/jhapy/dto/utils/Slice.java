@@ -12,6 +12,7 @@ import lombok.Data;
  */
 @Data
 public class Slice<T extends Serializable> implements Serializable {
+
   private List<T> content = Collections.emptyList();
   private Pageable pageable;
   private boolean hasNext;

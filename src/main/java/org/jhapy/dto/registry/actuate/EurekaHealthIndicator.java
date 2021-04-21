@@ -20,6 +20,7 @@ package org.jhapy.dto.registry.actuate;
 
 import java.util.Map;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * @author jHapy Lead Dev.
@@ -27,6 +28,7 @@ import lombok.Data;
  * @since 03/06/2020
  */
 @Data
+@EqualsAndHashCode(callSuper = false)
 public class EurekaHealthIndicator extends AbstractHealthIndicator {
 
   private Details details;

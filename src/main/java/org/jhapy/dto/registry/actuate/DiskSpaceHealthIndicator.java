@@ -19,6 +19,7 @@
 package org.jhapy.dto.registry.actuate;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * @author jHapy Lead Dev.
@@ -26,6 +27,7 @@ import lombok.Data;
  * @since 03/06/2020
  */
 @Data
+@EqualsAndHashCode(callSuper = false)
 public class DiskSpaceHealthIndicator extends AbstractHealthIndicator {
 
   private Details details;
