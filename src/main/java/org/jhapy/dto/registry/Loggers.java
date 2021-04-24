@@ -22,6 +22,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * @author jHapy Lead Dev.
@@ -42,12 +43,14 @@ public class Loggers {
   }
 
   @Data
+  @EqualsAndHashCode(callSuper=false)
   static class GroupLoggerLevels extends LoggerLevels {
 
     private List<String> members;
   }
 
   @Data
+  @EqualsAndHashCode(callSuper=false)
   public static class SingleLoggerLevels extends LoggerLevels {
 
     private String effectiveLevel;

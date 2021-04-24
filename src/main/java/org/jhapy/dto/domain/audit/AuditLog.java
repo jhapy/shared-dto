@@ -20,6 +20,7 @@ package org.jhapy.dto.domain.audit;
 
 import java.time.LocalDateTime;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import org.jhapy.dto.domain.BaseEntityLongId;
 
 /**
@@ -28,6 +29,7 @@ import org.jhapy.dto.domain.BaseEntityLongId;
  * @since 20/04/2020
  */
 @Data
+@EqualsAndHashCode(callSuper=false)
 public class AuditLog extends BaseEntityLongId {
 
   private String commit;

@@ -22,9 +22,9 @@ import java.io.Serializable;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
+import org.apache.commons.lang3.StringUtils;
 import org.jhapy.dto.domain.BaseEntityLongId;
 import org.jhapy.dto.utils.StoredFile;
-import org.springframework.util.StringUtils;
 
 /**
  * This class represent a User.
