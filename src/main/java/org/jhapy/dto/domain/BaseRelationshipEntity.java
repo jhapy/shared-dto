@@ -16,26 +16,46 @@
  * limitations under the License.
  */
 
-package org.jhapy.dto.domain.reference;
+package org.jhapy.dto.domain;
 
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
+import java.time.Instant;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.ToString;
-import org.jhapy.dto.domain.BaseEntityLongId;
 
 /**
  * @author jHapy Lead Dev.
  * @version 1.0
- * @since 2019-03-27
+ * @since 2019-03-06
  */
 @Data
-@EqualsAndHashCode(callSuper = true, exclude = {"countries"})
-@ToString(callSuper = true, exclude = {"countries"})
-public class Region extends BaseEntityLongId implements Serializable {
+@EqualsAndHashCode(exclude = {"createdBy", "modifiedBy", "created", "modified"})
+public abstract class BaseRelationshipEntity implements Serializable {
 
-  // From Translation
-  private String name;
+  /**
+   * DB Generated ID
+   */
+  private Long id;
+
+  /**
+   * Who create this record (no ID, use username)
+   */
+  private String createdBy;
+
+  /**
+   * When this record has been created
+   */
+  private Instant created;
+
+  /**
+   * How did the last modification of this record (no ID, use username)
+   */
+  private String modifiedBy;
+
+  /**
+   * When this record was last updated
+   */
+  private Instant modified;
+
+  private Boolean isNew = Boolean.FALSE;
 }

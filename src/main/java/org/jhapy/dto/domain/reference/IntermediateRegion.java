@@ -46,15 +46,17 @@ public class IntermediateRegion extends
 
   @EqualsAndHashCode.Exclude
   @ToString.Exclude
-  private Set<Region> regions = new HashSet<>();
-
-  @EqualsAndHashCode.Exclude
-  @ToString.Exclude
-  private Set<Country> countries = new HashSet<>();
+  private Region region;
 
   @EqualsAndHashCode.Include
   @ToString.Include
   private String subRegion() {
     return (subRegion != null && subRegion.getId() != null) ? subRegion.getId().toString() : null;
+  }
+
+  @EqualsAndHashCode.Include
+  @ToString.Include
+  private String region() {
+    return (region != null && region.getId() != null) ? region.getId().toString() : null;
   }
 }

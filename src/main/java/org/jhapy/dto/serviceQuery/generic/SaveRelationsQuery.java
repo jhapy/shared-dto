@@ -25,6 +25,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.jhapy.dto.domain.BaseEntity;
+import org.jhapy.dto.domain.BaseRelationshipEntity;
 import org.jhapy.dto.serviceQuery.BaseRemoteQuery;
 
 /**
@@ -36,7 +37,7 @@ import org.jhapy.dto.serviceQuery.BaseRemoteQuery;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
-public class SaveRelationsQuery<T extends BaseEntity> extends BaseRemoteQuery implements
+public class SaveRelationsQuery<T extends BaseRelationshipEntity> extends BaseRemoteQuery implements
     Serializable {
 
   private Long parent;

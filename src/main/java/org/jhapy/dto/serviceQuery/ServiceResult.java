@@ -45,7 +45,7 @@ public class ServiceResult<T> implements Serializable {
 
   private String exceptionString;
   private String exceptionClass;
-  private Boolean isSuccess;
+  private boolean isSuccess;
   private String message;
   private T data;
 
@@ -53,7 +53,7 @@ public class ServiceResult<T> implements Serializable {
    * Create a new Service Result As Success
    */
   public ServiceResult() {
-    isSuccess = Boolean.TRUE;
+    isSuccess = true;
   }
 
   /**
@@ -128,6 +128,14 @@ public class ServiceResult<T> implements Serializable {
       }
     }
     return null;
+  }
+
+  public boolean getIsSuccess() {
+    return isSuccess;
+  }
+
+  public void setIsSuccess( boolean isSuccess ) {
+    this.isSuccess = isSuccess;
   }
 
   public void ifSuccess(Consumer<? super T> action) {

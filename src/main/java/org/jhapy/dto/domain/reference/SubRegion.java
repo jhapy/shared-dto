@@ -43,10 +43,6 @@ public class SubRegion extends BaseEntityLongId implements Serializable {
   @ToString.Exclude
   private Region region;
 
-  @EqualsAndHashCode.Exclude
-  @ToString.Exclude
-  private Set<Country> countries = new HashSet<>();
-
   @EqualsAndHashCode.Include
   @ToString.Include
   private String region() {

@@ -37,4 +37,18 @@ public class LatLng implements Serializable {
 
   private Double lat;
   private Double lng;
+  private Double alt;
+
+  public LatLng( Double lat, Double lng ) {
+    this.lat = lat;
+    this.lng = lng;
+  }
+
+  public static LatLng latlng(double lat, double lng) {
+    return new LatLng(lat, lng);
+  }
+
+  public static LatLng latlng(double lat, double lng, double altitude) {
+    return new LatLng(lat, lng, altitude);
+  }
 }
