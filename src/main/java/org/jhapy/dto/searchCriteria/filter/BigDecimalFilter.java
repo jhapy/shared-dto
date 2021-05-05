@@ -17,6 +17,7 @@
  */
 package org.jhapy.dto.searchCriteria.filter;
 
+import java.io.Serial;
 import java.math.BigDecimal;
 
 /**
@@ -26,6 +27,7 @@ import java.math.BigDecimal;
  */
 public class BigDecimalFilter extends RangeFilter<BigDecimal> {
 
+  @Serial
   private static final long serialVersionUID = 1L;
 
   /**

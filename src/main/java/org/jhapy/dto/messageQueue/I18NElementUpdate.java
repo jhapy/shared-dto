@@ -11,6 +11,7 @@ import org.jhapy.dto.domain.i18n.Element;
  */
 @Data
 public class I18NElementUpdate implements Serializable {
+
   private I18NUpdateTypeEnum updateType;
   private Element element;
 }

@@ -17,6 +17,8 @@
  */
 package org.jhapy.dto.searchCriteria.filter;
 
+import java.io.Serial;
+
 /**
  * Filter class for {@link Double} type attributes.
  *
@@ -24,6 +26,7 @@ package org.jhapy.dto.searchCriteria.filter;
  */
 public class DoubleFilter extends RangeFilter<Double> {
 
+  @Serial
   private static final long serialVersionUID = 1L;
 
   /**

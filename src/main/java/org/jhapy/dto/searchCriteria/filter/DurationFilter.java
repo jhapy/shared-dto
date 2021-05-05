@@ -17,6 +17,7 @@
  */
 package org.jhapy.dto.searchCriteria.filter;
 
+import java.io.Serial;
 import java.time.Duration;
 
 /**
@@ -26,6 +27,7 @@ import java.time.Duration;
  */
 public class DurationFilter extends RangeFilter<Duration> {
 
+  @Serial
   private static final long serialVersionUID = 1L;
 
   /**

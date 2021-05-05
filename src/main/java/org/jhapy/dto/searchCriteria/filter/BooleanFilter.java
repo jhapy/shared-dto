@@ -17,6 +17,8 @@
  */
 package org.jhapy.dto.searchCriteria.filter;
 
+import java.io.Serial;
+
 /**
  * Class for filtering attributes with {@link Boolean} type. It can be added to a criteria class as
  * a member, to support the following query parameters:
@@ -31,6 +33,7 @@ package org.jhapy.dto.searchCriteria.filter;
  */
 public class BooleanFilter extends Filter<Boolean> {
 
+  @Serial
   private static final long serialVersionUID = 1L;
 
   /**

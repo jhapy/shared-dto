@@ -18,6 +18,8 @@
 
 package org.jhapy.dto.searchCriteria.filter;
 
+import java.io.Serial;
+
 /**
  * Filter class for {@link Long} type attributes.
  *
@@ -25,6 +27,7 @@ package org.jhapy.dto.searchCriteria.filter;
  */
 public class LongFilter extends RangeFilter<Long> {
 
+  @Serial
   private static final long serialVersionUID = 1L;
 
   /**

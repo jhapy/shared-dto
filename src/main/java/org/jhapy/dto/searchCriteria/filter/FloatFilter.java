@@ -17,6 +17,8 @@
  */
 package org.jhapy.dto.searchCriteria.filter;
 
+import java.io.Serial;
+
 /**
  * Filter class for {@link Float} type attributes.
  *
@@ -24,6 +26,7 @@ package org.jhapy.dto.searchCriteria.filter;
  */
 public class FloatFilter extends RangeFilter<Float> {
 
+  @Serial
   private static final long serialVersionUID = 1L;
 
   /**

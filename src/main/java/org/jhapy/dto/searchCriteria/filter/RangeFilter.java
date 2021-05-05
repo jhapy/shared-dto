@@ -18,6 +18,7 @@
 
 package org.jhapy.dto.searchCriteria.filter;
 
+import java.io.Serial;
 import java.util.Objects;
 
 /**
@@ -52,6 +53,7 @@ import java.util.Objects;
 public class RangeFilter<FIELD_TYPE extends Comparable<? super FIELD_TYPE>> extends
     Filter<FIELD_TYPE> {
 
+  @Serial
   private static final long serialVersionUID = 1L;
 
   private FIELD_TYPE greaterThan;

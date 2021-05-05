@@ -39,7 +39,7 @@ public class LatLng implements Serializable {
   private Double lng;
   private Double alt;
 
-  public LatLng( Double lat, Double lng ) {
+  public LatLng(Double lat, Double lng) {
     this.lat = lat;
     this.lng = lng;
   }

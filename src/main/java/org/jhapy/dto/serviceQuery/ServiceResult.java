@@ -24,6 +24,7 @@ import com.fasterxml.jackson.databind.Module;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import java.io.IOException;
 import java.io.Serializable;
 import java.time.Instant;
 import java.util.function.Consumer;
@@ -123,7 +124,7 @@ public class ServiceResult<T> implements Serializable {
     if (StringUtils.isNotBlank(exceptionString) && StringUtils.isNotBlank(exceptionClass)) {
       try {
         return jsonObjectMapper().readValue(exceptionString, Class.forName(exceptionClass));
-      } catch (JsonProcessingException | ClassNotFoundException e) {
+      } catch (IOException |ClassNotFoundException e) {
         e.printStackTrace();
       }
     }
@@ -134,7 +135,7 @@ public class ServiceResult<T> implements Serializable {
     return isSuccess;
   }
 
-  public void setIsSuccess( boolean isSuccess ) {
+  public void setIsSuccess(boolean isSuccess) {
     this.isSuccess = isSuccess;
   }
 

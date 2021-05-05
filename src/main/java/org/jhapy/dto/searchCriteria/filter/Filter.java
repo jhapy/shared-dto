@@ -18,6 +18,7 @@
 
 package org.jhapy.dto.searchCriteria.filter;
 
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -37,6 +38,7 @@ import java.util.Objects;
  */
 public class Filter<FIELD_TYPE> implements Serializable {
 
+  @Serial
   private static final long serialVersionUID = 1L;
   private FIELD_TYPE equals;
   private FIELD_TYPE notEquals;

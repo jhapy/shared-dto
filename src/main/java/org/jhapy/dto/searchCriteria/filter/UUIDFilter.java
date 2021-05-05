@@ -17,6 +17,7 @@
  */
 package org.jhapy.dto.searchCriteria.filter;
 
+import java.io.Serial;
 import java.util.UUID;
 
 /**
@@ -26,6 +27,7 @@ import java.util.UUID;
  */
 public class UUIDFilter extends Filter<UUID> {
 
+  @Serial
   private static final long serialVersionUID = 1L;
 
   /**

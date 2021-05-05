@@ -18,6 +18,7 @@
 
 package org.jhapy.dto.searchCriteria.filter;
 
+import java.io.Serial;
 import java.time.LocalDate;
 import java.util.List;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -30,6 +31,7 @@ import org.springframework.format.annotation.DateTimeFormat.ISO;
  */
 public class LocalDateFilter extends RangeFilter<LocalDate> {
 
+  @Serial
   private static final long serialVersionUID = 1L;
 
   /**

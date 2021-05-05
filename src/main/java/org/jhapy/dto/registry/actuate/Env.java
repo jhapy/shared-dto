@@ -18,6 +18,7 @@
 
 package org.jhapy.dto.registry.actuate;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -41,10 +42,8 @@ public class Env {
     private Map<String, Property> properties;
 
     public List<Property> getPropertyList() {
-      properties.keySet().forEach(s -> {
-        properties.get(s).setName(s);
-      });
-      return properties.values().stream().collect(Collectors.toList());
+      properties.keySet().forEach(s -> properties.get(s).setName(s));
+      return new ArrayList<>(properties.values());
     }
 
     @Data

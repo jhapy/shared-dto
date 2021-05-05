@@ -46,7 +46,7 @@ public class DateConverter {
 
     @Override
     public void serialize(Instant value, JsonGenerator jgen, SerializerProvider provider) {
-      String loggerPrefix = getLoggerPrefix("serialize");
+      var loggerPrefix = getLoggerPrefix("serialize");
       try {
         if (value == null) {
           jgen.writeNull();
@@ -67,7 +67,7 @@ public class DateConverter {
     @Override
     public Instant deserialize(com.fasterxml.jackson.core.JsonParser jp,
         DeserializationContext ctxt) throws IOException {
-      String loggerPrefix = getLoggerPrefix("deserialize");
+      var loggerPrefix = getLoggerPrefix("deserialize");
       String dateAsString = "";
       try {
         dateAsString = jp.getText();

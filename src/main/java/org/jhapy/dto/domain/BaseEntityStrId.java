@@ -31,6 +31,7 @@ import lombok.ToString;
 @ToString(callSuper = true)
 @Data
 public abstract class BaseEntityStrId extends BaseEntity {
+
   private Long temporaryId;
 
   public String getId() {

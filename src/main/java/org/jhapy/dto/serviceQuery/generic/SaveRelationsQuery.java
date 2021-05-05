@@ -24,7 +24,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import org.jhapy.dto.domain.BaseEntity;
 import org.jhapy.dto.domain.BaseRelationshipEntity;
 import org.jhapy.dto.serviceQuery.BaseRemoteQuery;
 
