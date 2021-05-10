@@ -48,6 +48,7 @@ public class ServiceResult<T> implements Serializable {
   private String exceptionClass;
   private boolean isSuccess;
   private String message;
+  private String messageTitle;
   private T data;
 
   /**
