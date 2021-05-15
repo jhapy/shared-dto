@@ -125,7 +125,7 @@ public class ServiceResult<T> implements Serializable {
     if (StringUtils.isNotBlank(exceptionString) && StringUtils.isNotBlank(exceptionClass)) {
       try {
         return jsonObjectMapper().readValue(exceptionString, Class.forName(exceptionClass));
-      } catch (IOException |ClassNotFoundException e) {
+      } catch (IOException | ClassNotFoundException e) {
         e.printStackTrace();
       }
     }

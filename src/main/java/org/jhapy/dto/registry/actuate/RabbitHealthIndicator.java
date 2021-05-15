@@ -27,7 +27,7 @@ import lombok.EqualsAndHashCode;
  * @since 03/06/2020
  */
 @Data
-@EqualsAndHashCode(callSuper=false)
+@EqualsAndHashCode(callSuper = false)
 public class RabbitHealthIndicator extends AbstractHealthIndicator {
 
   private Details details;

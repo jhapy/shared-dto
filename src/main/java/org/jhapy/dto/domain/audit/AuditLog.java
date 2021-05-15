@@ -29,7 +29,7 @@ import org.jhapy.dto.domain.BaseEntityLongId;
  * @since 20/04/2020
  */
 @Data
-@EqualsAndHashCode(callSuper=false)
+@EqualsAndHashCode(callSuper = false)
 public class AuditLog extends BaseEntityLongId {
 
   private String commit;

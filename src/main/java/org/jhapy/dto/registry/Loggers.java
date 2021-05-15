@@ -43,14 +43,14 @@ public class Loggers {
   }
 
   @Data
-  @EqualsAndHashCode(callSuper=false)
+  @EqualsAndHashCode(callSuper = false)
   static class GroupLoggerLevels extends LoggerLevels {
 
     private List<String> members;
   }
 
   @Data
-  @EqualsAndHashCode(callSuper=false)
+  @EqualsAndHashCode(callSuper = false)
   public static class SingleLoggerLevels extends LoggerLevels {
 
     private String effectiveLevel;
