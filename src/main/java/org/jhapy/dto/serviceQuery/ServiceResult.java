@@ -45,7 +45,6 @@ import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 public class ServiceResult<T> implements Serializable {
 
   private String exceptionString;
-  private String exceptionClass;
   private boolean isSuccess;
   private String message;
   private String messageTitle;
@@ -76,22 +75,6 @@ public class ServiceResult<T> implements Serializable {
     this(Boolean.TRUE, null, data);
   }
 
-  /**
-   * Create a new Service Result As Failed with an exception
-   *
-   * @param throwable Service Result Exception
-   */
-  public ServiceResult(Throwable throwable) {
-    setExceptionClass(throwable.getClass().getName());
-    try {
-      setExceptionString(jsonObjectMapper().writeValueAsString(throwable));
-    } catch (JsonProcessingException e) {
-      e.printStackTrace();
-    }
-    setIsSuccess(false);
-    setMessage(throwable.getMessage());
-  }
-
   @JsonIgnore
   private ObjectMapper jsonObjectMapper() {
     return Jackson2ObjectMapperBuilder.json()
@@ -118,18 +101,6 @@ public class ServiceResult<T> implements Serializable {
     setIsSuccess(isSuccess);
     setMessage(message);
     setData(data);
-  }
-
-  @JsonIgnore
-  public Object getException() {
-    if (StringUtils.isNotBlank(exceptionString) && StringUtils.isNotBlank(exceptionClass)) {
-      try {
-        return jsonObjectMapper().readValue(exceptionString, Class.forName(exceptionClass));
-      } catch (IOException | ClassNotFoundException e) {
-        e.printStackTrace();
-      }
-    }
-    return null;
   }
 
   public boolean getIsSuccess() {
