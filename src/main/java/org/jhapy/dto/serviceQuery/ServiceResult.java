@@ -161,4 +161,12 @@ public class ServiceResult<T> implements Serializable {
       return other;
     }
   }
+  public T ifSuccessOrElseWithError(T other, Consumer<ServiceResult<T>> errorAction) {
+    if (isSuccess && data != null) {
+      return data;
+    } else {
+      errorAction.accept(this);
+      return other;
+    }
+  }
 }
