@@ -19,6 +19,7 @@
 package org.jhapy.dto.serviceQuery.googlePlaceSearch;
 
 import java.io.Serializable;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -35,11 +36,10 @@ import org.jhapy.dto.utils.LatLng;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
-public class SearchAroundByKeywordQuery extends BaseRemoteQuery implements Serializable {
+public class SearchAroundByCategoriesQuery extends BaseRemoteQuery implements Serializable {
 
   private LatLng latLng;
-  private String keyword;
   private String placeType;
   private Double radius;
-
+private List<Long> categories;
 }
