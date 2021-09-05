@@ -32,5 +32,4 @@ public class UserFriendlyDataException extends RuntimeException implements Seria
   public UserFriendlyDataException(String message) {
     super(message);
   }
-
 }

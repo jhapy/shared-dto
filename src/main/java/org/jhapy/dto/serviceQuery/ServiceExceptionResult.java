@@ -18,10 +18,10 @@
 
 package org.jhapy.dto.serviceQuery;
 
+import lombok.*;
+import lombok.Builder;
+
 import java.io.Serializable;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
 
 @Data
 @EqualsAndHashCode(callSuper = true)

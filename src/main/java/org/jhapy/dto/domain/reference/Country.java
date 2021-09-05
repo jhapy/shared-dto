@@ -18,11 +18,13 @@
 
 package org.jhapy.dto.domain.reference;
 
-import java.io.Serializable;
 import lombok.Data;
+import lombok.experimental.SuperBuilder;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import org.jhapy.dto.domain.BaseEntityLongId;
+
+import java.io.Serializable;
 
 /**
  * Referential for countries, based on the ISO 3166 list
@@ -32,6 +34,7 @@ import org.jhapy.dto.domain.BaseEntityLongId;
  * @since 2019-03-06
  */
 @Data
+@SuperBuilder
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 public class Country extends BaseEntityLongId implements Serializable {
@@ -39,37 +42,23 @@ public class Country extends BaseEntityLongId implements Serializable {
   // From Translation
   private String name;
 
-  /**
-   * Alpha-2 code
-   */
+  /** Alpha-2 code */
   private String iso2;
 
-  /**
-   * Alpha-3 code
-   */
+  /** Alpha-3 code */
   private String iso3;
 
-  /**
-   * Dialing code prefix
-   */
+  /** Dialing code prefix */
   private String dialingCode;
 
-  /**
-   * Is European Union
-   */
+  /** Is European Union */
   private Boolean isEU;
 
-  @EqualsAndHashCode.Exclude
-  @ToString.Exclude
-  private Region region;
+  @EqualsAndHashCode.Exclude @ToString.Exclude private Region region;
 
-  @EqualsAndHashCode.Exclude
-  @ToString.Exclude
-  private SubRegion subRegion;
+  @EqualsAndHashCode.Exclude @ToString.Exclude private SubRegion subRegion;
 
-  @EqualsAndHashCode.Exclude
-  @ToString.Exclude
-  private IntermediateRegion intermediateRegion;
+  @EqualsAndHashCode.Exclude @ToString.Exclude private IntermediateRegion intermediateRegion;
 
   @EqualsAndHashCode.Include
   @ToString.Include
@@ -86,7 +75,8 @@ public class Country extends BaseEntityLongId implements Serializable {
   @EqualsAndHashCode.Include
   @ToString.Include
   private String intermediateRegion() {
-    return (intermediateRegion != null && intermediateRegion.getId() != null) ? intermediateRegion
-        .getId().toString() : null;
+    return (intermediateRegion != null && intermediateRegion.getId() != null)
+        ? intermediateRegion.getId().toString()
+        : null;
   }
 }

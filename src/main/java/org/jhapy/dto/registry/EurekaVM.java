@@ -22,9 +22,7 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
-/**
- * View Model object for representing Eureka applications list.
- */
+/** View Model object for representing Eureka applications list. */
 public class EurekaVM implements Serializable {
 
   private List<Map<String, Object>> applications;

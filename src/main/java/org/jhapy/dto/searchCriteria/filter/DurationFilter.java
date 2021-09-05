@@ -27,17 +27,13 @@ import java.time.Duration;
  */
 public class DurationFilter extends RangeFilter<Duration> {
 
-  @Serial
-  private static final long serialVersionUID = 1L;
+  @Serial private static final long serialVersionUID = 1L;
+
+  /** Constructor for DurationFilter. */
+  public DurationFilter() {}
 
   /**
-   * <p>Constructor for DurationFilter.</p>
-   */
-  public DurationFilter() {
-  }
-
-  /**
-   * <p>Constructor for DurationFilter.</p>
+   * Constructor for DurationFilter.
    *
    * @param filter a {@link DurationFilter} object.
    */
@@ -46,12 +42,11 @@ public class DurationFilter extends RangeFilter<Duration> {
   }
 
   /**
-   * <p>copy.</p>
+   * copy.
    *
    * @return a {@link DurationFilter} object.
    */
   public DurationFilter copy() {
     return new DurationFilter(this);
   }
-
 }

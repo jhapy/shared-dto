@@ -18,13 +18,11 @@
 
 package org.jhapy.dto.domain.security;
 
-import java.util.Date;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 import org.jhapy.dto.domain.BaseEntityStrId;
+
+import java.util.Date;
 
 /**
  * @author jHapy Lead Dev.
@@ -32,6 +30,7 @@ import org.jhapy.dto.domain.BaseEntityStrId;
  * @since 2019-07-09
  */
 @Data
+@SuperBuilder
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 @AllArgsConstructor

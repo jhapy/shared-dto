@@ -18,12 +18,14 @@
 
 package org.jhapy.dto.serviceQuery.reference.countryTrl;
 
-import java.io.Serializable;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.jhapy.dto.serviceQuery.BaseRemoteQuery;
+
+import java.io.Serializable;
 
 /**
  * @author jHapy Lead Dev.
@@ -31,6 +33,7 @@ import org.jhapy.dto.serviceQuery.BaseRemoteQuery;
  * @since 2019-06-02
  */
 @Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)

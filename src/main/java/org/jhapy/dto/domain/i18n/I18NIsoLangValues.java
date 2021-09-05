@@ -1,8 +1,10 @@
 package org.jhapy.dto.domain.i18n;
 
+import lombok.Data;
+import lombok.experimental.SuperBuilder;
+
 import java.io.Serializable;
 import java.util.Map;
-import lombok.Data;
 
 /**
  * @author Alexandre Clavaud.
@@ -10,6 +12,7 @@ import lombok.Data;
  * @since 27/03/2021
  */
 @Data
+@SuperBuilder
 public class I18NIsoLangValues implements Serializable {
 
   private Integer recordVersion;

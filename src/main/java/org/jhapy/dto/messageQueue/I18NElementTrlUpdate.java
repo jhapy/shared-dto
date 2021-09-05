@@ -1,8 +1,9 @@
 package org.jhapy.dto.messageQueue;
 
-import java.io.Serializable;
 import lombok.Data;
-import org.jhapy.dto.domain.i18n.ElementTrl;
+import org.jhapy.dto.domain.i18n.ElementTrlDTO;
+
+import java.io.Serializable;
 
 /**
  * @author Alexandre Clavaud.
@@ -13,5 +14,5 @@ import org.jhapy.dto.domain.i18n.ElementTrl;
 public class I18NElementTrlUpdate implements Serializable {
 
   private I18NUpdateTypeEnum updateType;
-  private ElementTrl elementTrl;
+  private ElementTrlDTO elementTrl;
 }

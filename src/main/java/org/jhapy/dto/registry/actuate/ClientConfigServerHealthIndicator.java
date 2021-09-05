@@ -20,6 +20,7 @@ package org.jhapy.dto.registry.actuate;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.experimental.SuperBuilder;
 
 /**
  * @author jHapy Lead Dev.
@@ -27,6 +28,7 @@ import lombok.EqualsAndHashCode;
  * @since 03/06/2020
  */
 @Data
+@SuperBuilder
 @EqualsAndHashCode(callSuper = false)
 public class ClientConfigServerHealthIndicator extends AbstractHealthIndicator {
 

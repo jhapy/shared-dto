@@ -24,5 +24,6 @@ package org.jhapy.dto.utils;
  * @since 2019-06-03
  */
 public enum DirectionEnum {
-  ASC, DESC
+  ASC,
+  DESC
 }

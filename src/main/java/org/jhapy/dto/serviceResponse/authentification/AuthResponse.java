@@ -18,18 +18,22 @@
 
 package org.jhapy.dto.serviceResponse.authentification;
 
-import java.io.Serializable;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.experimental.SuperBuilder;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
+
 @Data
+@SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
 public class AuthResponse implements Serializable {
 
   private String accessToken;
-  private String tokenType = "Bearer";
+  @Builder.Default private String tokenType = "Bearer";
   private AuthStatusEnum status;
 
   public AuthResponse(String accessToken) {

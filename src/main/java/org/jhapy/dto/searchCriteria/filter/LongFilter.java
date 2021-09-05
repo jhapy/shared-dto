@@ -27,21 +27,17 @@ import java.io.Serial;
  */
 public class LongFilter extends RangeFilter<Long> {
 
-  @Serial
-  private static final long serialVersionUID = 1L;
+  @Serial private static final long serialVersionUID = 1L;
 
-  /**
-   * <p>Constructor for LongFilter.</p>
-   */
-  public LongFilter() {
-  }
+  /** Constructor for LongFilter. */
+  public LongFilter() {}
 
   public LongFilter(Long filter) {
     setEquals(filter);
   }
 
   /**
-   * <p>Constructor for LongFilter.</p>
+   * Constructor for LongFilter.
    *
    * @param filter a {@link LongFilter} object.
    */
@@ -50,12 +46,11 @@ public class LongFilter extends RangeFilter<Long> {
   }
 
   /**
-   * <p>copy.</p>
+   * copy.
    *
    * @return a {@link LongFilter} object.
    */
   public LongFilter copy() {
     return new LongFilter(this);
   }
-
 }

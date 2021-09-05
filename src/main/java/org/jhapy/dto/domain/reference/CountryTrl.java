@@ -18,11 +18,13 @@
 
 package org.jhapy.dto.domain.reference;
 
-import java.io.Serializable;
 import lombok.Data;
+import lombok.experimental.SuperBuilder;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import org.jhapy.dto.domain.EntityTranslation;
+
+import java.io.Serializable;
 
 /**
  * @author jHapy Lead Dev.
@@ -30,12 +32,11 @@ import org.jhapy.dto.domain.EntityTranslation;
  * @since 2019-03-30
  */
 @Data
+@SuperBuilder
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 public class CountryTrl extends EntityTranslation implements Serializable {
 
-  /**
-   * Country name
-   */
+  /** Country name */
   private String name;
 }

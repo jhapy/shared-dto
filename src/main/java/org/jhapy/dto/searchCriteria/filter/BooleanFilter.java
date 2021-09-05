@@ -22,6 +22,7 @@ import java.io.Serial;
 /**
  * Class for filtering attributes with {@link Boolean} type. It can be added to a criteria class as
  * a member, to support the following query parameters:
+ *
  * <pre>
  *      fieldName.equals=true
  *      fieldName.notEquals=true
@@ -33,17 +34,13 @@ import java.io.Serial;
  */
 public class BooleanFilter extends Filter<Boolean> {
 
-  @Serial
-  private static final long serialVersionUID = 1L;
+  @Serial private static final long serialVersionUID = 1L;
+
+  /** Constructor for BooleanFilter. */
+  public BooleanFilter() {}
 
   /**
-   * <p>Constructor for BooleanFilter.</p>
-   */
-  public BooleanFilter() {
-  }
-
-  /**
-   * <p>Constructor for BooleanFilter.</p>
+   * Constructor for BooleanFilter.
    *
    * @param filter a {@link BooleanFilter} object.
    */
@@ -52,7 +49,7 @@ public class BooleanFilter extends Filter<Boolean> {
   }
 
   /**
-   * <p>copy.</p>
+   * copy.
    *
    * @return a {@link BooleanFilter} object.
    */
@@ -60,5 +57,4 @@ public class BooleanFilter extends Filter<Boolean> {
   public BooleanFilter copy() {
     return new BooleanFilter(this);
   }
-
 }

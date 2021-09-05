@@ -24,5 +24,6 @@ package org.jhapy.dto.domain.notification;
  * @since 2019-02-22
  */
 public enum SmsActionEnum {
-  SMS_VERIFICATION, SMS_FORGET_PASSWORD
+  SMS_VERIFICATION,
+  SMS_FORGET_PASSWORD
 }

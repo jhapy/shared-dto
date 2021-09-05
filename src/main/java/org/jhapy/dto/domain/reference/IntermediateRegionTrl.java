@@ -18,11 +18,13 @@
 
 package org.jhapy.dto.domain.reference;
 
-import java.io.Serializable;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
+import lombok.experimental.SuperBuilder;
 import org.jhapy.dto.domain.EntityTranslation;
+
+import java.io.Serializable;
 
 /**
  * @author jHapy Lead Dev.
@@ -30,6 +32,7 @@ import org.jhapy.dto.domain.EntityTranslation;
  * @since 2019-03-30
  */
 @Data
+@SuperBuilder
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 public class IntermediateRegionTrl extends EntityTranslation implements Serializable {

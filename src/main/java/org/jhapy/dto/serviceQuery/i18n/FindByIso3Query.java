@@ -18,13 +18,10 @@
 
 package org.jhapy.dto.serviceQuery.i18n;
 
-import java.io.Serializable;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.jhapy.dto.serviceQuery.BaseRemoteQuery;
+
+import java.io.Serializable;
 
 /**
  * @author jHapy Lead Dev.

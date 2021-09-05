@@ -27,17 +27,13 @@ import java.util.UUID;
  */
 public class UUIDFilter extends Filter<UUID> {
 
-  @Serial
-  private static final long serialVersionUID = 1L;
+  @Serial private static final long serialVersionUID = 1L;
+
+  /** Constructor for UUIDFilter. */
+  public UUIDFilter() {}
 
   /**
-   * <p>Constructor for UUIDFilter.</p>
-   */
-  public UUIDFilter() {
-  }
-
-  /**
-   * <p>Constructor for UUIDFilter.</p>
+   * Constructor for UUIDFilter.
    *
    * @param filter a {@link UUIDFilter} object.
    */
@@ -46,12 +42,11 @@ public class UUIDFilter extends Filter<UUID> {
   }
 
   /**
-   * <p>copy.</p>
+   * copy.
    *
    * @return a {@link UUIDFilter} object.
    */
   public UUIDFilter copy() {
     return new UUIDFilter(this);
   }
-
 }

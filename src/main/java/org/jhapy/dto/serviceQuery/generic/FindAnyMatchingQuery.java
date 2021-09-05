@@ -19,13 +19,11 @@
 package org.jhapy.dto.serviceQuery.generic;
 
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.Serializable;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.jhapy.dto.serviceQuery.BaseRemoteQuery;
 import org.jhapy.dto.utils.Pageable;
+
+import java.io.Serializable;
 
 /**
  * @author jHapy Lead Dev.
@@ -33,6 +31,7 @@ import org.jhapy.dto.utils.Pageable;
  * @since 2019-06-02
  */
 @Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)

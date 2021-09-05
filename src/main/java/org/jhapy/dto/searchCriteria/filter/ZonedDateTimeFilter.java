@@ -18,11 +18,12 @@
 
 package org.jhapy.dto.searchCriteria.filter;
 
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
+
 import java.io.Serial;
 import java.time.ZonedDateTime;
 import java.util.List;
-import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 /**
  * Filter class for {@link ZonedDateTime} type attributes.
@@ -31,17 +32,13 @@ import org.springframework.format.annotation.DateTimeFormat.ISO;
  */
 public class ZonedDateTimeFilter extends RangeFilter<ZonedDateTime> {
 
-  @Serial
-  private static final long serialVersionUID = 1L;
+  @Serial private static final long serialVersionUID = 1L;
+
+  /** Constructor for ZonedDateTimeFilter. */
+  public ZonedDateTimeFilter() {}
 
   /**
-   * <p>Constructor for ZonedDateTimeFilter.</p>
-   */
-  public ZonedDateTimeFilter() {
-  }
-
-  /**
-   * <p>Constructor for ZonedDateTimeFilter.</p>
+   * Constructor for ZonedDateTimeFilter.
    *
    * @param filter a {@link ZonedDateTimeFilter} object.
    */
@@ -50,7 +47,7 @@ public class ZonedDateTimeFilter extends RangeFilter<ZonedDateTime> {
   }
 
   /**
-   * <p>copy.</p>
+   * copy.
    *
    * @return a {@link ZonedDateTimeFilter} object.
    */
@@ -59,9 +56,7 @@ public class ZonedDateTimeFilter extends RangeFilter<ZonedDateTime> {
     return new ZonedDateTimeFilter(this);
   }
 
-  /**
-   * {@inheritDoc}
-   */
+  /** {@inheritDoc} */
   @Override
   @DateTimeFormat(iso = ISO.DATE_TIME)
   public ZonedDateTimeFilter setEquals(ZonedDateTime equals) {
@@ -69,9 +64,7 @@ public class ZonedDateTimeFilter extends RangeFilter<ZonedDateTime> {
     return this;
   }
 
-  /**
-   * {@inheritDoc}
-   */
+  /** {@inheritDoc} */
   @Override
   @DateTimeFormat(iso = ISO.DATE_TIME)
   public ZonedDateTimeFilter setNotEquals(ZonedDateTime equals) {
@@ -79,9 +72,7 @@ public class ZonedDateTimeFilter extends RangeFilter<ZonedDateTime> {
     return this;
   }
 
-  /**
-   * {@inheritDoc}
-   */
+  /** {@inheritDoc} */
   @Override
   @DateTimeFormat(iso = ISO.DATE_TIME)
   public ZonedDateTimeFilter setIn(List<ZonedDateTime> in) {
@@ -89,9 +80,7 @@ public class ZonedDateTimeFilter extends RangeFilter<ZonedDateTime> {
     return this;
   }
 
-  /**
-   * {@inheritDoc}
-   */
+  /** {@inheritDoc} */
   @Override
   @DateTimeFormat(iso = ISO.DATE_TIME)
   public ZonedDateTimeFilter setNotIn(List<ZonedDateTime> notIn) {
@@ -99,9 +88,7 @@ public class ZonedDateTimeFilter extends RangeFilter<ZonedDateTime> {
     return this;
   }
 
-  /**
-   * {@inheritDoc}
-   */
+  /** {@inheritDoc} */
   @Override
   @DateTimeFormat(iso = ISO.DATE_TIME)
   public ZonedDateTimeFilter setGreaterThan(ZonedDateTime equals) {
@@ -109,9 +96,7 @@ public class ZonedDateTimeFilter extends RangeFilter<ZonedDateTime> {
     return this;
   }
 
-  /**
-   * {@inheritDoc}
-   */
+  /** {@inheritDoc} */
   @Override
   @DateTimeFormat(iso = ISO.DATE_TIME)
   public ZonedDateTimeFilter setLessThan(ZonedDateTime equals) {
@@ -119,9 +104,7 @@ public class ZonedDateTimeFilter extends RangeFilter<ZonedDateTime> {
     return this;
   }
 
-  /**
-   * {@inheritDoc}
-   */
+  /** {@inheritDoc} */
   @Override
   @DateTimeFormat(iso = ISO.DATE_TIME)
   public ZonedDateTimeFilter setGreaterThanOrEqual(ZonedDateTime equals) {
@@ -129,9 +112,7 @@ public class ZonedDateTimeFilter extends RangeFilter<ZonedDateTime> {
     return this;
   }
 
-  /**
-   * {@inheritDoc}
-   */
+  /** {@inheritDoc} */
   @Override
   @DateTimeFormat(iso = ISO.DATE_TIME)
   @Deprecated
@@ -140,9 +121,7 @@ public class ZonedDateTimeFilter extends RangeFilter<ZonedDateTime> {
     return this;
   }
 
-  /**
-   * {@inheritDoc}
-   */
+  /** {@inheritDoc} */
   @Override
   @DateTimeFormat(iso = ISO.DATE_TIME)
   public ZonedDateTimeFilter setLessThanOrEqual(ZonedDateTime equals) {
@@ -150,9 +129,7 @@ public class ZonedDateTimeFilter extends RangeFilter<ZonedDateTime> {
     return this;
   }
 
-  /**
-   * {@inheritDoc}
-   */
+  /** {@inheritDoc} */
   @Override
   @DateTimeFormat(iso = ISO.DATE_TIME)
   @Deprecated
@@ -160,5 +137,4 @@ public class ZonedDateTimeFilter extends RangeFilter<ZonedDateTime> {
     super.setLessOrEqualThan(equals);
     return this;
   }
-
 }

@@ -27,8 +27,7 @@ import org.jhapy.dto.domain.BaseEntity;
  */
 public final class EntityUtil {
 
-  private EntityUtil() {
-  }
+  private EntityUtil() {}
 
   public static String getName(Class<? extends BaseEntity> type) {
     // All main domain have simple one word names, so this is sufficient. Metadata

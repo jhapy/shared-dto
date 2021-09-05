@@ -1,10 +1,12 @@
 package org.jhapy.dto.serviceQuery;
 
-import java.io.Serializable;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+
+import java.io.Serializable;
 
 /**
  * @author Alexandre Clavaud.
@@ -12,6 +14,7 @@ import lombok.NoArgsConstructor;
  * @since 28/08/2020
  */
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)

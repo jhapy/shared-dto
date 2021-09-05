@@ -18,14 +18,16 @@
 
 package org.jhapy.dto.searchCriteria;
 
-import java.io.Serializable;
 import lombok.Data;
+import lombok.experimental.SuperBuilder;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
 import org.jhapy.dto.searchCriteria.filter.BooleanFilter;
 import org.jhapy.dto.searchCriteria.filter.InstantFilter;
 import org.jhapy.dto.searchCriteria.filter.LongFilter;
 import org.jhapy.dto.searchCriteria.filter.StringFilter;
+
+import java.io.Serializable;
 
 /**
  * @author jHapy Lead Dev.

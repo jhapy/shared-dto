@@ -18,9 +18,8 @@
 
 package org.jhapy.dto.domain;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 import java.io.Serializable;
 import java.time.Instant;
@@ -33,12 +32,15 @@ import java.time.Instant;
  * @since 2019-03-12
  */
 @Data
+@SuperBuilder
 @EqualsAndHashCode
+@AllArgsConstructor
+@NoArgsConstructor
 @ToString(callSuper = true)
 public abstract class EntityTranslationV2 implements Serializable {
 
-    private Long id;
-    private Boolean isNew;
+  private Long id;
+  private Boolean isNew;
 
   private String iso3Language;
   private Boolean isTranslated;
@@ -53,5 +55,4 @@ public abstract class EntityTranslationV2 implements Serializable {
   private Instant modified;
 
   private Long relatedEntityId;
-
 }

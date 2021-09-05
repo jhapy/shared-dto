@@ -19,10 +19,10 @@
 package org.springframework.security.core.userdetails;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import java.io.Serializable;
-import java.util.Collection;
 import org.springframework.security.core.GrantedAuthority;
 
+import java.io.Serializable;
+import java.util.Collection;
 
 public interface UserDetails extends Serializable {
   // ~ Methods
@@ -53,8 +53,8 @@ public interface UserDetails extends Serializable {
   /**
    * Indicates whether the user's account has expired. An expired account cannot be authenticated.
    *
-   * @return <code>true</code> if the user's account is valid (ie non-expired),
-   * <code>false</code> if no longer valid (ie expired)
+   * @return <code>true</code> if the user's account is valid (ie non-expired), <code>false</code>
+   *     if no longer valid (ie expired)
    */
   @JsonIgnore
   boolean isAccountNonExpired();
@@ -71,8 +71,8 @@ public interface UserDetails extends Serializable {
    * Indicates whether the user's credentials (password) has expired. Expired credentials prevent
    * authentication.
    *
-   * @return <code>true</code> if the user's credentials are valid (ie non-expired),
-   * <code>false</code> if no longer valid (ie expired)
+   * @return <code>true</code> if the user's credentials are valid (ie non-expired), <code>false
+   *     </code> if no longer valid (ie expired)
    */
   @JsonIgnore
   boolean isCredentialsNonExpired();

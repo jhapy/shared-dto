@@ -18,8 +18,10 @@
 
 package org.jhapy.dto.registry;
 
-import java.util.Set;
 import lombok.Data;
+import lombok.experimental.SuperBuilder;
+
+import java.util.Set;
 
 /**
  * @author jHapy Lead Dev.
@@ -60,8 +62,6 @@ public class Thread {
 
     private Long identityHashCode;
     private String className;
-
-
   }
 
   @Data
@@ -84,7 +84,6 @@ public class Thread {
       private Long lineNumber;
       private String classLoaderName;
     }
-
   }
 
   @Data

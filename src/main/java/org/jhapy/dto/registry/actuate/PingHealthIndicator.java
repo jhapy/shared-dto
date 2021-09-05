@@ -19,6 +19,7 @@
 package org.jhapy.dto.registry.actuate;
 
 import lombok.Data;
+import lombok.experimental.SuperBuilder;
 import lombok.EqualsAndHashCode;
 
 /**
@@ -27,6 +28,7 @@ import lombok.EqualsAndHashCode;
  * @since 03/06/2020
  */
 @Data
+@SuperBuilder
 @EqualsAndHashCode(callSuper = false)
 public class PingHealthIndicator extends AbstractHealthIndicator {
 
@@ -49,5 +51,4 @@ public class PingHealthIndicator extends AbstractHealthIndicator {
   public boolean hasComponents() {
     return false;
   }
-
 }

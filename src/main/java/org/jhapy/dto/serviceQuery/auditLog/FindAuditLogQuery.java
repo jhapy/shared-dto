@@ -18,14 +18,16 @@
 
 package org.jhapy.dto.serviceQuery.auditLog;
 
-import java.io.Serializable;
-import javax.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import org.jhapy.dto.serviceQuery.BaseRemoteQuery;
 import org.jhapy.dto.utils.Pageable;
+
+import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 
 /**
  * @author jHapy Lead Dev.
@@ -33,15 +35,14 @@ import org.jhapy.dto.utils.Pageable;
  * @since 2019-06-02
  */
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 public class FindAuditLogQuery extends BaseRemoteQuery implements Serializable {
 
-  @NotNull
-  private String className;
-  @NotNull
-  private String recordId;
+  @NotNull private String className;
+  @NotNull private String recordId;
 
   protected Pageable pageable;
 }

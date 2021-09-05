@@ -18,14 +18,11 @@
 
 package org.jhapy.dto.serviceQuery.generic;
 
-import java.io.Serializable;
-import javax.validation.constraints.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.jhapy.dto.serviceQuery.BaseRemoteQuery;
+
+import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 
 /**
  * @author jHapy Lead Dev.
@@ -39,6 +36,5 @@ import org.jhapy.dto.serviceQuery.BaseRemoteQuery;
 @EqualsAndHashCode(callSuper = true)
 public class GetByIdQuery extends BaseRemoteQuery implements Serializable {
 
-  @NotNull
-  private Long id;
+  @NotNull private Long id;
 }

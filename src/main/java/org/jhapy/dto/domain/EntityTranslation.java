@@ -18,10 +18,10 @@
 
 package org.jhapy.dto.domain;
 
+import lombok.*;
+import lombok.experimental.SuperBuilder;
+
 import java.io.Serializable;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
 
 /**
  * Base class for all translations
@@ -31,14 +31,16 @@ import lombok.ToString;
  * @since 2019-03-12
  */
 @Data
+@SuperBuilder
+@AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 public abstract class EntityTranslation extends BaseEntityLongId implements Serializable {
 
-  /**
-   * Language
-   */
+  /** Language */
   private String iso3Language;
+
   private Boolean isTranslated;
   private Boolean isDefault;
   private Long relatedGraphDbId;

@@ -27,8 +27,7 @@ import java.io.Serializable;
  */
 public class DataIntegrityViolationException extends RuntimeException implements Serializable {
 
-  public DataIntegrityViolationException() {
-  }
+  public DataIntegrityViolationException() {}
 
   public DataIntegrityViolationException(String message) {
     super(message);

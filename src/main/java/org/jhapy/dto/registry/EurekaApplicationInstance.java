@@ -18,9 +18,11 @@
 
 package org.jhapy.dto.registry;
 
+import lombok.Data;
+import lombok.experimental.SuperBuilder;
+
 import java.io.Serializable;
 import java.util.Map;
-import lombok.Data;
 
 /**
  * @author jHapy Lead Dev.

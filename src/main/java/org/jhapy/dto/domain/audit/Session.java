@@ -18,12 +18,14 @@
 
 package org.jhapy.dto.domain.audit;
 
-import java.io.Serializable;
-import java.time.Instant;
 import lombok.Data;
+import lombok.experimental.SuperBuilder;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import org.jhapy.dto.domain.BaseEntityStrId;
+
+import java.io.Serializable;
+import java.time.Instant;
 
 /**
  * @author jHapy Lead Dev.
@@ -31,6 +33,7 @@ import org.jhapy.dto.domain.BaseEntityStrId;
  * @since 2019-05-24
  */
 @Data
+@SuperBuilder
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 public class Session extends BaseEntityStrId implements Serializable {
@@ -50,5 +53,4 @@ public class Session extends BaseEntityStrId implements Serializable {
   private String error;
 
   private String jsessionId;
-
 }

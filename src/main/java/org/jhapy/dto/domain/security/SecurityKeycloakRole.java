@@ -19,13 +19,15 @@
 package org.jhapy.dto.domain.security;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import java.io.Serializable;
-import javax.validation.constraints.NotNull;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
+import lombok.experimental.SuperBuilder;
 import org.jhapy.dto.domain.BaseEntityStrId;
 import org.springframework.security.core.GrantedAuthority;
+
+import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 
 /**
  * This class represent a Security SecurityConst (Used to access and navigate the application)
@@ -35,26 +37,20 @@ import org.springframework.security.core.GrantedAuthority;
  * @since 2019-03-09
  */
 @Data
+@SuperBuilder
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-public class SecurityKeycloakRole extends BaseEntityStrId implements GrantedAuthority,
-    Serializable {
+public class SecurityKeycloakRole extends BaseEntityStrId
+    implements GrantedAuthority, Serializable {
 
-  /**
-   * Name of the SecurityConst
-   */
-  @NotNull
-  private String name;
-  /**
-   * Some description for this role
-   */
+  /** Name of the SecurityConst */
+  @NotNull private String name;
+  /** Some description for this role */
   private String description;
 
-  @NotNull
-  private Boolean canLogin;
+  @NotNull private Boolean canLogin;
 
-  public SecurityKeycloakRole() {
-  }
+  public SecurityKeycloakRole() {}
 
   public SecurityKeycloakRole(String authority) {
     setName(authority);

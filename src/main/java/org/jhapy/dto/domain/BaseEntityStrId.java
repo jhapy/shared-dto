@@ -18,9 +18,8 @@
 
 package org.jhapy.dto.domain;
 
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 /**
  * @author jHapy Lead Dev.
@@ -29,6 +28,9 @@ import lombok.ToString;
  */
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
+@SuperBuilder
+@AllArgsConstructor
+@NoArgsConstructor
 @Data
 public abstract class BaseEntityStrId extends BaseEntity {
 

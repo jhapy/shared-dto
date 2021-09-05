@@ -19,9 +19,11 @@
 package org.jhapy.dto.registry;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
+import lombok.experimental.SuperBuilder;
+
 import java.util.Arrays;
 import java.util.List;
-import lombok.Data;
 
 /**
  * @author jHapy Lead Dev.
@@ -58,18 +60,25 @@ public class Databases {
   public static class Stats {
 
     private String name;
+
     @JsonProperty("0.0")
     private Double p000;
+
     @JsonProperty("0.5")
     private Double p050;
+
     @JsonProperty("0.75")
     private Double p075;
+
     @JsonProperty("0.95")
     private Double p095;
+
     @JsonProperty("0.99")
     private Double p099;
+
     @JsonProperty("1.0")
     private Double p100;
+
     private Double max;
     private Double mean;
     private Double totalTime;

@@ -18,15 +18,14 @@
 
 package org.jhapy.dto.serviceQuery.authentification;
 
-import javax.validation.constraints.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.jhapy.dto.serviceQuery.BaseRemoteQuery;
+
+import javax.validation.constraints.NotNull;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class ValidateUserQuery extends BaseRemoteQuery {
@@ -39,9 +38,7 @@ public class ValidateUserQuery extends BaseRemoteQuery {
 
   private String nickName;
 
-  @NotNull
-  private String securityUserId;
+  @NotNull private String securityUserId;
 
-  @NotNull
-  private String verificationToken;
+  @NotNull private String verificationToken;
 }

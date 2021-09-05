@@ -18,51 +18,37 @@
 
 package org.jhapy.dto.utils;
 
+import lombok.Data;
+
 import java.io.Serializable;
 import java.util.Collections;
 import java.util.List;
-import lombok.Data;
 
 @Data
 public class Page<T extends Serializable> implements Serializable {
 
-  /**
-   * Page content.
-   */
+  /** Page content. */
   private List<T> content = Collections.emptyList();
 
-  /**
-   * Returns the number of total pages.
-   */
+  /** Returns the number of total pages. */
   private Integer totalPages = 0;
 
-  /**
-   * Returns the total amount of elements.
-   */
+  /** Returns the total amount of elements. */
   private Long totalElements;
 
-  /**
-   * Returns the size of the page.
-   */
+  /** Returns the size of the page. */
   private Integer size = 0;
 
-  /**
-   * Returns the number of the current page.
-   */
+  /** Returns the number of the current page. */
   private Integer number = 0;
 
-  /**
-   * Returns the number of elements currently on page.
-   */
+  /** Returns the number of elements currently on page. */
   private Integer numberOfElements = 0;
-  /**
-   * Returns whether the current page is the first one.
-   */
+  /** Returns whether the current page is the first one. */
   private Boolean first;
-  /**
-   * Returns whether the current page is the last one.
-   */
+  /** Returns whether the current page is the last one. */
   private Boolean last;
+
   private Pageable pageable;
   private Long dummy;
 }

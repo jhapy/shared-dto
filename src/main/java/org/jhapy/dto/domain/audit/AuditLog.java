@@ -18,10 +18,14 @@
 
 package org.jhapy.dto.domain.audit;
 
-import java.time.LocalDateTime;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 import lombok.EqualsAndHashCode;
 import org.jhapy.dto.domain.BaseEntityLongId;
+
+import java.time.LocalDateTime;
 
 /**
  * @author jHapy Lead Dev.
@@ -29,6 +33,9 @@ import org.jhapy.dto.domain.BaseEntityLongId;
  * @since 20/04/2020
  */
 @Data
+@SuperBuilder
+@NoArgsConstructor
+@AllArgsConstructor
 @EqualsAndHashCode(callSuper = false)
 public class AuditLog extends BaseEntityLongId {
 

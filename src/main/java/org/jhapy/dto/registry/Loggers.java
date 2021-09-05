@@ -18,11 +18,13 @@
 
 package org.jhapy.dto.registry;
 
+import lombok.Data;
+import lombok.experimental.SuperBuilder;
+import lombok.EqualsAndHashCode;
+
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
 
 /**
  * @author jHapy Lead Dev.
@@ -57,7 +59,12 @@ public class Loggers {
   }
 
   public enum LogLevel {
-    TRACE, DEBUG, INFO, WARN, ERROR, FATAL, OFF
-
+    TRACE,
+    DEBUG,
+    INFO,
+    WARN,
+    ERROR,
+    FATAL,
+    OFF
   }
 }

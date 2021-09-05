@@ -27,17 +27,13 @@ import java.math.BigDecimal;
  */
 public class BigDecimalFilter extends RangeFilter<BigDecimal> {
 
-  @Serial
-  private static final long serialVersionUID = 1L;
+  @Serial private static final long serialVersionUID = 1L;
+
+  /** Constructor for BigDecimalFilter. */
+  public BigDecimalFilter() {}
 
   /**
-   * <p>Constructor for BigDecimalFilter.</p>
-   */
-  public BigDecimalFilter() {
-  }
-
-  /**
-   * <p>Constructor for BigDecimalFilter.</p>
+   * Constructor for BigDecimalFilter.
    *
    * @param filter a {@link BigDecimalFilter} object.
    */
@@ -46,12 +42,11 @@ public class BigDecimalFilter extends RangeFilter<BigDecimal> {
   }
 
   /**
-   * <p>copy.</p>
+   * copy.
    *
    * @return a {@link BigDecimalFilter} object.
    */
   public BigDecimalFilter copy() {
     return new BigDecimalFilter(this);
   }
-
 }

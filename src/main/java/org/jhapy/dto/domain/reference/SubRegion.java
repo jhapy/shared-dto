@@ -18,11 +18,13 @@
 
 package org.jhapy.dto.domain.reference;
 
-import java.io.Serializable;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
+import lombok.experimental.SuperBuilder;
 import org.jhapy.dto.domain.BaseEntityLongId;
+
+import java.io.Serializable;
 
 /**
  * @author jHapy Lead Dev.
@@ -30,6 +32,7 @@ import org.jhapy.dto.domain.BaseEntityLongId;
  * @since 2019-03-27
  */
 @Data
+@SuperBuilder
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 public class SubRegion extends BaseEntityLongId implements Serializable {
@@ -37,9 +40,7 @@ public class SubRegion extends BaseEntityLongId implements Serializable {
   // From Translation
   private String name;
 
-  @EqualsAndHashCode.Exclude
-  @ToString.Exclude
-  private Region region;
+  @EqualsAndHashCode.Exclude @ToString.Exclude private Region region;
 
   @EqualsAndHashCode.Include
   @ToString.Include

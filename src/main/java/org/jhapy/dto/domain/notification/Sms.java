@@ -18,11 +18,14 @@
 
 package org.jhapy.dto.domain.notification;
 
-import java.util.Map;
+import lombok.Builder;
 import lombok.Data;
+import lombok.experimental.SuperBuilder;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import org.jhapy.dto.domain.BaseEntityStrId;
+
+import java.util.Map;
 
 /**
  * @author jHapy Lead Dev.
@@ -30,6 +33,7 @@ import org.jhapy.dto.domain.BaseEntityStrId;
  * @since 2019-07-09
  */
 @Data
+@SuperBuilder
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 public class Sms extends BaseEntityStrId {
@@ -46,7 +50,7 @@ public class Sms extends BaseEntityStrId {
 
   private String errorMessage;
 
-  private int nbRetry = 0;
+  @Builder.Default private int nbRetry = 0;
 
   private String applicationName;
 

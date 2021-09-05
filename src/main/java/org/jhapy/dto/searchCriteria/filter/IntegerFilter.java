@@ -27,17 +27,13 @@ import java.io.Serial;
  */
 public class IntegerFilter extends RangeFilter<Integer> {
 
-  @Serial
-  private static final long serialVersionUID = 1L;
+  @Serial private static final long serialVersionUID = 1L;
+
+  /** Constructor for IntegerFilter. */
+  public IntegerFilter() {}
 
   /**
-   * <p>Constructor for IntegerFilter.</p>
-   */
-  public IntegerFilter() {
-  }
-
-  /**
-   * <p>Constructor for IntegerFilter.</p>
+   * Constructor for IntegerFilter.
    *
    * @param filter a {@link IntegerFilter} object.
    */
@@ -46,12 +42,11 @@ public class IntegerFilter extends RangeFilter<Integer> {
   }
 
   /**
-   * <p>copy.</p>
+   * copy.
    *
    * @return a {@link IntegerFilter} object.
    */
   public IntegerFilter copy() {
     return new IntegerFilter(this);
   }
-
 }

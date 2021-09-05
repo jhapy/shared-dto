@@ -27,8 +27,7 @@ import java.io.Serializable;
  */
 public class AccessDeniedException extends RuntimeException implements Serializable {
 
-  public AccessDeniedException() {
-  }
+  public AccessDeniedException() {}
 
   public AccessDeniedException(String message) {
     super(message);

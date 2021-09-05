@@ -18,10 +18,12 @@
 
 package org.jhapy.dto.registry.actuate;
 
+import lombok.Data;
+import lombok.experimental.SuperBuilder;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import lombok.Data;
 
 /**
  * @author jHapy Lead Dev.

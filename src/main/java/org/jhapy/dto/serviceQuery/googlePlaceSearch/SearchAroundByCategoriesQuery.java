@@ -18,14 +18,12 @@
 
 package org.jhapy.dto.serviceQuery.googlePlaceSearch;
 
-import java.io.Serializable;
-import java.util.List;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.jhapy.dto.serviceQuery.BaseRemoteQuery;
 import org.jhapy.dto.utils.LatLng;
+
+import java.io.Serializable;
+import java.util.List;
 
 /**
  * @author jHapy Lead Dev.
@@ -33,6 +31,7 @@ import org.jhapy.dto.utils.LatLng;
  * @since 2019-06-02
  */
 @Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
@@ -41,5 +40,5 @@ public class SearchAroundByCategoriesQuery extends BaseRemoteQuery implements Se
   private LatLng latLng;
   private String placeType;
   private Double radius;
-private List<Long> categories;
+  private List<Long> categories;
 }

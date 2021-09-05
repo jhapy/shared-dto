@@ -18,14 +18,12 @@
 
 package org.jhapy.dto.serviceQuery.generic;
 
-import java.io.Serializable;
-import java.util.List;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.jhapy.dto.domain.BaseRelationshipEntity;
 import org.jhapy.dto.serviceQuery.BaseRemoteQuery;
+
+import java.io.Serializable;
+import java.util.List;
 
 /**
  * @author jHapy Lead Dev.
@@ -33,11 +31,12 @@ import org.jhapy.dto.serviceQuery.BaseRemoteQuery;
  * @since 2019-06-02
  */
 @Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
-public class SaveRelationsQuery<T extends BaseRelationshipEntity> extends BaseRemoteQuery implements
-    Serializable {
+public class SaveRelationsQuery<T extends BaseRelationshipEntity> extends BaseRemoteQuery
+    implements Serializable {
 
   private Long parent;
   private List<T> entity;

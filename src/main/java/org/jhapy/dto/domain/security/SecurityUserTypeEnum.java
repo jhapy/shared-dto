@@ -24,5 +24,7 @@ package org.jhapy.dto.domain.security;
  * @since 2019-03-09
  */
 public enum SecurityUserTypeEnum {
-  SYSTEM, ADMIN, EXTERNAL
+  SYSTEM,
+  ADMIN,
+  EXTERNAL
 }

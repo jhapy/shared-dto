@@ -20,6 +20,7 @@ package org.jhapy.dto.registry;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
+import lombok.experimental.SuperBuilder;
 
 /**
  * @author jHapy Lead Dev.
@@ -31,14 +32,19 @@ public class GarbageCollector {
 
   @JsonProperty("jvm.gc.max.data.size")
   private Double jvmGcMaxDataSize;
+
   @JsonProperty("jvm.gc.live.data.size")
   private Double jvmGcLiveDataSize;
+
   @JsonProperty("jvm.gc.memory.promoted")
   private Double jvmGcMemoryPromoted;
+
   @JsonProperty("jvm.gc.memory.allocated")
   private Double jvmGcMemoryAllocated;
+
   private Double classesLoaded;
   private Double classesUnloaded;
+
   @JsonProperty("jvm.gc.pause")
   private JvmGcPause jvmGcPause;
 
@@ -47,16 +53,22 @@ public class GarbageCollector {
 
     @JsonProperty("0.0")
     private Double p000;
+
     @JsonProperty("0.5")
     private Double p050;
+
     @JsonProperty("0.75")
     private Double p075;
+
     @JsonProperty("0.95")
     private Double p095;
+
     @JsonProperty("0.99")
     private Double p099;
+
     @JsonProperty("1.0")
     private Double p100;
+
     private Double max;
     private Double mean;
     private Double totalTime;

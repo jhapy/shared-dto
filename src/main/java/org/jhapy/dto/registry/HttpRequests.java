@@ -18,8 +18,10 @@
 
 package org.jhapy.dto.registry;
 
-import java.util.List;
 import lombok.Data;
+import lombok.experimental.SuperBuilder;
+
+import java.util.List;
 
 /**
  * @author jHapy Lead Dev.

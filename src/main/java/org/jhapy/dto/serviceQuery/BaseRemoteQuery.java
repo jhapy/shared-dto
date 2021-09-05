@@ -18,12 +18,13 @@
 
 package org.jhapy.dto.serviceQuery;
 
-
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.Serializable;
 import lombok.Data;
+import lombok.Builder;
 import org.jhapy.dto.utils.AppContext;
 import org.jhapy.dto.utils.LatLng;
+
+import java.io.Serializable;
 
 /**
  * @author jHapy Lead Dev.
@@ -37,6 +38,9 @@ public class BaseRemoteQuery implements Serializable {
   @Schema(description = "Username of the caller")
   private String queryUsername;
 
+  @Schema(description = "Nickname of the caller")
+  private String queryNickname;
+
   @Schema(description = "User Id of the caller")
   private String queryUserId;
 
@@ -49,11 +53,22 @@ public class BaseRemoteQuery implements Serializable {
   @Schema(description = "GPS position of the caller")
   private LatLng queryCurrentPosition;
 
+  @Schema(description = "Client ID of the caller")
+  private Long queryExternalClientID;
+
+  private String queryMailbox;
+
+  private String queryMailboxFullName;
+
   public BaseRemoteQuery() {
     queryUsername = AppContext.getInstance().getCurrentUsername();
     queryUserId = AppContext.getInstance().getCurrentUserId();
+    queryNickname = AppContext.getInstance().getCurrentNickname();
     querySessionId = AppContext.getInstance().getCurrentSessionId();
     queryIso3Language = AppContext.getInstance().getCurrentIso3Language();
     queryCurrentPosition = AppContext.getInstance().getCurrentPosition();
+    queryExternalClientID = AppContext.getInstance().getExternalClientID();
+    queryMailbox = AppContext.getInstance().getMailbox();
+    queryMailboxFullName = AppContext.getInstance().getMailboxFullName();
   }
 }

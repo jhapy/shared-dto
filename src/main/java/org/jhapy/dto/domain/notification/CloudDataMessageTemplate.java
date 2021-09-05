@@ -18,11 +18,13 @@
 
 package org.jhapy.dto.domain.notification;
 
-import javax.validation.constraints.NotNull;
 import lombok.Data;
+import lombok.experimental.SuperBuilder;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import org.jhapy.dto.domain.BaseEntityStrId;
+
+import javax.validation.constraints.NotNull;
 
 /**
  * @author jHapy Lead Dev.
@@ -30,18 +32,16 @@ import org.jhapy.dto.domain.BaseEntityStrId;
  * @since 2019-07-09
  */
 @Data
+@SuperBuilder
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 public class CloudDataMessageTemplate extends BaseEntityStrId {
 
-  @NotNull
-  private String name;
+  @NotNull private String name;
 
-  @NotNull
-  private String data;
+  @NotNull private String data;
 
   private String iso3Language;
 
-  @NotNull
-  private String cloudDataMessageAction;
+  @NotNull private String cloudDataMessageAction;
 }

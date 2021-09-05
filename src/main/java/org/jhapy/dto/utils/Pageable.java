@@ -19,14 +19,17 @@
 package org.jhapy.dto.utils;
 
 import io.swagger.v3.oas.annotations.media.Schema;
-import java.io.Serializable;
-import java.util.Collection;
-import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
+
+import java.io.Serializable;
+import java.util.Collection;
+import java.util.List;
 
 @Data
+@SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
 @Schema
@@ -68,13 +71,13 @@ public class Pageable implements Serializable {
   }
 
   @Data
+  @SuperBuilder
   public static class Order implements Serializable {
 
     private Direction direction;
     private String property;
 
-    public Order() {
-    }
+    public Order() {}
 
     public Order(String property) {
       this(Direction.ASC, property);
@@ -94,8 +97,8 @@ public class Pageable implements Serializable {
     }
 
     public enum Direction {
-      ASC, DESC
+      ASC,
+      DESC
     }
   }
-
 }

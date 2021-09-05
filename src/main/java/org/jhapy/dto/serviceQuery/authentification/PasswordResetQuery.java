@@ -18,25 +18,21 @@
 
 package org.jhapy.dto.serviceQuery.authentification;
 
-import javax.validation.constraints.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.jhapy.dto.serviceQuery.BaseRemoteQuery;
+
+import javax.validation.constraints.NotNull;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class PasswordResetQuery extends BaseRemoteQuery {
 
-  @NotNull
-  private String username;
+  @NotNull private String username;
 
-  @NotNull
-  private String passwordResetToken;
+  @NotNull private String passwordResetToken;
 
-  @NotNull
-  private String newPassword;
+  @NotNull private String newPassword;
 }

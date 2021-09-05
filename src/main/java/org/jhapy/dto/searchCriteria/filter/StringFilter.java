@@ -23,8 +23,7 @@ import java.util.Objects;
 
 /**
  * Class for filtering attributes with {@link String} type. It can be added to a criteria class as a
- * member, to support the following query parameters:
- * <code>
+ * member, to support the following query parameters: <code>
  * fieldName.equals='something' fieldName.notEquals='something' fieldName.specified=true
  * fieldName.specified=false fieldName.in='something','other' fieldName.notIn='something','other'
  * fieldName.contains='thing' fieldName.doesNotContain='thing'
@@ -32,20 +31,16 @@ import java.util.Objects;
  */
 public class StringFilter extends Filter<String> {
 
-  @Serial
-  private static final long serialVersionUID = 1L;
+  @Serial private static final long serialVersionUID = 1L;
 
   private String contains;
   private String doesNotContain;
 
-  /**
-   * <p>Constructor for StringFilter.</p>
-   */
-  public StringFilter() {
-  }
+  /** Constructor for StringFilter. */
+  public StringFilter() {}
 
   /**
-   * <p>Constructor for StringFilter.</p>
+   * Constructor for StringFilter.
    *
    * @param filter a {@link StringFilter} object.
    */
@@ -56,7 +51,7 @@ public class StringFilter extends Filter<String> {
   }
 
   /**
-   * <p>copy.</p>
+   * copy.
    *
    * @return a {@link StringFilter} object.
    */
@@ -66,7 +61,7 @@ public class StringFilter extends Filter<String> {
   }
 
   /**
-   * <p>Getter for the field <code>contains</code>.</p>
+   * Getter for the field <code>contains</code>.
    *
    * @return a {@link String} object.
    */
@@ -75,7 +70,7 @@ public class StringFilter extends Filter<String> {
   }
 
   /**
-   * <p>Setter for the field <code>contains</code>.</p>
+   * Setter for the field <code>contains</code>.
    *
    * @param contains a {@link String} object.
    * @return a {@link StringFilter} object.
@@ -86,7 +81,7 @@ public class StringFilter extends Filter<String> {
   }
 
   /**
-   * <p>Getter for the field <code>doesNotContain</code>.</p>
+   * Getter for the field <code>doesNotContain</code>.
    *
    * @return a {@link String} object.
    */
@@ -95,7 +90,7 @@ public class StringFilter extends Filter<String> {
   }
 
   /**
-   * <p>Setter for the field <code>doesNotContain</code>.</p>
+   * Setter for the field <code>doesNotContain</code>.
    *
    * @param doesNotContain a {@link String} object.
    * @return a {@link StringFilter} object.
@@ -105,9 +100,7 @@ public class StringFilter extends Filter<String> {
     return this;
   }
 
-  /**
-   * {@inheritDoc}
-   */
+  /** {@inheritDoc} */
   @Override
   public boolean equals(final Object o) {
     if (this == o) {
@@ -120,24 +113,21 @@ public class StringFilter extends Filter<String> {
       return false;
     }
     final StringFilter that = (StringFilter) o;
-    return Objects.equals(contains, that.contains) &&
-        Objects.equals(doesNotContain, that.doesNotContain);
+    return Objects.equals(contains, that.contains)
+        && Objects.equals(doesNotContain, that.doesNotContain);
   }
 
-  /**
-   * {@inheritDoc}
-   */
+  /** {@inheritDoc} */
   @Override
   public int hashCode() {
     return Objects.hash(super.hashCode(), contains, doesNotContain);
   }
 
-  /**
-   * {@inheritDoc}
-   */
+  /** {@inheritDoc} */
   @Override
   public String toString() {
-    return getFilterName() + " ["
+    return getFilterName()
+        + " ["
         + (getEquals() != null ? "equals=" + getEquals() + ", " : "")
         + (getNotEquals() != null ? "notEquals=" + getNotEquals() + ", " : "")
         + (getSpecified() != null ? "specified=" + getSpecified() + ", " : "")
@@ -147,5 +137,4 @@ public class StringFilter extends Filter<String> {
         + (getDoesNotContain() != null ? "doesNotContain=" + getDoesNotContain() : "")
         + "]";
   }
-
 }

@@ -18,11 +18,12 @@
 
 package org.jhapy.dto.registry.actuate;
 
+import lombok.Data;
+import org.jhapy.dto.registry.actuate.ConfigProps.Contexts.Context.Bean;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import lombok.Data;
-import org.jhapy.dto.registry.actuate.ConfigProps.Contexts.Context.Bean;
 
 /**
  * @author jHapy Lead Dev.

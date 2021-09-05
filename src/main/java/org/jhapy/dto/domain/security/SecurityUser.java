@@ -19,22 +19,17 @@
 package org.jhapy.dto.domain.security;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import java.io.Serializable;
-import java.time.Instant;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Locale;
-import java.util.Map;
-import java.util.Set;
-import javax.validation.constraints.NotNull;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 import org.jhapy.dto.domain.BaseEntityStrId;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.oauth2.core.user.OAuth2User;
+
+import javax.validation.constraints.NotNull;
+import java.io.Serializable;
+import java.time.Instant;
+import java.util.*;
 
 /**
  * This class represents a Security User used to login and access the application.
@@ -44,15 +39,15 @@ import org.springframework.security.oauth2.core.user.OAuth2User;
  * @since 2019-03-09
  */
 @Data
+@SuperBuilder
+@AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 public class SecurityUser extends BaseEntityStrId implements OAuth2User, UserDetails, Serializable {
 
-  /**
-   * Username
-   */
-  @NotNull
-  private String username;
+  /** Username */
+  @NotNull private String username;
 
   private String email;
 
@@ -66,70 +61,51 @@ public class SecurityUser extends BaseEntityStrId implements OAuth2User, UserDet
 
   private String imageUrl;
 
-  /**
-   * Password for login using internal authentication
-   */
-  //@NotNull
-  //@Pattern(regexp = "^(|(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{6,})$", message = "need 6 or more chars, mixing digits, lowercase and uppercase letters")
+  /** Password for login using internal authentication */
+  // @NotNull
+  // @Pattern(regexp = "^(|(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{6,})$", message = "need 6 or more chars,
+  // mixing digits, lowercase and uppercase letters")
   private String password;
 
-  /**
-   * Number of consecutive failed login attempt
-   */
-  private Integer failedLoginAttempts = 0;
+  /** Number of consecutive failed login attempt */
+  @Builder.Default private Integer failedLoginAttempts = 0;
 
-  /**
-   * Password last modification date
-   */
+  /** Password last modification date */
   private Instant passwordLastModification;
 
-  /**
-   * Last successful login date
-   */
+  /** Last successful login date */
   private Instant lastSuccessfulLogin;
 
-  /**
-   * Does this account has expired ?
-   */
+  /** Does this account has expired ? */
   private Boolean isAccountExpired;
 
-  /**
-   * Is this account locked ?
-   */
+  /** Is this account locked ? */
   private Boolean isAccountLocked;
 
-  /**
-   * Is the password expired ?
-   */
+  /** Is the password expired ? */
   private Boolean isCredentialsExpired;
 
-  private Map<String, Object> attributes = new HashMap<>();
+  @Builder.Default private Map<String, Object> attributes = new HashMap<>();
 
-  /**
-   * Define the kind of user : Internal, System, External
-   */
-  @NotNull
-  private SecurityUserTypeEnum userType;
+  /** Define the kind of user : Internal, System, External */
+  @NotNull private SecurityUserTypeEnum userType;
 
   private Locale defaultLocale;
 
   private Boolean isActivated;
 
-  private VerificationToken verificationToken = new VerificationToken();
+  @Builder.Default private VerificationToken verificationToken = new VerificationToken();
 
-  private PasswordResetToken passwordResetToken = new PasswordResetToken();
+  @Builder.Default private PasswordResetToken passwordResetToken = new PasswordResetToken();
 
-  private RememberMeToken rememberMeToken = new RememberMeToken();
+  @Builder.Default private RememberMeToken rememberMeToken = new RememberMeToken();
 
-  @NotNull
-  private AuthProviderEnum provider = AuthProviderEnum.LOCAL;
+  @NotNull @Builder.Default private AuthProviderEnum provider = AuthProviderEnum.LOCAL;
 
   private String providerId;
 
-  /**
-   * Security roles for this user
-   */
-  private Set<SecurityRole> roles = new HashSet<>();
+  /** Security roles for this user */
+  @Builder.Default private Set<SecurityRole> roles = new HashSet<>();
 
   @Override
   @JsonIgnore

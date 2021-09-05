@@ -33,10 +33,10 @@ public enum AuthProviderEnum {
   PINTEREST("pinterest"),
   FOURSQUARE("foursquare");
 
-  //Lookup table
+  // Lookup table
   private static final Map<String, AuthProviderEnum> lookup = new HashMap<>();
 
-  //Populate the lookup table on loading time
+  // Populate the lookup table on loading time
   static {
     for (AuthProviderEnum env : AuthProviderEnum.values()) {
       lookup.put(env.getName(), env);
@@ -45,13 +45,13 @@ public enum AuthProviderEnum {
 
   private final String name;
 
-  //****** Reverse Lookup Implementation************//
+  // ****** Reverse Lookup Implementation************//
 
   AuthProviderEnum(String name) {
     this.name = name;
   }
 
-  //This method can be used for reverse lookup purpose
+  // This method can be used for reverse lookup purpose
   public static AuthProviderEnum get(String name) {
     return lookup.get(name);
   }
@@ -59,5 +59,4 @@ public enum AuthProviderEnum {
   public String getName() {
     return name;
   }
-
 }

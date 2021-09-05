@@ -1,108 +1,108 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-  <modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-  <parent>
-    <groupId>org.jhapy</groupId>
-    <artifactId>jhapy-bom</artifactId>
+    <parent>
+        <groupId>org.jhapy</groupId>
+        <artifactId>jhapy-bom</artifactId>
+        <version>3.0.0-SNAPSHOT</version>
+        <relativePath/>
+    </parent>
+
+    <artifactId>shared-dto</artifactId>
     <version>3.0.0-SNAPSHOT</version>
-    <relativePath/>
-  </parent>
 
-  <artifactId>shared-dto</artifactId>
-  <version>3.0.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
-  <packaging>jar</packaging>
+    <name>jHapy Framework - DTO</name>
 
-  <name>jHapy Framework - DTO</name>
+    <inceptionYear>2020</inceptionYear>
 
-  <inceptionYear>2020</inceptionYear>
+    <organization>
+        <name>jHapy Framework</name>
+    </organization>
 
-  <organization>
-    <name>jHapy Framework</name>
-  </organization>
+    <developers>
+        <developer>
+            <id>dev1</id>
+            <name>jHapy Lead Dev</name>
+            <email>jhapy@jhapy.org</email>
+        </developer>
+    </developers>
 
-  <developers>
-    <developer>
-      <id>dev1</id>
-      <name>jHapy Lead Dev</name>
-      <email>jhapy@jhapy.org</email>
-    </developer>
-  </developers>
+    <scm>
+        <connection>scm:git:git@github.com/jhapy/shared-dto.git</connection>
+        <developerConnection>scm:git:git@github.com:jhapy/shared-dto.git</developerConnection>
+        <url>https://github.com/jhapy/shared-dto</url>
+        <tag>HEAD</tag>
+    </scm>
 
-  <scm>
-    <connection>scm:git:git@github.com/jhapy/shared-dto.git</connection>
-    <developerConnection>scm:git:git@github.com:jhapy/shared-dto.git</developerConnection>
-    <url>https://github.com/jhapy/shared-dto</url>
-    <tag>HEAD</tag>
-  </scm>
+    <issueManagement>
+        <system>GitHub</system>
+        <url>https://github.com/jhapy/shared-dto/issues</url>
+    </issueManagement>
 
-  <issueManagement>
-    <system>GitHub</system>
-    <url>https://github.com/jhapy/shared-dto/issues</url>
-  </issueManagement>
+    <dependencies>
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-annotations</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-oauth2-core</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-ui</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
 
-  <dependencies>
-    <dependency>
-      <groupId>javax.validation</groupId>
-      <artifactId>validation-api</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-annotations</artifactId>
-    </dependency>
-    <dependency>
-      <groupId>org.springframework.security</groupId>
-      <artifactId>spring-security-oauth2-core</artifactId>
-      <scope>provided</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-      <scope>compile</scope>
-    </dependency>
-    <dependency>
-      <groupId>org.springdoc</groupId>
-      <artifactId>springdoc-openapi-ui</artifactId>
-      <scope>provided</scope>
-    </dependency>
-  </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.sonatype.plugins</groupId>
+                <artifactId>nexus-staging-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
 
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.sonatype.plugins</groupId>
-        <artifactId>nexus-staging-maven-plugin</artifactId>
-      </plugin>
-    </plugins>
-  </build>
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
 
-  <distributionManagement>
-    <snapshotRepository>
-      <id>ossrh</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-    </snapshotRepository>
-    <repository>
-      <id>ossrh</id>
-      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-    </repository>
-  </distributionManagement>
-
-  <repositories>
-    <repository>
-      <id>sonatype-snapshot</id>
-      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-      <releases>
-        <enabled>false</enabled>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-    </repository>
-  </repositories>
+    <repositories>
+        <repository>
+            <id>sonatype-snapshot</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 </project>

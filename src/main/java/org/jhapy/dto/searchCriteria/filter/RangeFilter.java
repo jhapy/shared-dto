@@ -25,6 +25,7 @@ import java.util.Objects;
  * Filter class for Comparable types, where less than / greater than / etc relations could be
  * interpreted. It can be added to a criteria class as a member, to support the following query
  * parameters:
+ *
  * <pre>
  *      fieldName.equals=42
  *      fieldName.notEquals=42
@@ -37,6 +38,7 @@ import java.util.Objects;
  *      fieldName.greaterThanOrEqual=42
  *      fieldName.lessThanOrEqual=44
  * </pre>
+ *
  * Due to problems with the type conversions, the descendant classes should be used, where the
  * generic type parameter is materialized.
  *
@@ -50,25 +52,21 @@ import java.util.Objects;
  * @see ShortFilter
  * @see ZonedDateTimeFilter
  */
-public class RangeFilter<FIELD_TYPE extends Comparable<? super FIELD_TYPE>> extends
-    Filter<FIELD_TYPE> {
+public class RangeFilter<FIELD_TYPE extends Comparable<? super FIELD_TYPE>>
+    extends Filter<FIELD_TYPE> {
 
-  @Serial
-  private static final long serialVersionUID = 1L;
+  @Serial private static final long serialVersionUID = 1L;
 
   private FIELD_TYPE greaterThan;
   private FIELD_TYPE lessThan;
   private FIELD_TYPE greaterThanOrEqual;
   private FIELD_TYPE lessThanOrEqual;
 
-  /**
-   * <p>Constructor for RangeFilter.</p>
-   */
-  public RangeFilter() {
-  }
+  /** Constructor for RangeFilter. */
+  public RangeFilter() {}
 
   /**
-   * <p>Constructor for RangeFilter.</p>
+   * Constructor for RangeFilter.
    *
    * @param filter a {@link RangeFilter} object.
    */
@@ -81,7 +79,7 @@ public class RangeFilter<FIELD_TYPE extends Comparable<? super FIELD_TYPE>> exte
   }
 
   /**
-   * <p>copy.</p>
+   * copy.
    *
    * @return a {@link RangeFilter} object.
    */
@@ -91,7 +89,7 @@ public class RangeFilter<FIELD_TYPE extends Comparable<? super FIELD_TYPE>> exte
   }
 
   /**
-   * <p>Getter for the field <code>greaterThan</code>.</p>
+   * Getter for the field <code>greaterThan</code>.
    *
    * @return a FIELD_TYPE object.
    */
@@ -100,7 +98,7 @@ public class RangeFilter<FIELD_TYPE extends Comparable<? super FIELD_TYPE>> exte
   }
 
   /**
-   * <p>Setter for the field <code>greaterThan</code>.</p>
+   * Setter for the field <code>greaterThan</code>.
    *
    * @param greaterThan a FIELD_TYPE object.
    * @return a {@link RangeFilter} object.
@@ -111,7 +109,7 @@ public class RangeFilter<FIELD_TYPE extends Comparable<? super FIELD_TYPE>> exte
   }
 
   /**
-   * <p>Getter for the field <code>lessThan</code>.</p>
+   * Getter for the field <code>lessThan</code>.
    *
    * @return a FIELD_TYPE object.
    */
@@ -120,7 +118,7 @@ public class RangeFilter<FIELD_TYPE extends Comparable<? super FIELD_TYPE>> exte
   }
 
   /**
-   * <p>Setter for the field <code>lessThan</code>.</p>
+   * Setter for the field <code>lessThan</code>.
    *
    * @param lessThan a FIELD_TYPE object.
    * @return a {@link RangeFilter} object.
@@ -131,7 +129,7 @@ public class RangeFilter<FIELD_TYPE extends Comparable<? super FIELD_TYPE>> exte
   }
 
   /**
-   * <p>Getter for the field <code>greaterThanOrEqual</code>.</p>
+   * Getter for the field <code>greaterThanOrEqual</code>.
    *
    * @return a FIELD_TYPE object.
    */
@@ -140,7 +138,7 @@ public class RangeFilter<FIELD_TYPE extends Comparable<? super FIELD_TYPE>> exte
   }
 
   /**
-   * <p>Setter for the field <code>greaterThanOrEqual</code>.</p>
+   * Setter for the field <code>greaterThanOrEqual</code>.
    *
    * @param greaterThanOrEqual a FIELD_TYPE object.
    * @return a {@link RangeFilter} object.
@@ -151,7 +149,7 @@ public class RangeFilter<FIELD_TYPE extends Comparable<? super FIELD_TYPE>> exte
   }
 
   /**
-   * <p>Setter for the field <code>greaterThanOrEqual</code>.</p>
+   * Setter for the field <code>greaterThanOrEqual</code>.
    *
    * @param greaterThanOrEqual a FIELD_TYPE object.
    * @return a {@link RangeFilter} object.
@@ -164,7 +162,7 @@ public class RangeFilter<FIELD_TYPE extends Comparable<? super FIELD_TYPE>> exte
   }
 
   /**
-   * <p>Getter for the field <code>lessThanOrEqual</code>.</p>
+   * Getter for the field <code>lessThanOrEqual</code>.
    *
    * @return a FIELD_TYPE object.
    */
@@ -173,7 +171,7 @@ public class RangeFilter<FIELD_TYPE extends Comparable<? super FIELD_TYPE>> exte
   }
 
   /**
-   * <p>Setter for the field <code>lessThanOrEqual</code>.</p>
+   * Setter for the field <code>lessThanOrEqual</code>.
    *
    * @param lessThanOrEqual a FIELD_TYPE object.
    * @return a {@link RangeFilter} object.
@@ -184,7 +182,7 @@ public class RangeFilter<FIELD_TYPE extends Comparable<? super FIELD_TYPE>> exte
   }
 
   /**
-   * <p>Setter for the field <code>lessThanOrEqual</code>.</p>
+   * Setter for the field <code>lessThanOrEqual</code>.
    *
    * @param lessThanOrEqual a FIELD_TYPE object.
    * @return a {@link RangeFilter} object.
@@ -196,9 +194,7 @@ public class RangeFilter<FIELD_TYPE extends Comparable<? super FIELD_TYPE>> exte
     return this;
   }
 
-  /**
-   * {@inheritDoc}
-   */
+  /** {@inheritDoc} */
   @Override
   public boolean equals(final Object o) {
     if (this == o) {
@@ -211,27 +207,24 @@ public class RangeFilter<FIELD_TYPE extends Comparable<? super FIELD_TYPE>> exte
       return false;
     }
     final RangeFilter<?> that = (RangeFilter<?>) o;
-    return Objects.equals(greaterThan, that.greaterThan) &&
-        Objects.equals(lessThan, that.lessThan) &&
-        Objects.equals(greaterThanOrEqual, that.greaterThanOrEqual) &&
-        Objects.equals(lessThanOrEqual, that.lessThanOrEqual);
+    return Objects.equals(greaterThan, that.greaterThan)
+        && Objects.equals(lessThan, that.lessThan)
+        && Objects.equals(greaterThanOrEqual, that.greaterThanOrEqual)
+        && Objects.equals(lessThanOrEqual, that.lessThanOrEqual);
   }
 
-  /**
-   * {@inheritDoc}
-   */
+  /** {@inheritDoc} */
   @Override
   public int hashCode() {
-    return Objects
-        .hash(super.hashCode(), greaterThan, lessThan, greaterThanOrEqual, lessThanOrEqual);
+    return Objects.hash(
+        super.hashCode(), greaterThan, lessThan, greaterThanOrEqual, lessThanOrEqual);
   }
 
-  /**
-   * {@inheritDoc}
-   */
+  /** {@inheritDoc} */
   @Override
   public String toString() {
-    return getFilterName() + " ["
+    return getFilterName()
+        + " ["
         + (getEquals() != null ? "equals=" + getEquals() + ", " : "")
         + (getNotEquals() != null ? "notEquals=" + getNotEquals() + ", " : "")
         + (getSpecified() != null ? "specified=" + getSpecified() + ", " : "")
@@ -239,10 +232,10 @@ public class RangeFilter<FIELD_TYPE extends Comparable<? super FIELD_TYPE>> exte
         + (getNotIn() != null ? "notIn=" + getNotIn() + ", " : "")
         + (getGreaterThan() != null ? "greaterThan=" + getGreaterThan() + ", " : "")
         + (getLessThan() != null ? "lessThan=" + getLessThan() + ", " : "")
-        + (getGreaterThanOrEqual() != null ? "greaterThanOrEqual=" + getGreaterThanOrEqual() + ", "
-        : "")
+        + (getGreaterThanOrEqual() != null
+            ? "greaterThanOrEqual=" + getGreaterThanOrEqual() + ", "
+            : "")
         + (getLessThanOrEqual() != null ? "lessThanOrEqual=" + getLessThanOrEqual() : "")
         + "]";
   }
-
 }

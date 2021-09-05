@@ -18,9 +18,11 @@
 
 package org.jhapy.dto.registry.actuate;
 
-import java.util.Map;
 import lombok.Data;
+import lombok.experimental.SuperBuilder;
 import lombok.EqualsAndHashCode;
+
+import java.util.Map;
 
 /**
  * @author jHapy Lead Dev.
@@ -28,6 +30,7 @@ import lombok.EqualsAndHashCode;
  * @since 03/06/2020
  */
 @Data
+@SuperBuilder
 @EqualsAndHashCode(callSuper = false)
 public class EurekaHealthIndicator extends AbstractHealthIndicator {
 

@@ -18,19 +18,17 @@
 
 package org.jhapy.dto.serviceQuery.authentification;
 
-import javax.validation.constraints.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.jhapy.dto.serviceQuery.BaseRemoteQuery;
+
+import javax.validation.constraints.NotNull;
 
 @EqualsAndHashCode(callSuper = true)
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class ResetVerificationTokenQuery extends BaseRemoteQuery {
 
-  @NotNull
-  private String securityUserId;
+  @NotNull private String securityUserId;
 }

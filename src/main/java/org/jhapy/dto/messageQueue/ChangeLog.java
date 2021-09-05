@@ -18,9 +18,10 @@
 
 package org.jhapy.dto.messageQueue;
 
-import java.io.Serializable;
 import lombok.Data;
 import org.jhapy.dto.domain.audit.Session;
+
+import java.io.Serializable;
 
 /**
  * @author jHapy Lead Dev.

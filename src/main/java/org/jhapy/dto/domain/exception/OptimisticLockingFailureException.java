@@ -27,11 +27,9 @@ import java.io.Serializable;
  */
 public class OptimisticLockingFailureException extends RuntimeException implements Serializable {
 
-  public OptimisticLockingFailureException() {
-  }
+  public OptimisticLockingFailureException() {}
 
   public OptimisticLockingFailureException(String message) {
     super(message);
   }
 }
-

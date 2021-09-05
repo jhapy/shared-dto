@@ -18,13 +18,15 @@
 
 package org.jhapy.dto.domain.security;
 
-import java.io.Serializable;
-import java.util.List;
-import javax.validation.constraints.NotNull;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
+import lombok.experimental.SuperBuilder;
 import org.jhapy.dto.domain.BaseEntityStrId;
+
+import javax.validation.constraints.NotNull;
+import java.io.Serializable;
+import java.util.List;
 
 /**
  * This class represent a Security SecurityConst (Used to access and navigate the application)
@@ -34,18 +36,14 @@ import org.jhapy.dto.domain.BaseEntityStrId;
  * @since 2019-03-09
  */
 @Data
+@SuperBuilder
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 public class SecurityKeycloakGroup extends BaseEntityStrId implements Serializable {
 
-  /**
-   * Name of the SecurityConst
-   */
-  @NotNull
-  private String name;
-  /**
-   * Some description for this role
-   */
+  /** Name of the SecurityConst */
+  @NotNull private String name;
+  /** Some description for this role */
   private String description;
 
   private List<SecurityKeycloakRole> roles;

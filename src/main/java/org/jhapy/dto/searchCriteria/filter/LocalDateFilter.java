@@ -18,11 +18,12 @@
 
 package org.jhapy.dto.searchCriteria.filter;
 
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
+
 import java.io.Serial;
 import java.time.LocalDate;
 import java.util.List;
-import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 /**
  * Filter class for {@link LocalDate} type attributes.
@@ -31,17 +32,13 @@ import org.springframework.format.annotation.DateTimeFormat.ISO;
  */
 public class LocalDateFilter extends RangeFilter<LocalDate> {
 
-  @Serial
-  private static final long serialVersionUID = 1L;
+  @Serial private static final long serialVersionUID = 1L;
+
+  /** Constructor for LocalDateFilter. */
+  public LocalDateFilter() {}
 
   /**
-   * <p>Constructor for LocalDateFilter.</p>
-   */
-  public LocalDateFilter() {
-  }
-
-  /**
-   * <p>Constructor for LocalDateFilter.</p>
+   * Constructor for LocalDateFilter.
    *
    * @param filter a {@link LocalDateFilter} object.
    */
@@ -50,7 +47,7 @@ public class LocalDateFilter extends RangeFilter<LocalDate> {
   }
 
   /**
-   * <p>copy.</p>
+   * copy.
    *
    * @return a {@link LocalDateFilter} object.
    */
@@ -59,9 +56,7 @@ public class LocalDateFilter extends RangeFilter<LocalDate> {
     return new LocalDateFilter(this);
   }
 
-  /**
-   * {@inheritDoc}
-   */
+  /** {@inheritDoc} */
   @Override
   @DateTimeFormat(iso = ISO.DATE)
   public LocalDateFilter setEquals(LocalDate equals) {
@@ -69,9 +64,7 @@ public class LocalDateFilter extends RangeFilter<LocalDate> {
     return this;
   }
 
-  /**
-   * {@inheritDoc}
-   */
+  /** {@inheritDoc} */
   @Override
   @DateTimeFormat(iso = ISO.DATE)
   public LocalDateFilter setNotEquals(LocalDate equals) {
@@ -79,9 +72,7 @@ public class LocalDateFilter extends RangeFilter<LocalDate> {
     return this;
   }
 
-  /**
-   * {@inheritDoc}
-   */
+  /** {@inheritDoc} */
   @Override
   @DateTimeFormat(iso = ISO.DATE)
   public LocalDateFilter setIn(List<LocalDate> in) {
@@ -89,9 +80,7 @@ public class LocalDateFilter extends RangeFilter<LocalDate> {
     return this;
   }
 
-  /**
-   * {@inheritDoc}
-   */
+  /** {@inheritDoc} */
   @Override
   @DateTimeFormat(iso = ISO.DATE)
   public LocalDateFilter setNotIn(List<LocalDate> notIn) {
@@ -99,9 +88,7 @@ public class LocalDateFilter extends RangeFilter<LocalDate> {
     return this;
   }
 
-  /**
-   * {@inheritDoc}
-   */
+  /** {@inheritDoc} */
   @Override
   @DateTimeFormat(iso = ISO.DATE)
   public LocalDateFilter setGreaterThan(LocalDate equals) {
@@ -109,9 +96,7 @@ public class LocalDateFilter extends RangeFilter<LocalDate> {
     return this;
   }
 
-  /**
-   * {@inheritDoc}
-   */
+  /** {@inheritDoc} */
   @Override
   @DateTimeFormat(iso = ISO.DATE)
   public LocalDateFilter setLessThan(LocalDate equals) {
@@ -119,9 +104,7 @@ public class LocalDateFilter extends RangeFilter<LocalDate> {
     return this;
   }
 
-  /**
-   * {@inheritDoc}
-   */
+  /** {@inheritDoc} */
   @Override
   @DateTimeFormat(iso = ISO.DATE)
   public LocalDateFilter setGreaterThanOrEqual(LocalDate equals) {
@@ -129,9 +112,7 @@ public class LocalDateFilter extends RangeFilter<LocalDate> {
     return this;
   }
 
-  /**
-   * {@inheritDoc}
-   */
+  /** {@inheritDoc} */
   @Override
   @DateTimeFormat(iso = ISO.DATE)
   @Deprecated
@@ -140,9 +121,7 @@ public class LocalDateFilter extends RangeFilter<LocalDate> {
     return this;
   }
 
-  /**
-   * {@inheritDoc}
-   */
+  /** {@inheritDoc} */
   @Override
   @DateTimeFormat(iso = ISO.DATE)
   public LocalDateFilter setLessThanOrEqual(LocalDate equals) {
@@ -150,9 +129,7 @@ public class LocalDateFilter extends RangeFilter<LocalDate> {
     return this;
   }
 
-  /**
-   * {@inheritDoc}
-   */
+  /** {@inheritDoc} */
   @Override
   @DateTimeFormat(iso = ISO.DATE_TIME)
   @Deprecated
@@ -160,5 +137,4 @@ public class LocalDateFilter extends RangeFilter<LocalDate> {
     super.setLessOrEqualThan(equals);
     return this;
   }
-
 }

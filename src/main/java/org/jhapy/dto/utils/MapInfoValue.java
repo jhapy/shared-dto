@@ -20,6 +20,7 @@ package org.jhapy.dto.utils;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.experimental.SuperBuilder;
 import lombok.NoArgsConstructor;
 
 /**
@@ -28,6 +29,7 @@ import lombok.NoArgsConstructor;
  * @since 2019-08-19
  */
 @Data
+@SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
 public class MapInfoValue {

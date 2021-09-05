@@ -26,17 +26,13 @@ import java.io.Serial;
  */
 public class FloatFilter extends RangeFilter<Float> {
 
-  @Serial
-  private static final long serialVersionUID = 1L;
+  @Serial private static final long serialVersionUID = 1L;
+
+  /** Constructor for FloatFilter. */
+  public FloatFilter() {}
 
   /**
-   * <p>Constructor for FloatFilter.</p>
-   */
-  public FloatFilter() {
-  }
-
-  /**
-   * <p>Constructor for FloatFilter.</p>
+   * Constructor for FloatFilter.
    *
    * @param filter a {@link FloatFilter} object.
    */
@@ -45,12 +41,11 @@ public class FloatFilter extends RangeFilter<Float> {
   }
 
   /**
-   * <p>copy.</p>
+   * copy.
    *
    * @return a {@link FloatFilter} object.
    */
   public FloatFilter copy() {
     return new FloatFilter(this);
   }
-
 }

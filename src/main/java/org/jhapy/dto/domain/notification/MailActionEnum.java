@@ -24,5 +24,6 @@ package org.jhapy.dto.domain.notification;
  * @since 2019-02-22
  */
 public enum MailActionEnum {
-  EMAIL_VERIFICATION, EMAIL_FORGET_PASSWORD
+  EMAIL_VERIFICATION,
+  EMAIL_FORGET_PASSWORD
 }

@@ -18,13 +18,13 @@
 
 package org.jhapy.dto.utils;
 
+import lombok.*;
+import lombok.experimental.SuperBuilder;
+import org.jhapy.dto.domain.BaseEntityStrId;
+
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
-import org.jhapy.dto.domain.BaseEntityStrId;
 
 /**
  * @author jHapy Lead Dev.
@@ -32,8 +32,13 @@ import org.jhapy.dto.domain.BaseEntityStrId;
  * @since 2019-05-15
  */
 @Data
+@SuperBuilder
+@NoArgsConstructor
+@AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
-@ToString(callSuper = true, exclude = {"content", "orginalContent", "pdfContent"})
+@ToString(
+    callSuper = true,
+    exclude = {"content", "orginalContent", "pdfContent"})
 public class StoredFile extends BaseEntityStrId implements Serializable {
 
   private String filename;
@@ -44,11 +49,9 @@ public class StoredFile extends BaseEntityStrId implements Serializable {
   private byte[] orginalContent;
   private PdfConvert pdfConvertStatus;
   private byte[] pdfContent;
-
-  private Map<String, String> metadata = new HashMap<>();
+  @Builder.Default private Map<String, String> metadata = new HashMap<>();
 
   private Long relatedObjectId;
   private String relatedObjectClass;
-
-  private Boolean hasChanged = Boolean.FALSE;
+  @Builder.Default private Boolean hasChanged = Boolean.FALSE;
 }

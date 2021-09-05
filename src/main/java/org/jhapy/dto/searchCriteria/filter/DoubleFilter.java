@@ -26,17 +26,13 @@ import java.io.Serial;
  */
 public class DoubleFilter extends RangeFilter<Double> {
 
-  @Serial
-  private static final long serialVersionUID = 1L;
+  @Serial private static final long serialVersionUID = 1L;
+
+  /** Constructor for DoubleFilter. */
+  public DoubleFilter() {}
 
   /**
-   * <p>Constructor for DoubleFilter.</p>
-   */
-  public DoubleFilter() {
-  }
-
-  /**
-   * <p>Constructor for DoubleFilter.</p>
+   * Constructor for DoubleFilter.
    *
    * @param filter a {@link DoubleFilter} object.
    */
@@ -45,12 +41,11 @@ public class DoubleFilter extends RangeFilter<Double> {
   }
 
   /**
-   * <p>copy.</p>
+   * copy.
    *
    * @return a {@link DoubleFilter} object.
    */
   public DoubleFilter copy() {
     return new DoubleFilter(this);
   }
-
 }

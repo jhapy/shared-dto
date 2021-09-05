@@ -18,13 +18,11 @@
 
 package org.jhapy.dto.serviceQuery.i18n;
 
-import java.io.Serializable;
-import lombok.AllArgsConstructor;
+import lombok.*;
 import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
 import org.jhapy.dto.serviceQuery.BaseRemoteQuery;
+
+import java.io.Serializable;
 
 /**
  * @author jHapy Lead Dev.
@@ -32,9 +30,9 @@ import org.jhapy.dto.serviceQuery.BaseRemoteQuery;
  * @since 2019-06-02
  */
 @Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
 @EqualsAndHashCode(callSuper = true)
 public class GetByNameAndIso3Query extends BaseRemoteQuery implements Serializable {
 

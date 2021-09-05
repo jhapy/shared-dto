@@ -1,6 +1,6 @@
 name: JHapy Shared DTO CI
 
-on: [push]
+on: [ push ]
 
 jobs:
   build:

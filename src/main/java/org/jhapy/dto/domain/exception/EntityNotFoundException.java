@@ -27,8 +27,7 @@ import java.io.Serializable;
  */
 public class EntityNotFoundException extends RuntimeException implements Serializable {
 
-  public EntityNotFoundException() {
-  }
+  public EntityNotFoundException() {}
 
   public EntityNotFoundException(String message) {
     super(message);

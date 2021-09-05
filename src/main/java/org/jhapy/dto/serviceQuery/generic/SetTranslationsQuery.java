@@ -18,14 +18,12 @@
 
 package org.jhapy.dto.serviceQuery.generic;
 
+import lombok.*;
+import org.jhapy.dto.serviceQuery.BaseRemoteQuery;
+
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.List;
-import javax.validation.constraints.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import org.jhapy.dto.serviceQuery.BaseRemoteQuery;
 
 /**
  * @author jHapy Lead Dev.
@@ -33,13 +31,13 @@ import org.jhapy.dto.serviceQuery.BaseRemoteQuery;
  * @since 2019-06-02
  */
 @Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 public class SetTranslationsQuery<TRANSLATIONS> extends BaseRemoteQuery implements Serializable {
 
-  @NotNull
-  private Long id;
+  @NotNull private Long id;
 
   private List<TRANSLATIONS> translations;
 }

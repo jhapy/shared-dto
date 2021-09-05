@@ -18,12 +18,15 @@
 
 package org.jhapy.dto.domain;
 
-import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Set;
+import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
+import lombok.experimental.SuperBuilder;
+
+import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * @author jHapy Lead Dev.
@@ -31,11 +34,10 @@ import lombok.ToString;
  * @since 2019-03-06
  */
 @Data
+@SuperBuilder
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
-public abstract class BaseEntityWithTrl<TRANSLATION extends EntityTranslation> extends
-    BaseEntityLongId implements
-    Serializable {
-
-  private Set<TRANSLATION> translations = new HashSet<>();
+public abstract class BaseEntityWithTrl<TRANSLATION extends EntityTranslation>
+    extends BaseEntityLongId implements Serializable {
+  @Builder.Default private Set<TRANSLATION> translations = new HashSet<>();
 }

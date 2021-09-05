@@ -18,12 +18,15 @@
 
 package org.jhapy.dto.domain;
 
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
+import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
+import lombok.experimental.SuperBuilder;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author jHapy Lead Dev.
@@ -31,9 +34,9 @@ import lombok.ToString;
  * @since 2019-03-06
  */
 @Data
+@SuperBuilder
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 public abstract class BaseEntityWithComments extends BaseEntityLongId implements Serializable {
-
-  private List<Comment> comments = new ArrayList<>();
+  @Builder.Default private List<Comment> comments = new ArrayList<>();
 }

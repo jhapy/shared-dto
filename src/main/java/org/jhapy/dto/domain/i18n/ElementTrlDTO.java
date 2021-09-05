@@ -18,11 +18,11 @@
 
 package org.jhapy.dto.domain.i18n;
 
-import java.io.Serializable;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 import org.jhapy.dto.domain.EntityTranslation;
+
+import java.io.Serializable;
 
 /**
  * @author jHapy Lead Dev.
@@ -30,14 +30,15 @@ import org.jhapy.dto.domain.EntityTranslation;
  * @since 2019-03-30
  */
 @Data
+@SuperBuilder
+@AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-public class ActionTrl extends EntityTranslation implements Serializable {
+public class ElementTrlDTO extends EntityTranslation implements Serializable {
 
   private String name;
-  /**
-   * Action Value
-   */
+  /** Element Value */
   private String value;
 
   private String tooltip;

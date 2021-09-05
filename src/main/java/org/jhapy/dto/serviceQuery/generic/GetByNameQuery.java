@@ -18,13 +18,11 @@
 
 package org.jhapy.dto.serviceQuery.generic;
 
-import java.io.Serializable;
-import javax.validation.constraints.NotNull;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.jhapy.dto.serviceQuery.BaseRemoteQuery;
+
+import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 
 /**
  * @author jHapy Lead Dev.
@@ -32,11 +30,11 @@ import org.jhapy.dto.serviceQuery.BaseRemoteQuery;
  * @since 2019-06-02
  */
 @Data
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 public class GetByNameQuery extends BaseRemoteQuery implements Serializable {
 
-  @NotNull
-  private String name;
+  @NotNull private String name;
 }

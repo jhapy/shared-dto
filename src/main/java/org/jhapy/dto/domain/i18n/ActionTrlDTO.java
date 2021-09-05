@@ -18,29 +18,28 @@
 
 package org.jhapy.dto.domain.i18n;
 
+import lombok.*;
+import lombok.experimental.SuperBuilder;
+import org.jhapy.dto.domain.EntityTranslation;
+
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
-import org.jhapy.dto.domain.BaseEntityLongId;
 
 /**
  * @author jHapy Lead Dev.
  * @version 1.0
- * @since 2019-04-18
+ * @since 2019-03-30
  */
 @Data
+@SuperBuilder
+@AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-public class Action extends BaseEntityLongId implements Serializable {
+public class ActionTrlDTO extends EntityTranslation implements Serializable {
 
   private String name;
+  /** Action Value */
+  private String value;
 
-  private String category;
-
-  private Boolean isTranslated = Boolean.FALSE;
-
-  private List<ActionTrl> translations = new ArrayList<>();
+  private String tooltip;
 }

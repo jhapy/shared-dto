@@ -17,13 +17,11 @@
  */
 package org.jhapy.dto.searchCriteria;
 
-/**
- * Implementation should usually contain fields of Filter instances.
- */
+/** Implementation should usually contain fields of Filter instances. */
 public interface Criteria {
 
   /**
-   * <p>copy.</p>
+   * copy.
    *
    * @return a new criteria with copied filters
    */

@@ -18,11 +18,12 @@
 
 package org.jhapy.dto.searchCriteria.filter;
 
+import org.springframework.format.annotation.DateTimeFormat;
+import org.springframework.format.annotation.DateTimeFormat.ISO;
+
 import java.io.Serial;
 import java.time.Instant;
 import java.util.List;
-import org.springframework.format.annotation.DateTimeFormat;
-import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 /**
  * Filter class for {@link Instant} type attributes.
@@ -31,17 +32,13 @@ import org.springframework.format.annotation.DateTimeFormat.ISO;
  */
 public class InstantFilter extends RangeFilter<Instant> {
 
-  @Serial
-  private static final long serialVersionUID = 1L;
+  @Serial private static final long serialVersionUID = 1L;
+
+  /** Constructor for InstantFilter. */
+  public InstantFilter() {}
 
   /**
-   * <p>Constructor for InstantFilter.</p>
-   */
-  public InstantFilter() {
-  }
-
-  /**
-   * <p>Constructor for InstantFilter.</p>
+   * Constructor for InstantFilter.
    *
    * @param filter a {@link InstantFilter} object.
    */
@@ -50,7 +47,7 @@ public class InstantFilter extends RangeFilter<Instant> {
   }
 
   /**
-   * <p>copy.</p>
+   * copy.
    *
    * @return a {@link InstantFilter} object.
    */
@@ -59,9 +56,7 @@ public class InstantFilter extends RangeFilter<Instant> {
     return new InstantFilter(this);
   }
 
-  /**
-   * {@inheritDoc}
-   */
+  /** {@inheritDoc} */
   @Override
   @DateTimeFormat(iso = ISO.DATE_TIME)
   public InstantFilter setEquals(Instant equals) {
@@ -69,9 +64,7 @@ public class InstantFilter extends RangeFilter<Instant> {
     return this;
   }
 
-  /**
-   * {@inheritDoc}
-   */
+  /** {@inheritDoc} */
   @Override
   @DateTimeFormat(iso = ISO.DATE_TIME)
   public InstantFilter setNotEquals(Instant equals) {
@@ -79,9 +72,7 @@ public class InstantFilter extends RangeFilter<Instant> {
     return this;
   }
 
-  /**
-   * {@inheritDoc}
-   */
+  /** {@inheritDoc} */
   @Override
   @DateTimeFormat(iso = ISO.DATE_TIME)
   public InstantFilter setIn(List<Instant> in) {
@@ -89,9 +80,7 @@ public class InstantFilter extends RangeFilter<Instant> {
     return this;
   }
 
-  /**
-   * {@inheritDoc}
-   */
+  /** {@inheritDoc} */
   @Override
   @DateTimeFormat(iso = ISO.DATE_TIME)
   public InstantFilter setNotIn(List<Instant> notIn) {
@@ -99,9 +88,7 @@ public class InstantFilter extends RangeFilter<Instant> {
     return this;
   }
 
-  /**
-   * {@inheritDoc}
-   */
+  /** {@inheritDoc} */
   @Override
   @DateTimeFormat(iso = ISO.DATE_TIME)
   public InstantFilter setGreaterThan(Instant equals) {
@@ -109,9 +96,7 @@ public class InstantFilter extends RangeFilter<Instant> {
     return this;
   }
 
-  /**
-   * {@inheritDoc}
-   */
+  /** {@inheritDoc} */
   @Override
   @DateTimeFormat(iso = ISO.DATE_TIME)
   public InstantFilter setLessThan(Instant equals) {
@@ -119,9 +104,7 @@ public class InstantFilter extends RangeFilter<Instant> {
     return this;
   }
 
-  /**
-   * {@inheritDoc}
-   */
+  /** {@inheritDoc} */
   @Override
   @DateTimeFormat(iso = ISO.DATE_TIME)
   public InstantFilter setGreaterThanOrEqual(Instant equals) {
@@ -129,9 +112,7 @@ public class InstantFilter extends RangeFilter<Instant> {
     return this;
   }
 
-  /**
-   * {@inheritDoc}
-   */
+  /** {@inheritDoc} */
   @Override
   @DateTimeFormat(iso = ISO.DATE_TIME)
   @Deprecated
@@ -140,9 +121,7 @@ public class InstantFilter extends RangeFilter<Instant> {
     return this;
   }
 
-  /**
-   * {@inheritDoc}
-   */
+  /** {@inheritDoc} */
   @Override
   @DateTimeFormat(iso = ISO.DATE_TIME)
   public InstantFilter setLessThanOrEqual(Instant equals) {
@@ -150,9 +129,7 @@ public class InstantFilter extends RangeFilter<Instant> {
     return this;
   }
 
-  /**
-   * {@inheritDoc}
-   */
+  /** {@inheritDoc} */
   @Override
   @DateTimeFormat(iso = ISO.DATE_TIME)
   @Deprecated
@@ -160,5 +137,4 @@ public class InstantFilter extends RangeFilter<Instant> {
     super.setLessOrEqualThan(equals);
     return this;
   }
-
 }

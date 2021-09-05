@@ -18,11 +18,11 @@
 
 package org.jhapy.dto.domain.notification;
 
-import javax.validation.constraints.NotNull;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 import org.jhapy.dto.domain.BaseEntityStrId;
+
+import javax.validation.constraints.NotNull;
 
 /**
  * @author jHapy Lead Dev.
@@ -30,17 +30,18 @@ import org.jhapy.dto.domain.BaseEntityStrId;
  * @since 2019-02-22
  */
 @Data
+@SuperBuilder
+@AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 public class SmsTemplate extends BaseEntityStrId {
 
-  @NotNull
-  private String name;
+  @NotNull private String name;
 
   private String body;
 
   private String iso3Language;
 
-  @NotNull
-  private String smsAction;
+  @NotNull private String smsAction;
 }

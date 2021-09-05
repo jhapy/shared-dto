@@ -18,25 +18,30 @@
 
 package org.jhapy.dto.domain.i18n;
 
+import lombok.*;
+import lombok.experimental.SuperBuilder;
+import org.jhapy.dto.domain.BaseEntityLongId;
+
 import java.io.Serializable;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
-import org.jhapy.dto.domain.EntityTranslation;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author jHapy Lead Dev.
  * @version 1.0
- * @since 2019-03-30
+ * @since 2019-04-18
  */
 @Data
+@SuperBuilder
+@AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-public class MessageTrl extends EntityTranslation implements Serializable {
+public class MessageDTO extends BaseEntityLongId implements Serializable {
 
   private String name;
-  /**
-   * Message Value
-   */
-  private String value;
+
+  private String category;
+  @Builder.Default private Boolean isTranslated = Boolean.FALSE;
+  @Builder.Default private List<MessageTrlDTO> translations = new ArrayList<>();
 }

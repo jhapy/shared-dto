@@ -18,18 +18,21 @@
 
 package org.jhapy.dto.domain.user;
 
-import java.io.Serializable;
+import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
+import lombok.experimental.SuperBuilder;
 import org.apache.commons.lang3.StringUtils;
 import org.jhapy.dto.domain.BaseEntityLongId;
 import org.jhapy.dto.utils.StoredFile;
 
+import java.io.Serializable;
+
 /**
  * This class represent a User.
  *
- * A User can be : - System user (internal) - Admin user (to administer the platform) - Player or
+ * <p>A User can be : - System user (internal) - Admin user (to administer the platform) - Player or
  * Fan - Owner of a Place
  *
  * @author jHapy Lead Dev.
@@ -37,6 +40,7 @@ import org.jhapy.dto.utils.StoredFile;
  * @since 2019-03-06
  */
 @Data
+@SuperBuilder
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 public class BaseUser extends BaseEntityLongId implements Serializable {
@@ -53,9 +57,9 @@ public class BaseUser extends BaseEntityLongId implements Serializable {
 
   private String nickName;
 
-  private StoredFile avatar = null;
+  @Builder.Default private StoredFile avatar = null;
 
-  private String avatarId = null;
+  @Builder.Default private String avatarId = null;
 
   public String getFullName() {
     if (StringUtils.isEmpty(fullName)) {

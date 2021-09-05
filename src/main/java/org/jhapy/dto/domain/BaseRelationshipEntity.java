@@ -18,10 +18,13 @@
 
 package org.jhapy.dto.domain;
 
-import java.io.Serializable;
-import java.time.Instant;
+import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.experimental.SuperBuilder;
+
+import java.io.Serializable;
+import java.time.Instant;
 
 /**
  * @author jHapy Lead Dev.
@@ -29,33 +32,24 @@ import lombok.EqualsAndHashCode;
  * @since 2019-03-06
  */
 @Data
+@SuperBuilder
 @EqualsAndHashCode(exclude = {"createdBy", "modifiedBy", "created", "modified"})
 public abstract class BaseRelationshipEntity implements Serializable {
 
-  /**
-   * DB Generated ID
-   */
+  /** DB Generated ID */
   private Long id;
 
-  /**
-   * Who create this record (no ID, use username)
-   */
+  /** Who create this record (no ID, use username) */
   private String createdBy;
 
-  /**
-   * When this record has been created
-   */
+  /** When this record has been created */
   private Instant created;
 
-  /**
-   * How did the last modification of this record (no ID, use username)
-   */
+  /** How did the last modification of this record (no ID, use username) */
   private String modifiedBy;
 
-  /**
-   * When this record was last updated
-   */
+  /** When this record was last updated */
   private Instant modified;
 
-  private Boolean isNew = Boolean.FALSE;
+  @Builder.Default private Boolean isNew = Boolean.FALSE;
 }

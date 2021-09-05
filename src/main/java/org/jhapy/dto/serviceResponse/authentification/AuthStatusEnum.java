@@ -24,5 +24,8 @@ package org.jhapy.dto.serviceResponse.authentification;
  * @since 9/29/19
  */
 public enum AuthStatusEnum {
-  SUCCESS, NOT_ACTIVATED, LOCKED, BAD_CREDENTIALS
+  SUCCESS,
+  NOT_ACTIVATED,
+  LOCKED,
+  BAD_CREDENTIALS
 }

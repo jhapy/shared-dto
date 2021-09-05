@@ -19,25 +19,24 @@
 package org.jhapy.dto.serviceQuery;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.Module;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
-import java.io.IOException;
-import java.io.Serializable;
-import java.time.Instant;
-import java.util.function.Consumer;
 import lombok.Data;
-import org.apache.commons.lang3.StringUtils;
+import lombok.Builder;
 import org.jhapy.dto.utils.DateConverter.Deserialize;
 import org.jhapy.dto.utils.DateConverter.Serialize;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
 
+import java.io.Serializable;
+import java.time.Instant;
+import java.util.function.Consumer;
+
 /**
  * Represents the result of a remote Service call (using Feign)
  *
- * Contains success or failure status, failure message and result data
+ * <p>Contains success or failure status, failure message and result data
  *
  * @param <T> Data type of the result (mostly when success)
  */
@@ -50,9 +49,7 @@ public class ServiceResult<T> implements Serializable {
   private String messageTitle;
   private T data;
 
-  /**
-   * Create a new Service Result As Success
-   */
+  /** Create a new Service Result As Success */
   public ServiceResult() {
     isSuccess = true;
   }
@@ -77,9 +74,7 @@ public class ServiceResult<T> implements Serializable {
 
   @JsonIgnore
   private ObjectMapper jsonObjectMapper() {
-    return Jackson2ObjectMapperBuilder.json()
-        .modules(module(), new JavaTimeModule())
-        .build();
+    return Jackson2ObjectMapperBuilder.json().modules(module(), new JavaTimeModule()).build();
   }
 
   @JsonIgnore
@@ -125,6 +120,14 @@ public class ServiceResult<T> implements Serializable {
     }
   }
 
+  public void ifSuccessOrElse(Consumer<? super T> action, Consumer<ServiceResult<T>> errorAction) {
+    if (isSuccess && data != null) {
+      action.accept(data);
+    } else {
+      errorAction.accept(this);
+    }
+  }
+
   public T ifSuccessOrElse(T other) {
     if (isSuccess && data != null) {
       return data;
@@ -132,6 +135,7 @@ public class ServiceResult<T> implements Serializable {
       return other;
     }
   }
+
   public T ifSuccessOrElseWithError(T other, Consumer<ServiceResult<T>> errorAction) {
     if (isSuccess && data != null) {
       return data;

@@ -27,6 +27,7 @@ import java.util.Objects;
 /**
  * Base class for the various attribute filters. It can be added to a criteria class as a member, to
  * support the following query parameters:
+ *
  * <pre>
  *      fieldName.equals='something'
  *      fieldName.notEquals='somethingElse'
@@ -38,22 +39,18 @@ import java.util.Objects;
  */
 public class Filter<FIELD_TYPE> implements Serializable {
 
-  @Serial
-  private static final long serialVersionUID = 1L;
+  @Serial private static final long serialVersionUID = 1L;
   private FIELD_TYPE equals;
   private FIELD_TYPE notEquals;
   private Boolean specified;
   private List<FIELD_TYPE> in;
   private List<FIELD_TYPE> notIn;
 
-  /**
-   * <p>Constructor for Filter.</p>
-   */
-  public Filter() {
-  }
+  /** Constructor for Filter. */
+  public Filter() {}
 
   /**
-   * <p>Constructor for Filter.</p>
+   * Constructor for Filter.
    *
    * @param filter a {@link Filter} object.
    */
@@ -66,7 +63,7 @@ public class Filter<FIELD_TYPE> implements Serializable {
   }
 
   /**
-   * <p>copy.</p>
+   * copy.
    *
    * @return a {@link Filter} object.
    */
@@ -75,7 +72,7 @@ public class Filter<FIELD_TYPE> implements Serializable {
   }
 
   /**
-   * <p>Getter for the field <code>equals</code>.</p>
+   * Getter for the field <code>equals</code>.
    *
    * @return a FIELD_TYPE object.
    */
@@ -84,7 +81,7 @@ public class Filter<FIELD_TYPE> implements Serializable {
   }
 
   /**
-   * <p>Setter for the field <code>equals</code>.</p>
+   * Setter for the field <code>equals</code>.
    *
    * @param equals a FIELD_TYPE object.
    * @return a {@link Filter} object.
@@ -95,7 +92,7 @@ public class Filter<FIELD_TYPE> implements Serializable {
   }
 
   /**
-   * <p>Getter for the field <code>notEquals</code>.</p>
+   * Getter for the field <code>notEquals</code>.
    *
    * @return a FIELD_TYPE object.
    */
@@ -104,7 +101,7 @@ public class Filter<FIELD_TYPE> implements Serializable {
   }
 
   /**
-   * <p>Setter for the field <code>notEquals</code>.</p>
+   * Setter for the field <code>notEquals</code>.
    *
    * @param notEquals a FIELD_TYPE object.
    * @return a {@link Filter} object.
@@ -115,7 +112,7 @@ public class Filter<FIELD_TYPE> implements Serializable {
   }
 
   /**
-   * <p>Getter for the field <code>specified</code>.</p>
+   * Getter for the field <code>specified</code>.
    *
    * @return a {@link Boolean} object.
    */
@@ -124,7 +121,7 @@ public class Filter<FIELD_TYPE> implements Serializable {
   }
 
   /**
-   * <p>Setter for the field <code>specified</code>.</p>
+   * Setter for the field <code>specified</code>.
    *
    * @param specified a {@link Boolean} object.
    * @return a {@link Filter} object.
@@ -135,7 +132,7 @@ public class Filter<FIELD_TYPE> implements Serializable {
   }
 
   /**
-   * <p>Getter for the field <code>in</code>.</p>
+   * Getter for the field <code>in</code>.
    *
    * @return a {@link List} object.
    */
@@ -144,7 +141,7 @@ public class Filter<FIELD_TYPE> implements Serializable {
   }
 
   /**
-   * <p>Setter for the field <code>in</code>.</p>
+   * Setter for the field <code>in</code>.
    *
    * @param in a {@link List} object.
    * @return a {@link Filter} object.
@@ -155,7 +152,7 @@ public class Filter<FIELD_TYPE> implements Serializable {
   }
 
   /**
-   * <p>Getter for the field <code>notIn</code>.</p>
+   * Getter for the field <code>notIn</code>.
    *
    * @return a {@link List} object.
    */
@@ -164,7 +161,7 @@ public class Filter<FIELD_TYPE> implements Serializable {
   }
 
   /**
-   * <p>Setter for the field <code>notIn</code>.</p>
+   * Setter for the field <code>notIn</code>.
    *
    * @param notIn a {@link List} object.
    * @return a {@link Filter} object.
@@ -174,9 +171,7 @@ public class Filter<FIELD_TYPE> implements Serializable {
     return this;
   }
 
-  /**
-   * {@inheritDoc}
-   */
+  /** {@inheritDoc} */
   @Override
   public boolean equals(final Object o) {
     if (this == o) {
@@ -186,27 +181,24 @@ public class Filter<FIELD_TYPE> implements Serializable {
       return false;
     }
     final Filter<?> filter = (Filter<?>) o;
-    return Objects.equals(equals, filter.equals) &&
-        Objects.equals(notEquals, filter.notEquals) &&
-        Objects.equals(specified, filter.specified) &&
-        Objects.equals(in, filter.in) &&
-        Objects.equals(notIn, filter.notIn);
+    return Objects.equals(equals, filter.equals)
+        && Objects.equals(notEquals, filter.notEquals)
+        && Objects.equals(specified, filter.specified)
+        && Objects.equals(in, filter.in)
+        && Objects.equals(notIn, filter.notIn);
   }
 
-  /**
-   * {@inheritDoc}
-   */
+  /** {@inheritDoc} */
   @Override
   public int hashCode() {
     return Objects.hash(equals, notEquals, specified, in, notIn);
   }
 
-  /**
-   * {@inheritDoc}
-   */
+  /** {@inheritDoc} */
   @Override
   public String toString() {
-    return getFilterName() + " ["
+    return getFilterName()
+        + " ["
         + (getEquals() != null ? "equals=" + getEquals() + ", " : "")
         + (getNotEquals() != null ? "notEquals=" + getNotEquals() + ", " : "")
         + (getSpecified() != null ? "specified=" + getSpecified() + ", " : "")
@@ -216,7 +208,7 @@ public class Filter<FIELD_TYPE> implements Serializable {
   }
 
   /**
-   * <p>getFilterName.</p>
+   * getFilterName.
    *
    * @return a {@link String} object.
    */

@@ -18,8 +18,9 @@
 
 package org.jhapy.dto.messageQueue;
 
-import java.io.Serializable;
 import lombok.Data;
+
+import java.io.Serializable;
 
 /**
  * @author jHapy Lead Dev.
@@ -27,6 +28,4 @@ import lombok.Data;
  * @since 2019-07-02
  */
 @Data
-public class MobileMessage implements Serializable {
-
-}
+public class MobileMessage implements Serializable {}

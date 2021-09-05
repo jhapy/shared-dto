@@ -6,5 +6,7 @@ package org.jhapy.dto.messageQueue;
  * @since 27/03/2021
  */
 public enum I18NUpdateTypeEnum {
-  INSERT, UPDATE, DELETE
+  INSERT,
+  UPDATE,
+  DELETE
 }

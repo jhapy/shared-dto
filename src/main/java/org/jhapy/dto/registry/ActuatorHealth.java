@@ -18,26 +18,13 @@
 
 package org.jhapy.dto.registry;
 
+import lombok.Data;
+import lombok.experimental.SuperBuilder;
+import org.jhapy.dto.registry.actuate.*;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import lombok.Data;
-import org.jhapy.dto.registry.actuate.AbstractHealthIndicator;
-import org.jhapy.dto.registry.actuate.ClientConfigServerHealthIndicator;
-import org.jhapy.dto.registry.actuate.ConfigServerHealthIndicator;
-import org.jhapy.dto.registry.actuate.DataSourceHealthIndicator;
-import org.jhapy.dto.registry.actuate.DiscoveryServerHealthIndicator;
-import org.jhapy.dto.registry.actuate.DiskSpaceHealthIndicator;
-import org.jhapy.dto.registry.actuate.HazelcastHealthIndicator;
-import org.jhapy.dto.registry.actuate.HystrixHealthIndicator;
-import org.jhapy.dto.registry.actuate.JmsHealthIndicator;
-import org.jhapy.dto.registry.actuate.LdapHealthIndicator;
-import org.jhapy.dto.registry.actuate.MongoHealthIndicator;
-import org.jhapy.dto.registry.actuate.Neo4jHealthIndicator;
-import org.jhapy.dto.registry.actuate.PingHealthIndicator;
-import org.jhapy.dto.registry.actuate.RabbitHealthIndicator;
-import org.jhapy.dto.registry.actuate.RefreshScopeHealthIndicator;
-import org.jhapy.dto.registry.actuate.SolrHealthIndicator;
 
 /**
  * @author jHapy Lead Dev.
@@ -118,6 +105,7 @@ public class ActuatorHealth implements Serializable {
   }
 
   @Data
+  @SuperBuilder
   public static class Components implements Serializable {
 
     private ConfigServerHealthIndicator configServer;

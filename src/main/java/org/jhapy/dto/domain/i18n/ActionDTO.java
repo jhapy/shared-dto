@@ -18,13 +18,13 @@
 
 package org.jhapy.dto.domain.i18n;
 
+import lombok.*;
+import lombok.experimental.SuperBuilder;
+import org.jhapy.dto.domain.BaseEntityLongId;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.ToString;
-import org.jhapy.dto.domain.BaseEntityLongId;
 
 /**
  * @author jHapy Lead Dev.
@@ -32,15 +32,18 @@ import org.jhapy.dto.domain.BaseEntityLongId;
  * @since 2019-04-18
  */
 @Data
+@SuperBuilder
+@AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-public class Element extends BaseEntityLongId implements Serializable {
+public class ActionDTO extends BaseEntityLongId implements Serializable {
 
   private String name;
 
   private String category;
 
-  private Boolean isTranslated = Boolean.FALSE;
+  @Builder.Default private Boolean isTranslated = Boolean.FALSE;
 
-  private List<ElementTrl> translations = new ArrayList<>();
+  @Builder.Default private List<ActionTrlDTO> translations = new ArrayList<>();
 }

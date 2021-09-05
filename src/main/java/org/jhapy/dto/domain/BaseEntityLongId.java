@@ -18,8 +18,10 @@
 
 package org.jhapy.dto.domain;
 
+import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
+import lombok.experimental.SuperBuilder;
 
 /**
  * @author jHapy Lead Dev.
@@ -28,6 +30,8 @@ import lombok.ToString;
  */
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
+@SuperBuilder
+@AllArgsConstructor
 public abstract class BaseEntityLongId extends BaseEntity {
 
   public Long getId() {

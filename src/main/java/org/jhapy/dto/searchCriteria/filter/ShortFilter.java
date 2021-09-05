@@ -27,17 +27,13 @@ import java.io.Serial;
  */
 public class ShortFilter extends RangeFilter<Short> {
 
-  @Serial
-  private static final long serialVersionUID = 1L;
+  @Serial private static final long serialVersionUID = 1L;
+
+  /** Constructor for ShortFilter. */
+  public ShortFilter() {}
 
   /**
-   * <p>Constructor for ShortFilter.</p>
-   */
-  public ShortFilter() {
-  }
-
-  /**
-   * <p>Constructor for ShortFilter.</p>
+   * Constructor for ShortFilter.
    *
    * @param filter a {@link ShortFilter} object.
    */
@@ -46,12 +42,11 @@ public class ShortFilter extends RangeFilter<Short> {
   }
 
   /**
-   * <p>copy.</p>
+   * copy.
    *
    * @return a {@link ShortFilter} object.
    */
   public ShortFilter copy() {
     return new ShortFilter(this);
   }
-
 }

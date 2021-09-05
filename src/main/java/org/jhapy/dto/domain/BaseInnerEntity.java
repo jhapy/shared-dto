@@ -18,9 +18,11 @@
 
 package org.jhapy.dto.domain;
 
-import java.io.Serializable;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.experimental.SuperBuilder;
+
+import java.io.Serializable;
 
 /**
  * @author jHapy Lead Dev.
@@ -28,11 +30,10 @@ import lombok.EqualsAndHashCode;
  * @since 2019-03-06
  */
 @Data
+@SuperBuilder
 @EqualsAndHashCode
 public abstract class BaseInnerEntity implements Serializable {
 
-  /**
-   * Manual Generated ID
-   */
+  /** Manual Generated ID */
   private Long temporaryId;
 }
