@@ -59,6 +59,8 @@ public abstract class BaseEntity implements Serializable {
   private String clientName;
   //  private Long orgId;
 
+  private String syncId;
+
   /** Indicate if the current record is active (deactivate instead of delete) */
   @Builder.Default private Boolean isActive = Boolean.TRUE;
 
