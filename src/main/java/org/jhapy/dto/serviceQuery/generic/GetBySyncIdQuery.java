@@ -16,42 +16,25 @@
  * limitations under the License.
  */
 
-package org.jhapy.dto.domain.notification;
+package org.jhapy.dto.serviceQuery.generic;
 
 import lombok.*;
-import lombok.experimental.SuperBuilder;
-import org.jhapy.dto.domain.BaseEntityStrId;
+import org.jhapy.dto.serviceQuery.BaseRemoteQuery;
 
-import java.util.Map;
+import javax.validation.constraints.NotNull;
+import java.io.Serializable;
 
 /**
  * @author jHapy Lead Dev.
  * @version 1.0
- * @since 2019-07-09
+ * @since 2019-06-02
  */
 @Data
-@SuperBuilder
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
-@ToString(callSuper = true)
-public class Sms extends BaseEntityStrId {
+public class GetBySyncIdQuery extends BaseRemoteQuery implements Serializable {
 
-  private String phoneNumber;
-
-  private String body;
-
-  private SmsStatusEnum smsStatus;
-
-  private String smsAction;
-
-  private Map<String, String> attributes;
-
-  private String errorMessage;
-
-  @Builder.Default private int nbRetry = 0;
-
-  private String applicationName;
-
-  private String iso3Language;
+  @NotNull private String syncId;
 }
