@@ -25,6 +25,7 @@ import lombok.experimental.SuperBuilder;
 
 import java.io.Serializable;
 import java.time.Instant;
+import java.util.UUID;
 
 /**
  * @author jHapy Lead Dev.
@@ -37,7 +38,7 @@ import java.time.Instant;
 public abstract class BaseRelationshipEntity implements Serializable {
 
   /** DB Generated ID */
-  private Long id;
+  private UUID id;
 
   /** Who create this record (no ID, use username) */
   private String createdBy;

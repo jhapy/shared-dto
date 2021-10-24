@@ -23,6 +23,7 @@ import lombok.experimental.SuperBuilder;
 
 import java.io.Serializable;
 import java.time.Instant;
+import java.util.UUID;
 
 /**
  * Base class for all translations
@@ -39,7 +40,7 @@ import java.time.Instant;
 @ToString(callSuper = true)
 public abstract class BaseEmbeddableEntityDTO implements Serializable {
 
-  private Long id;
+  private UUID id;
 
   private Boolean isNew;
 
@@ -51,7 +52,7 @@ public abstract class BaseEmbeddableEntityDTO implements Serializable {
 
   private Instant modified;
 
-  private Long relatedEntityId;
+  private UUID relatedEntityId;
 
   public abstract String getDiscriminator();
 }

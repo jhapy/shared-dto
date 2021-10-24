@@ -19,7 +19,6 @@
 package org.jhapy.dto.registry;
 
 import lombok.Data;
-import lombok.experimental.SuperBuilder;
 
 import java.io.Serializable;
 import java.util.List;

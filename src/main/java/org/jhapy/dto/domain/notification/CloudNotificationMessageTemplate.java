@@ -19,10 +19,10 @@
 package org.jhapy.dto.domain.notification;
 
 import lombok.Data;
-import lombok.experimental.SuperBuilder;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import org.jhapy.dto.domain.BaseEntityStrId;
+import lombok.experimental.SuperBuilder;
+import org.jhapy.dto.domain.BaseEntityUUIDId;
 
 import javax.validation.constraints.NotNull;
 
@@ -35,7 +35,7 @@ import javax.validation.constraints.NotNull;
 @SuperBuilder
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-public class CloudNotificationMessageTemplate extends BaseEntityStrId {
+public class CloudNotificationMessageTemplate extends BaseEntityUUIDId {
 
   @NotNull private String name;
 

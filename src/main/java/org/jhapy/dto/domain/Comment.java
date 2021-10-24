@@ -26,6 +26,7 @@ import org.jhapy.dto.utils.StoredFile;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * A comment can be attached to anything
@@ -38,7 +39,7 @@ import java.util.List;
 @SuperBuilder
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-public class Comment extends BaseEntityLongId implements Serializable {
+public class Comment extends BaseEntityUUIDId implements Serializable {
 
   /** Text of the Comment */
   private String content;
@@ -50,7 +51,7 @@ public class Comment extends BaseEntityLongId implements Serializable {
   private Comment parent;
 
   /** Object attached ID */
-  private Long relatedObjectId;
+  private UUID relatedObjectId;
 
   /** Object attached Class */
   private String relatedObjectClass;

@@ -22,6 +22,7 @@ import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 import java.io.Serializable;
+import java.util.UUID;
 
 /**
  * Base class for all translations
@@ -36,12 +37,14 @@ import java.io.Serializable;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-public abstract class EntityTranslation extends BaseEntityLongId implements Serializable {
+public abstract class EntityTranslation extends BaseEntityUUIDId implements Serializable {
 
   /** Language */
   private String iso3Language;
 
   private Boolean isTranslated;
+
   private Boolean isDefault;
-  private Long relatedGraphDbId;
+
+  private UUID parentId;
 }

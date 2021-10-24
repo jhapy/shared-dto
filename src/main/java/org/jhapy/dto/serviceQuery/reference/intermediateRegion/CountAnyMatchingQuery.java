@@ -18,11 +18,7 @@
 
 package org.jhapy.dto.serviceQuery.reference.intermediateRegion;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.jhapy.dto.serviceQuery.BaseRemoteQuery;
 
 import java.io.Serializable;

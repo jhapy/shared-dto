@@ -24,10 +24,11 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 import org.apache.commons.lang3.StringUtils;
-import org.jhapy.dto.domain.BaseEntityLongId;
+import org.jhapy.dto.domain.BaseEntityUUIDId;
 import org.jhapy.dto.utils.StoredFile;
 
 import java.io.Serializable;
+import java.util.UUID;
 
 /**
  * This class represent a User.
@@ -43,7 +44,7 @@ import java.io.Serializable;
 @SuperBuilder
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-public class BaseUser extends BaseEntityLongId implements Serializable {
+public class BaseUser extends BaseEntityUUIDId implements Serializable {
 
   private String securityUserId;
 
@@ -59,7 +60,7 @@ public class BaseUser extends BaseEntityLongId implements Serializable {
 
   @Builder.Default private StoredFile avatar = null;
 
-  @Builder.Default private String avatarId = null;
+  @Builder.Default private UUID avatarId = null;
 
   public String getFullName() {
     if (StringUtils.isEmpty(fullName)) {

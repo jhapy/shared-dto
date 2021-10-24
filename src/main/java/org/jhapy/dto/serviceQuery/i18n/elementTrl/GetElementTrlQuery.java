@@ -21,7 +21,9 @@ package org.jhapy.dto.serviceQuery.i18n.elementTrl;
 import lombok.*;
 import org.jhapy.dto.serviceQuery.BaseRemoteQuery;
 
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
+import java.util.UUID;
 
 /**
  * @author jHapy Lead Dev.
@@ -35,5 +37,5 @@ import java.io.Serializable;
 @EqualsAndHashCode(callSuper = true)
 public class GetElementTrlQuery extends BaseRemoteQuery implements Serializable {
 
-  private Long elementId;
+  @NotNull private UUID elementId;
 }

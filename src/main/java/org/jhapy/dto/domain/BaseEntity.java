@@ -23,6 +23,7 @@ import lombok.experimental.SuperBuilder;
 
 import java.io.Serializable;
 import java.time.Instant;
+import java.util.UUID;
 
 /**
  * @author jHapy Lead Dev.
@@ -54,12 +55,9 @@ public abstract class BaseEntity implements Serializable {
   /** Version of the record. Used for synchronization and concurrent access. */
   private Long version;
 
-  private Long externalClientId;
+  private UUID clientId;
 
   private String clientName;
-  //  private Long orgId;
-
-  private String syncId;
 
   /** Indicate if the current record is active (deactivate instead of delete) */
   @Builder.Default private Boolean isActive = Boolean.TRUE;

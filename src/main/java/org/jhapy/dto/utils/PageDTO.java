@@ -25,7 +25,7 @@ import java.util.Collections;
 import java.util.List;
 
 @Data
-public class Page<T extends Serializable> implements Serializable {
+public class PageDTO<T extends Serializable> implements Serializable {
 
   /** Page content. */
   private List<T> content = Collections.emptyList();

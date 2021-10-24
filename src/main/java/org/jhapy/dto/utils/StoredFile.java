@@ -20,11 +20,12 @@ package org.jhapy.dto.utils;
 
 import lombok.*;
 import lombok.experimental.SuperBuilder;
-import org.jhapy.dto.domain.BaseEntityStrId;
+import org.jhapy.dto.domain.BaseEntityUUIDId;
 
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 /**
  * @author jHapy Lead Dev.
@@ -39,7 +40,7 @@ import java.util.Map;
 @ToString(
     callSuper = true,
     exclude = {"content", "orginalContent", "pdfContent"})
-public class StoredFile extends BaseEntityStrId implements Serializable {
+public class StoredFile extends BaseEntityUUIDId implements Serializable {
 
   private String filename;
   private String mimeType;
@@ -51,7 +52,7 @@ public class StoredFile extends BaseEntityStrId implements Serializable {
   private byte[] pdfContent;
   @Builder.Default private Map<String, String> metadata = new HashMap<>();
 
-  private Long relatedObjectId;
+  private UUID relatedObjectId;
   private String relatedObjectClass;
   @Builder.Default private Boolean hasChanged = Boolean.FALSE;
 }

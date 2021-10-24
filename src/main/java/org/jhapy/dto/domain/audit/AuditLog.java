@@ -20,10 +20,10 @@ package org.jhapy.dto.domain.audit;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
-import lombok.EqualsAndHashCode;
-import org.jhapy.dto.domain.BaseEntityLongId;
+import org.jhapy.dto.domain.BaseEntityUUIDId;
 
 import java.time.LocalDateTime;
 
@@ -37,7 +37,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = false)
-public class AuditLog extends BaseEntityLongId {
+public class AuditLog extends BaseEntityUUIDId {
 
   private String commit;
   private String author;

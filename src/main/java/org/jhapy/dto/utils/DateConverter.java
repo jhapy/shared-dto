@@ -43,65 +43,6 @@ public class DateConverter {
   private static final SimpleDateFormat sdf1 = new SimpleDateFormat(DATE_FORMAT);
   private static final SimpleDateFormat sdfIso8601 = new SimpleDateFormat(ISO8601_DATE_FORMAT);
 
-  public static class Serialize extends JsonSerializer<Instant> implements HasLogger {
-
-    @Override
-    public void serialize(Instant value, JsonGenerator jgen, SerializerProvider provider) {
-      var loggerPrefix = getLoggerPrefix("serialize");
-      try {
-        if (value == null) {
-          jgen.writeNull();
-        } else {
-          jgen.writeString(
-              DateTimeFormatter.ofPattern(DATE_FORMAT)
-                  .withZone(ZoneId.systemDefault())
-                  .format(value));
-        }
-      } catch (Exception e) {
-        logger()
-            .error(
-                loggerPrefix
-                    + "Unexpected error while serializing date : '"
-                    + value
-                    + "' : "
-                    + e.getMessage(),
-                e);
-      }
-    }
-  }
-
-  public static class Deserialize extends JsonDeserializer<Instant> implements HasLogger {
-
-    @Override
-    public Instant deserialize(
-        com.fasterxml.jackson.core.JsonParser jp, DeserializationContext ctxt) throws IOException {
-      var loggerPrefix = getLoggerPrefix("deserialize");
-      String dateAsString = "";
-      try {
-        dateAsString = jp.getText();
-        if (StringUtils.isBlank(dateAsString)) {
-          return null;
-        } else {
-          try {
-            return Instant.ofEpochMilli(sdf1.parse(dateAsString).getTime());
-          } catch (NumberFormatException | ParseException pe) {
-            return Instant.ofEpochMilli(sdfIso8601.parse(dateAsString).getTime());
-          }
-        }
-      } catch (Exception e) {
-        logger()
-            .error(
-                loggerPrefix
-                    + "Unexpected error while deserializing date : '"
-                    + dateAsString
-                    + "' : "
-                    + e.getMessage(),
-                e);
-      }
-      return null;
-    }
-  }
-
   public interface HasLogger {
 
     default String getLoggerPrefix(final String methodName) {
@@ -162,6 +103,65 @@ public class DateConverter {
 
     default Logger logger(Class aClass) {
       return LoggerFactory.getLogger(aClass);
+    }
+  }
+
+  public static class Serialize extends JsonSerializer<Instant> implements HasLogger {
+
+    @Override
+    public void serialize(Instant value, JsonGenerator jgen, SerializerProvider provider) {
+      var loggerPrefix = getLoggerPrefix("serialize");
+      try {
+        if (value == null) {
+          jgen.writeNull();
+        } else {
+          jgen.writeString(
+              DateTimeFormatter.ofPattern(DATE_FORMAT)
+                  .withZone(ZoneId.systemDefault())
+                  .format(value));
+        }
+      } catch (Exception e) {
+        logger()
+            .error(
+                loggerPrefix
+                    + "Unexpected error while serializing date : '"
+                    + value
+                    + "' : "
+                    + e.getMessage(),
+                e);
+      }
+    }
+  }
+
+  public static class Deserialize extends JsonDeserializer<Instant> implements HasLogger {
+
+    @Override
+    public Instant deserialize(
+        com.fasterxml.jackson.core.JsonParser jp, DeserializationContext ctxt) throws IOException {
+      var loggerPrefix = getLoggerPrefix("deserialize");
+      String dateAsString = "";
+      try {
+        dateAsString = jp.getText();
+        if (StringUtils.isBlank(dateAsString)) {
+          return null;
+        } else {
+          try {
+            return Instant.ofEpochMilli(sdf1.parse(dateAsString).getTime());
+          } catch (NumberFormatException | ParseException pe) {
+            return Instant.ofEpochMilli(sdfIso8601.parse(dateAsString).getTime());
+          }
+        }
+      } catch (Exception e) {
+        logger()
+            .error(
+                loggerPrefix
+                    + "Unexpected error while deserializing date : '"
+                    + dateAsString
+                    + "' : "
+                    + e.getMessage(),
+                e);
+      }
+      return null;
     }
   }
 }

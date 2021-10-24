@@ -20,11 +20,11 @@ package org.jhapy.dto.serviceQuery;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
-import lombok.Builder;
 import org.jhapy.dto.utils.AppContext;
 import org.jhapy.dto.utils.LatLng;
 
 import java.io.Serializable;
+import java.util.UUID;
 
 /**
  * @author jHapy Lead Dev.
@@ -42,7 +42,7 @@ public class BaseRemoteQuery implements Serializable {
   private String queryNickname;
 
   @Schema(description = "User Id of the caller")
-  private String queryUserId;
+  private UUID queryUserId;
 
   @Schema(description = "Session Id of the caller")
   private String querySessionId;
@@ -54,7 +54,7 @@ public class BaseRemoteQuery implements Serializable {
   private LatLng queryCurrentPosition;
 
   @Schema(description = "Client ID of the caller")
-  private Long queryExternalClientID;
+  private UUID queryExternalClientID;
 
   private String queryMailbox;
 

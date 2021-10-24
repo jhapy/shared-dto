@@ -22,6 +22,7 @@ import lombok.*;
 import org.jhapy.dto.domain.BaseEntity;
 import org.jhapy.dto.serviceQuery.BaseRemoteQuery;
 
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 /**
@@ -35,6 +36,5 @@ import java.io.Serializable;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 public class SaveQuery<T extends BaseEntity> extends BaseRemoteQuery implements Serializable {
-
-  private T entity;
+  @NotNull private T entity;
 }

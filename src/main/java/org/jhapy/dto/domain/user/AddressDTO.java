@@ -2,7 +2,7 @@ package org.jhapy.dto.domain.user;
 
 import lombok.*;
 import lombok.experimental.SuperBuilder;
-import org.jhapy.dto.domain.BaseEntityLongId;
+import org.jhapy.dto.domain.BaseEntityUUIDId;
 
 @Data
 @SuperBuilder
@@ -10,7 +10,7 @@ import org.jhapy.dto.domain.BaseEntityLongId;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-public class AddressDTO extends BaseEntityLongId {
+public class AddressDTO extends BaseEntityUUIDId {
   private String address1;
   private String address2;
   private String npa;

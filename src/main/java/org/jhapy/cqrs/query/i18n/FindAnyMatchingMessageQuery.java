@@ -16,27 +16,28 @@
  * limitations under the License.
  */
 
-package org.jhapy.dto.domain.reference;
+package org.jhapy.cqrs.query.i18n;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.ToString;
-import lombok.experimental.SuperBuilder;
-import org.jhapy.dto.domain.BaseEntityLongId;
+import lombok.NoArgsConstructor;
+import org.jhapy.cqrs.query.AbstractFindAnyMatchingQuery;
+import org.jhapy.dto.domain.i18n.MessageDTO;
+import org.jhapy.dto.utils.Pageable;
 
 import java.io.Serializable;
 
 /**
  * @author jHapy Lead Dev.
  * @version 1.0
- * @since 2019-03-27
+ * @since 2019-06-02
  */
 @Data
-@SuperBuilder
+@NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
-@ToString(callSuper = true)
-public class Region extends BaseEntityLongId implements Serializable {
-
-  // From Translation
-  private String name;
+public class FindAnyMatchingMessageQuery extends AbstractFindAnyMatchingQuery<MessageDTO>
+    implements Serializable {
+  public FindAnyMatchingMessageQuery(String filter, Boolean showInactive, Pageable pageable) {
+    super(filter, showInactive, pageable);
+  }
 }

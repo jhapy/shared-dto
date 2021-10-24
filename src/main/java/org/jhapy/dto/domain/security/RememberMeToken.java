@@ -20,7 +20,7 @@ package org.jhapy.dto.domain.security;
 
 import lombok.*;
 import lombok.experimental.SuperBuilder;
-import org.jhapy.dto.domain.BaseEntityStrId;
+import org.jhapy.dto.domain.BaseEntityUUIDId;
 
 import java.util.Date;
 
@@ -35,7 +35,7 @@ import java.util.Date;
 @ToString(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor
-public class RememberMeToken extends BaseEntityStrId {
+public class RememberMeToken extends BaseEntityUUIDId {
 
   private String token;
 

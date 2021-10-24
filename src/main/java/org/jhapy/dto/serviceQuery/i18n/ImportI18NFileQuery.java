@@ -18,11 +18,7 @@
 
 package org.jhapy.dto.serviceQuery.i18n;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.jhapy.dto.serviceQuery.BaseRemoteQuery;
 
 import java.io.Serializable;
@@ -38,6 +34,6 @@ import java.io.Serializable;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 public class ImportI18NFileQuery extends BaseRemoteQuery implements Serializable {
-
+  private String filename;
   private Byte[] fileContent;
 }

@@ -20,6 +20,7 @@ package org.jhapy.dto.utils;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.UUID;
 import java.util.function.Supplier;
 
 /**
@@ -33,13 +34,13 @@ public class AppContext {
 
   private Supplier<String> currentUsernameProvider;
   private Supplier<String> currentNicknameProvider;
-  private Supplier<String> currentUserId;
+  private Supplier<UUID> currentUserId;
   private Supplier<String> currentSessionIdProvider;
   private Supplier<String> currentIso3LanguageProvider;
   private Supplier<StoredFile> currentAvatarProvider;
   private Supplier<LatLng> currentPositionProvider;
-  private Supplier<List<Long>> currentUserActivitiesIds;
-  private Supplier<Long> currentClientIdProvider;
+  private Supplier<List<UUID>> currentUserActivitiesIds;
+  private Supplier<UUID> currentClientIdProvider;
   private Supplier<String> currentMailboxProvider;
   private Supplier<String> currentMailboxFullNameProvider;
 
@@ -55,13 +56,13 @@ public class AppContext {
 
   public void init(
       Supplier<String> currentUsernameProvider,
-      Supplier<String> currentUserIdProvider,
+      Supplier<UUID> currentUserIdProvider,
       Supplier<String> currentNicknameProvider,
       Supplier<String> currentSessionIdProvider,
       Supplier<String> currentIso3LanguageProvider,
       Supplier<LatLng> currentPositionProvider,
       Supplier<StoredFile> currentAvatarProvider,
-      Supplier<List<Long>> currentUserActivitiesIds) {
+      Supplier<List<UUID>> currentUserActivitiesIds) {
     this.currentUsernameProvider = currentUsernameProvider;
     this.currentUserId = currentUserIdProvider;
     this.currentNicknameProvider = currentNicknameProvider;
@@ -74,14 +75,14 @@ public class AppContext {
 
   public void init(
       Supplier<String> currentUsernameProvider,
-      Supplier<String> currentUserIdProvider,
+      Supplier<UUID> currentUserIdProvider,
       Supplier<String> currentNicknameProvider,
       Supplier<String> currentSessionIdProvider,
       Supplier<String> currentIso3LanguageProvider,
       Supplier<LatLng> currentPositionProvider,
       Supplier<StoredFile> currentAvatarProvider,
-      Supplier<List<Long>> currentUserActivitiesIds,
-      Supplier<Long> currentClientIdProvider,
+      Supplier<List<UUID>> currentUserActivitiesIds,
+      Supplier<UUID> currentClientIdProvider,
       Supplier<String> currentMailboxProvider,
       Supplier<String> currentMailboxFullNameProvider) {
     this.currentUsernameProvider = currentUsernameProvider;
@@ -101,7 +102,7 @@ public class AppContext {
     return currentUsernameProvider == null ? null : currentUsernameProvider.get();
   }
 
-  public String getCurrentUserId() {
+  public UUID getCurrentUserId() {
     return currentUserId == null ? null : currentUserId.get();
   }
 
@@ -121,7 +122,7 @@ public class AppContext {
     return currentPositionProvider == null ? null : currentPositionProvider.get();
   }
 
-  public Long getExternalClientID() {
+  public UUID getExternalClientID() {
     return currentClientIdProvider == null ? null : currentClientIdProvider.get();
   }
 
@@ -137,7 +138,7 @@ public class AppContext {
     return currentAvatarProvider == null ? null : currentAvatarProvider.get();
   }
 
-  public List<Long> getCurrentUserActivitiesIds() {
+  public List<UUID> getCurrentUserActivitiesIds() {
     return currentUserActivitiesIds == null
         ? Collections.emptyList()
         : currentUserActivitiesIds.get();

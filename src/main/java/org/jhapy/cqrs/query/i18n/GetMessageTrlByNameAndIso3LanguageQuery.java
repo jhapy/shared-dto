@@ -16,26 +16,27 @@
  * limitations under the License.
  */
 
-package org.jhapy.dto.domain.reference;
+package org.jhapy.cqrs.query.i18n;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.ToString;
-import lombok.experimental.SuperBuilder;
-import org.jhapy.dto.domain.EntityTranslation;
+import lombok.NoArgsConstructor;
+import org.jhapy.cqrs.query.AbstractBaseQuery;
 
 import java.io.Serializable;
 
 /**
  * @author jHapy Lead Dev.
  * @version 1.0
- * @since 2019-03-30
+ * @since 2019-06-02
  */
 @Data
-@SuperBuilder
+@AllArgsConstructor
+@NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
-@ToString(callSuper = true)
-public class RegionTrl extends EntityTranslation implements Serializable {
-
+public class GetMessageTrlByNameAndIso3LanguageQuery extends AbstractBaseQuery
+    implements Serializable {
   private String name;
+  private String iso3Language;
 }

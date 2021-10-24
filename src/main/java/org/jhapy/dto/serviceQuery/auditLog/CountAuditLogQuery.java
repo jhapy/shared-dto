@@ -18,15 +18,12 @@
 
 package org.jhapy.dto.serviceQuery.auditLog;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.jhapy.dto.serviceQuery.BaseRemoteQuery;
 
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
+import java.util.UUID;
 
 /**
  * @author jHapy Lead Dev.
@@ -41,5 +38,5 @@ import java.io.Serializable;
 public class CountAuditLogQuery extends BaseRemoteQuery implements Serializable {
 
   @NotNull private String className;
-  @NotNull private String recordId;
+  @NotNull private UUID recordId;
 }

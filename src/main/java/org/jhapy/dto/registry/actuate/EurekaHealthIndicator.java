@@ -19,8 +19,8 @@
 package org.jhapy.dto.registry.actuate;
 
 import lombok.Data;
-import lombok.experimental.SuperBuilder;
 import lombok.EqualsAndHashCode;
+import lombok.experimental.SuperBuilder;
 
 import java.util.Map;
 

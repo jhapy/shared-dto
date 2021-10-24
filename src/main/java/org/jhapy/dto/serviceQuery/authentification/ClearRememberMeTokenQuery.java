@@ -19,7 +19,6 @@
 package org.jhapy.dto.serviceQuery.authentification;
 
 import lombok.*;
-import lombok.Builder;
 import org.jhapy.dto.serviceQuery.BaseRemoteQuery;
 
 import javax.validation.constraints.NotNull;

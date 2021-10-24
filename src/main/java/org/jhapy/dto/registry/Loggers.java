@@ -19,7 +19,6 @@
 package org.jhapy.dto.registry;
 
 import lombok.Data;
-import lombok.experimental.SuperBuilder;
 import lombok.EqualsAndHashCode;
 
 import java.util.List;
@@ -37,6 +36,16 @@ public class Loggers {
   private Set<LogLevel> levels;
   private Map<String, SingleLoggerLevels> loggers;
   private Map<String, GroupLoggerLevels> groups;
+
+  public enum LogLevel {
+    TRACE,
+    DEBUG,
+    INFO,
+    WARN,
+    ERROR,
+    FATAL,
+    OFF
+  }
 
   @Data
   static class LoggerLevels {
@@ -56,15 +65,5 @@ public class Loggers {
   public static class SingleLoggerLevels extends LoggerLevels {
 
     private String effectiveLevel;
-  }
-
-  public enum LogLevel {
-    TRACE,
-    DEBUG,
-    INFO,
-    WARN,
-    ERROR,
-    FATAL,
-    OFF
   }
 }

@@ -37,6 +37,6 @@ import java.io.Serializable;
 @EqualsAndHashCode(callSuper = true)
 public class SearchQuery<T extends BaseCriteria> extends BaseRemoteQuery implements Serializable {
 
-  private T criteria;
   protected Pageable pageable;
+  private T criteria;
 }

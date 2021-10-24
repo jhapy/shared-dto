@@ -37,6 +37,6 @@ import java.util.List;
 @SuperBuilder
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-public abstract class BaseEntityWithComments extends BaseEntityLongId implements Serializable {
+public abstract class BaseEntityWithComments extends BaseEntityUUIDId implements Serializable {
   @Builder.Default private List<Comment> comments = new ArrayList<>();
 }

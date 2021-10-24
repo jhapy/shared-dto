@@ -20,7 +20,7 @@ package org.jhapy.dto.domain.i18n;
 
 import lombok.*;
 import lombok.experimental.SuperBuilder;
-import org.jhapy.dto.domain.BaseEntityLongId;
+import org.jhapy.dto.domain.BaseEntityUUIDId;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -37,11 +37,13 @@ import java.util.List;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-public class MessageDTO extends BaseEntityLongId implements Serializable {
+public class MessageDTO extends BaseEntityUUIDId implements Serializable {
 
   private String name;
 
   private String category;
+
   @Builder.Default private Boolean isTranslated = Boolean.FALSE;
+
   @Builder.Default private List<MessageTrlDTO> translations = new ArrayList<>();
 }

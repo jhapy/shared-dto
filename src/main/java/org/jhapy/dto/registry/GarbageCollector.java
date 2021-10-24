@@ -20,7 +20,6 @@ package org.jhapy.dto.registry;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
-import lombok.experimental.SuperBuilder;
 
 /**
  * @author jHapy Lead Dev.

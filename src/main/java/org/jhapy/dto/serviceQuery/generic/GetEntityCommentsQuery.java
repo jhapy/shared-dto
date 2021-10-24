@@ -24,6 +24,7 @@ import org.jhapy.dto.serviceQuery.BaseRemoteQuery;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.time.Instant;
+import java.util.UUID;
 
 /**
  * @author jHapy Lead Dev.
@@ -36,7 +37,7 @@ import java.time.Instant;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 public class GetEntityCommentsQuery extends BaseRemoteQuery implements Serializable {
-  @NotNull private Long relatedEntityId;
+  @NotNull private UUID relatedEntityId;
   @NotNull private String relatedEntityName;
   private Instant since;
 }

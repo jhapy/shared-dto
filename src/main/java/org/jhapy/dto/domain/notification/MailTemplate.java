@@ -20,7 +20,7 @@ package org.jhapy.dto.domain.notification;
 
 import lombok.*;
 import lombok.experimental.SuperBuilder;
-import org.jhapy.dto.domain.BaseEntityStrId;
+import org.jhapy.dto.domain.BaseEntityUUIDId;
 
 import javax.validation.constraints.NotNull;
 
@@ -35,7 +35,7 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-public class MailTemplate extends BaseEntityStrId {
+public class MailTemplate extends BaseEntityUUIDId {
 
   @NotNull private String name;
 

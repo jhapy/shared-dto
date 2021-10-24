@@ -9,7 +9,7 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-public class DbTableDTO extends BaseEntityLongId {
+public class DbTableDTO extends BaseEntityUUIDId {
   private String name;
 
   private String description;

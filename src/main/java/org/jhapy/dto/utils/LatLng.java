@@ -21,7 +21,6 @@ package org.jhapy.dto.utils;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
-import lombok.experimental.SuperBuilder;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;

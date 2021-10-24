@@ -19,10 +19,10 @@
 package org.jhapy.dto.serviceQuery.security;
 
 import lombok.*;
-import lombok.Builder;
 import org.jhapy.dto.serviceQuery.BaseRemoteQuery;
 
 import java.io.Serializable;
+import java.util.UUID;
 
 /**
  * @author jHapy Lead Dev.
@@ -36,5 +36,5 @@ import java.io.Serializable;
 @EqualsAndHashCode(callSuper = true)
 public class GetByExternalIdQuery extends BaseRemoteQuery implements Serializable {
 
-  private Long externalId;
+  private UUID externalId;
 }

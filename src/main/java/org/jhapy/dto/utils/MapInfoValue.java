@@ -20,8 +20,8 @@ package org.jhapy.dto.utils;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.experimental.SuperBuilder;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 /**
  * @author jHapy Lead Dev.

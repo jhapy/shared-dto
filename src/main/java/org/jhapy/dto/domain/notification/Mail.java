@@ -20,7 +20,7 @@ package org.jhapy.dto.domain.notification;
 
 import lombok.*;
 import lombok.experimental.SuperBuilder;
-import org.jhapy.dto.domain.BaseEntityStrId;
+import org.jhapy.dto.domain.BaseEntityUUIDId;
 
 import java.util.Map;
 
@@ -35,7 +35,7 @@ import java.util.Map;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-public class Mail extends BaseEntityStrId {
+public class Mail extends BaseEntityUUIDId {
 
   private String to;
 

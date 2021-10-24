@@ -24,6 +24,7 @@ import org.jhapy.dto.serviceQuery.BaseRemoteQuery;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * @author jHapy Lead Dev.
@@ -38,6 +39,6 @@ import java.util.List;
 public class SaveRelationsQuery<T extends BaseRelationshipEntity> extends BaseRemoteQuery
     implements Serializable {
 
-  private Long parent;
+  private UUID parent;
   private List<T> entity;
 }

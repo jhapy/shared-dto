@@ -22,6 +22,7 @@ import lombok.Data;
 import org.jhapy.dto.domain.audit.Session;
 
 import java.io.Serializable;
+import java.util.UUID;
 
 /**
  * @author jHapy Lead Dev.
@@ -33,7 +34,7 @@ public class ChangeLog implements Serializable {
 
   private String entity;
 
-  private Long recordId;
+  private UUID recordId;
 
   private Session session;
 

@@ -4,6 +4,7 @@ import lombok.*;
 import lombok.experimental.SuperBuilder;
 
 import java.util.List;
+import java.util.UUID;
 
 @Data
 @SuperBuilder
@@ -11,12 +12,12 @@ import java.util.List;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-public class OrgDTO extends BaseEntityLongId {
+public class OrgDTO extends BaseEntityUUIDId {
   private String name;
 
   private String description;
 
-  private List<Long> childIds;
+  private List<UUID> childIds;
 
-  private Long parentId;
+  private UUID parentId;
 }

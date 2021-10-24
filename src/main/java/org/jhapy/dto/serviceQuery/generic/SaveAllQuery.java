@@ -22,8 +22,11 @@ import lombok.*;
 import org.jhapy.dto.domain.BaseEntity;
 import org.jhapy.dto.serviceQuery.BaseRemoteQuery;
 
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * @author jHapy Lead Dev.
@@ -36,6 +39,6 @@ import java.util.List;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 public class SaveAllQuery<T extends BaseEntity> extends BaseRemoteQuery implements Serializable {
-  private Long parentEntityId;
-  private List<T> entity;
+  private UUID parentEntityId;
+  @NotNull @NotEmpty private List<T> entity;
 }

@@ -16,43 +16,26 @@
  * limitations under the License.
  */
 
-package org.jhapy.dto.domain.reference;
+package org.jhapy.cqrs.command.i18n;
 
 import lombok.Data;
-import lombok.experimental.SuperBuilder;
 import lombok.EqualsAndHashCode;
-import lombok.ToString;
-import org.jhapy.dto.domain.BaseEntityLongId;
+import lombok.NoArgsConstructor;
+import org.jhapy.cqrs.command.UpdateEntityCommand;
+import org.jhapy.dto.domain.i18n.ElementDTO;
 
 import java.io.Serializable;
 
 /**
  * @author jHapy Lead Dev.
  * @version 1.0
- * @since 2019-03-27
+ * @since 2019-06-02
  */
 @Data
-@SuperBuilder
+@NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
-@ToString(callSuper = true)
-public class IntermediateRegion extends BaseEntityLongId implements Serializable {
-
-  // From Translation
-  private String name;
-
-  @EqualsAndHashCode.Exclude @ToString.Exclude private SubRegion subRegion;
-
-  @EqualsAndHashCode.Exclude @ToString.Exclude private Region region;
-
-  @EqualsAndHashCode.Include
-  @ToString.Include
-  private String subRegion() {
-    return (subRegion != null && subRegion.getId() != null) ? subRegion.getId().toString() : null;
-  }
-
-  @EqualsAndHashCode.Include
-  @ToString.Include
-  private String region() {
-    return (region != null && region.getId() != null) ? region.getId().toString() : null;
+public class UpdateElementCommand extends UpdateEntityCommand<ElementDTO> implements Serializable {
+  public UpdateElementCommand(ElementDTO entity) {
+    super(entity);
   }
 }

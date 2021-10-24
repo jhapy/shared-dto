@@ -22,6 +22,7 @@ import lombok.*;
 import org.jhapy.dto.serviceQuery.BaseRemoteQuery;
 
 import java.io.Serializable;
+import java.util.UUID;
 
 /**
  * @author jHapy Lead Dev.
@@ -35,5 +36,5 @@ import java.io.Serializable;
 @EqualsAndHashCode(callSuper = true)
 public class FindByElementQuery extends BaseRemoteQuery implements Serializable {
 
-  private Long elementId;
+  private UUID elementId;
 }

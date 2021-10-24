@@ -19,10 +19,10 @@
 package org.jhapy.dto.domain.audit;
 
 import lombok.Data;
-import lombok.experimental.SuperBuilder;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import org.jhapy.dto.domain.BaseEntityStrId;
+import lombok.experimental.SuperBuilder;
+import org.jhapy.dto.domain.BaseEntityUUIDId;
 
 import java.io.Serializable;
 import java.time.Instant;
@@ -36,7 +36,7 @@ import java.time.Instant;
 @SuperBuilder
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-public class Session extends BaseEntityStrId implements Serializable {
+public class Session extends BaseEntityUUIDId implements Serializable {
 
   private String username;
 

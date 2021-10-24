@@ -2,13 +2,13 @@ package org.jhapy.dto.serviceQuery;
 
 import lombok.Builder;
 import lombok.Data;
-import lombok.Builder;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * @author Alexandre Clavaud.
@@ -21,7 +21,7 @@ import java.util.List;
 @ToString
 public class SearchQueryResult implements Serializable {
 
-  private String id;
+  private UUID id;
   @Builder.Default private List<String> highlight = new ArrayList<>();
   private String score;
 }

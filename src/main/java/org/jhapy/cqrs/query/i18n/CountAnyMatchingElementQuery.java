@@ -16,27 +16,27 @@
  * limitations under the License.
  */
 
-package org.jhapy.dto.domain.reference;
+package org.jhapy.cqrs.query.i18n;
 
 import lombok.Data;
-import lombok.experimental.SuperBuilder;
 import lombok.EqualsAndHashCode;
-import lombok.ToString;
-import org.jhapy.dto.domain.EntityTranslation;
+import lombok.NoArgsConstructor;
+import org.jhapy.cqrs.query.AbstractCountAnyMatchingQuery;
+import org.jhapy.dto.domain.i18n.ElementDTO;
 
 import java.io.Serializable;
 
 /**
  * @author jHapy Lead Dev.
  * @version 1.0
- * @since 2019-03-30
+ * @since 2019-06-02
  */
 @Data
-@SuperBuilder
+@NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
-@ToString(callSuper = true)
-public class CountryTrl extends EntityTranslation implements Serializable {
-
-  /** Country name */
-  private String name;
+public class CountAnyMatchingElementQuery extends AbstractCountAnyMatchingQuery<ElementDTO>
+    implements Serializable {
+  public CountAnyMatchingElementQuery(String filter, Boolean showInactive) {
+    super(filter, showInactive);
+  }
 }

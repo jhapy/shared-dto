@@ -24,6 +24,7 @@ import org.jhapy.dto.utils.LatLng;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * @author jHapy Lead Dev.
@@ -40,5 +41,5 @@ public class SearchAroundByCategoriesQuery extends BaseRemoteQuery implements Se
   private LatLng latLng;
   private String placeType;
   private Double radius;
-  private List<Long> categories;
+  private List<UUID> categories;
 }

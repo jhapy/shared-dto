@@ -19,9 +19,9 @@
 package org.jhapy.dto.serviceQuery.i18n;
 
 import lombok.*;
-import lombok.Builder;
 import org.jhapy.dto.serviceQuery.BaseRemoteQuery;
 
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 
 /**
@@ -36,6 +36,6 @@ import java.io.Serializable;
 @EqualsAndHashCode(callSuper = true)
 public class GetByNameAndIso3Query extends BaseRemoteQuery implements Serializable {
 
-  private String name;
-  private String iso3Language;
+  @NotNull private String name;
+  @NotNull private String iso3Language;
 }

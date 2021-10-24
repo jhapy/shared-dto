@@ -16,26 +16,27 @@
  * limitations under the License.
  */
 
-package org.jhapy.dto.domain.reference;
+package org.jhapy.cqrs.command.i18n;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.ToString;
-import lombok.experimental.SuperBuilder;
-import org.jhapy.dto.domain.EntityTranslation;
+import lombok.NoArgsConstructor;
+import org.jhapy.cqrs.command.DeleteEntityCommand;
+import org.jhapy.dto.domain.i18n.ElementDTO;
 
 import java.io.Serializable;
+import java.util.UUID;
 
 /**
  * @author jHapy Lead Dev.
  * @version 1.0
- * @since 2019-03-30
+ * @since 2019-06-02
  */
 @Data
-@SuperBuilder
+@NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
-@ToString(callSuper = true)
-public class IntermediateRegionTrl extends EntityTranslation implements Serializable {
-
-  private String name;
+public class DeleteElementCommand extends DeleteEntityCommand<ElementDTO> implements Serializable {
+  public DeleteElementCommand(UUID id) {
+    super(id);
+  }
 }

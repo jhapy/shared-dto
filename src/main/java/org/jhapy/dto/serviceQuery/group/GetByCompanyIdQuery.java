@@ -23,6 +23,7 @@ import org.jhapy.dto.serviceQuery.BaseRemoteQuery;
 
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
+import java.util.UUID;
 
 /**
  * @author jHapy Lead Dev.
@@ -36,5 +37,5 @@ import java.io.Serializable;
 @EqualsAndHashCode(callSuper = true)
 public class GetByCompanyIdQuery extends BaseRemoteQuery implements Serializable {
 
-  @NotNull private Long companyId;
+  @NotNull private UUID companyId;
 }

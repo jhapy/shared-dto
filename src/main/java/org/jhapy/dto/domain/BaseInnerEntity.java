@@ -23,6 +23,7 @@ import lombok.EqualsAndHashCode;
 import lombok.experimental.SuperBuilder;
 
 import java.io.Serializable;
+import java.util.UUID;
 
 /**
  * @author jHapy Lead Dev.
@@ -35,5 +36,5 @@ import java.io.Serializable;
 public abstract class BaseInnerEntity implements Serializable {
 
   /** Manual Generated ID */
-  private Long temporaryId;
+  private UUID temporaryId;
 }

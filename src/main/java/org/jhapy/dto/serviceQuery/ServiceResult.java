@@ -24,7 +24,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import lombok.Data;
-import lombok.Builder;
 import org.jhapy.dto.utils.DateConverter.Deserialize;
 import org.jhapy.dto.utils.DateConverter.Serialize;
 import org.springframework.http.converter.json.Jackson2ObjectMapperBuilder;
@@ -72,19 +71,6 @@ public class ServiceResult<T> implements Serializable {
     this(Boolean.TRUE, null, data);
   }
 
-  @JsonIgnore
-  private ObjectMapper jsonObjectMapper() {
-    return Jackson2ObjectMapperBuilder.json().modules(module(), new JavaTimeModule()).build();
-  }
-
-  @JsonIgnore
-  private Module module() {
-    SimpleModule module = new SimpleModule();
-    module.addSerializer(Instant.class, new Serialize());
-    module.addDeserializer(Instant.class, new Deserialize());
-    return module;
-  }
-
   /**
    * Create a new Service Result
    *
@@ -96,6 +82,19 @@ public class ServiceResult<T> implements Serializable {
     setIsSuccess(isSuccess);
     setMessage(message);
     setData(data);
+  }
+
+  @JsonIgnore
+  private ObjectMapper jsonObjectMapper() {
+    return Jackson2ObjectMapperBuilder.json().modules(module(), new JavaTimeModule()).build();
+  }
+
+  @JsonIgnore
+  private Module module() {
+    SimpleModule module = new SimpleModule();
+    module.addSerializer(Instant.class, new Serialize());
+    module.addDeserializer(Instant.class, new Deserialize());
+    return module;
   }
 
   public boolean getIsSuccess() {
@@ -146,8 +145,7 @@ public class ServiceResult<T> implements Serializable {
   }
 
   public T ifSuccessOrWithError(Consumer<ServiceResult<T>> errorAction) {
-    if ( ! isSuccess )
-      errorAction.accept(this);
+    if (!isSuccess) errorAction.accept(this);
 
     return data;
   }

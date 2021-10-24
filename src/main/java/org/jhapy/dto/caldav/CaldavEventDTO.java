@@ -8,6 +8,7 @@ import java.io.Serializable;
 import java.net.URI;
 import java.time.Instant;
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @ToString
 @Data
@@ -32,7 +33,7 @@ public class CaldavEventDTO implements Serializable {
   private CaldavDurationDTO duration;
 
   private String relatedObjectName;
-  private Long relatedObjectId;
+  private UUID relatedObjectId;
 
   private String uid;
   private String mailbox;

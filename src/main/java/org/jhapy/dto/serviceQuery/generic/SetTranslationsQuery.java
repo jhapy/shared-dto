@@ -24,6 +24,7 @@ import org.jhapy.dto.serviceQuery.BaseRemoteQuery;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.List;
+import java.util.UUID;
 
 /**
  * @author jHapy Lead Dev.
@@ -37,7 +38,7 @@ import java.util.List;
 @EqualsAndHashCode(callSuper = true)
 public class SetTranslationsQuery<TRANSLATIONS> extends BaseRemoteQuery implements Serializable {
 
-  @NotNull private Long id;
+  @NotNull private UUID id;
 
   private List<TRANSLATIONS> translations;
 }

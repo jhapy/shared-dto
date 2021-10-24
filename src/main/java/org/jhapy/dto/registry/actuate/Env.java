@@ -19,7 +19,6 @@
 package org.jhapy.dto.registry.actuate;
 
 import lombok.Data;
-import lombok.experimental.SuperBuilder;
 
 import java.util.ArrayList;
 import java.util.List;

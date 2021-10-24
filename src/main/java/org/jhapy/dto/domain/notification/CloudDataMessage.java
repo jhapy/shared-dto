@@ -20,10 +20,10 @@ package org.jhapy.dto.domain.notification;
 
 import lombok.Builder;
 import lombok.Data;
-import lombok.experimental.SuperBuilder;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import org.jhapy.dto.domain.BaseEntityStrId;
+import lombok.experimental.SuperBuilder;
+import org.jhapy.dto.domain.BaseEntityUUIDId;
 
 import java.util.Map;
 
@@ -36,7 +36,7 @@ import java.util.Map;
 @SuperBuilder
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-public class CloudDataMessage extends BaseEntityStrId {
+public class CloudDataMessage extends BaseEntityUUIDId {
 
   private String deviceToken;
 

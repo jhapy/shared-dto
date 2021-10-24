@@ -18,14 +18,11 @@
 
 package org.jhapy.dto.serviceQuery.reference.countryTrl;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.jhapy.dto.serviceQuery.BaseRemoteQuery;
 
 import java.io.Serializable;
+import java.util.UUID;
 
 /**
  * @author jHapy Lead Dev.
@@ -39,6 +36,6 @@ import java.io.Serializable;
 @EqualsAndHashCode(callSuper = true)
 public class GetCountryTrlQuery extends BaseRemoteQuery implements Serializable {
 
-  private Long countryId;
+  private UUID countryId;
   private String iso3Language;
 }

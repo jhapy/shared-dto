@@ -20,7 +20,6 @@ package org.jhapy.dto.registry;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.experimental.SuperBuilder;
 import lombok.NoArgsConstructor;
 
 /**

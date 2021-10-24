@@ -4,15 +4,17 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
+import java.util.UUID;
+
 @Data
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-public class EntityCommentDTO extends BaseEntityLongId {
+public class EntityCommentDTO extends BaseEntityUUIDId {
   private String topic;
 
   private String text;
 
-  private Long relatedEntityId;
+  private UUID relatedEntityId;
 
   private String relatedEntityName;
 
