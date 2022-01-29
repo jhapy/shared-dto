@@ -22,7 +22,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
-import lombok.experimental.SuperBuilder;
 import org.jhapy.dto.domain.BaseEntityUUIDId;
 
 import java.util.Date;
@@ -33,7 +32,6 @@ import java.util.Date;
  * @since 2019-07-09
  */
 @Data
-@SuperBuilder
 @EqualsAndHashCode(callSuper = true)
 @AllArgsConstructor
 @NoArgsConstructor

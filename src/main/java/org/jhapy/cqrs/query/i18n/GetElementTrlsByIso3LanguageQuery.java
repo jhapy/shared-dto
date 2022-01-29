@@ -19,9 +19,11 @@
 package org.jhapy.cqrs.query.i18n;
 
 import lombok.*;
+import org.jhapy.dto.domain.i18n.ElementTrlDTO;
 import org.jhapy.dto.serviceQuery.BaseRemoteQuery;
 
 import java.io.Serializable;
+import java.util.List;
 
 /**
  * @author jHapy Lead Dev.
@@ -36,4 +38,12 @@ import java.io.Serializable;
 public class GetElementTrlsByIso3LanguageQuery extends BaseRemoteQuery implements Serializable {
 
   private String iso3Language;
+
+  @Data
+  @Builder
+  @AllArgsConstructor
+  @NoArgsConstructor
+  public static class Response {
+    private List<ElementTrlDTO> data;
+  }
 }

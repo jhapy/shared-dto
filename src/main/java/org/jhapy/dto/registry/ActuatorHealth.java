@@ -19,7 +19,6 @@
 package org.jhapy.dto.registry;
 
 import lombok.Data;
-import lombok.experimental.SuperBuilder;
 import org.jhapy.dto.registry.actuate.*;
 
 import java.io.Serializable;
@@ -105,7 +104,6 @@ public class ActuatorHealth implements Serializable {
   }
 
   @Data
-  @SuperBuilder
   public static class Components implements Serializable {
 
     private ConfigServerHealthIndicator configServer;

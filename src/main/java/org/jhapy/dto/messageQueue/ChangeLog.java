@@ -19,7 +19,7 @@
 package org.jhapy.dto.messageQueue;
 
 import lombok.Data;
-import org.jhapy.dto.domain.audit.Session;
+import org.jhapy.dto.domain.audit.SessionDTO;
 
 import java.io.Serializable;
 import java.util.UUID;
@@ -36,7 +36,7 @@ public class ChangeLog implements Serializable {
 
   private UUID recordId;
 
-  private Session session;
+  private SessionDTO session;
 
   private String attribute;
 

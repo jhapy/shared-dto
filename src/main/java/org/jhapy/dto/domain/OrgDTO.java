@@ -1,13 +1,11 @@
 package org.jhapy.dto.domain;
 
 import lombok.*;
-import lombok.experimental.SuperBuilder;
 
 import java.util.List;
 import java.util.UUID;
 
 @Data
-@SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)

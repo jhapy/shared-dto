@@ -19,7 +19,6 @@
 package org.jhapy.dto.domain;
 
 import lombok.*;
-import lombok.experimental.SuperBuilder;
 
 /**
  * @author jHapy Lead Dev.
@@ -28,7 +27,6 @@ import lombok.experimental.SuperBuilder;
  */
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
-@SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
 @Data

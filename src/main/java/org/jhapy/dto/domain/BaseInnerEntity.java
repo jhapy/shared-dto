@@ -20,7 +20,6 @@ package org.jhapy.dto.domain;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.experimental.SuperBuilder;
 
 import java.io.Serializable;
 import java.util.UUID;
@@ -31,7 +30,6 @@ import java.util.UUID;
  * @since 2019-03-06
  */
 @Data
-@SuperBuilder
 @EqualsAndHashCode
 public abstract class BaseInnerEntity implements Serializable {
 

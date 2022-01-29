@@ -21,7 +21,6 @@ package org.jhapy.dto.domain.reference;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import lombok.experimental.SuperBuilder;
 import org.jhapy.dto.domain.BaseEntityUUIDId;
 
 import java.io.Serializable;
@@ -34,7 +33,6 @@ import java.io.Serializable;
  * @since 2019-03-06
  */
 @Data
-@SuperBuilder
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 public class CountryDTO extends BaseEntityUUIDId implements Serializable {

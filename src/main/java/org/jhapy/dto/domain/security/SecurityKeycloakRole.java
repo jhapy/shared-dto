@@ -22,7 +22,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import lombok.experimental.SuperBuilder;
 import org.jhapy.dto.domain.BaseEntityStrId;
 import org.springframework.security.core.GrantedAuthority;
 
@@ -37,7 +36,6 @@ import java.io.Serializable;
  * @since 2019-03-09
  */
 @Data
-@SuperBuilder
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 public class SecurityKeycloakRole extends BaseEntityStrId

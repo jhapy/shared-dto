@@ -20,7 +20,6 @@ package org.jhapy.dto.domain.security;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
-import lombok.experimental.SuperBuilder;
 import org.jhapy.dto.domain.BaseEntityStrId;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -39,7 +38,6 @@ import java.util.*;
  * @since 2019-03-09
  */
 @Data
-@SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
@@ -68,7 +66,7 @@ public class SecurityUser extends BaseEntityStrId implements OAuth2User, UserDet
   private String password;
 
   /** Number of consecutive failed login attempt */
-  @Builder.Default private Integer failedLoginAttempts = 0;
+  private Integer failedLoginAttempts = 0;
 
   /** Password last modification date */
   private Instant passwordLastModification;
@@ -85,7 +83,7 @@ public class SecurityUser extends BaseEntityStrId implements OAuth2User, UserDet
   /** Is the password expired ? */
   private Boolean isCredentialsExpired;
 
-  @Builder.Default private Map<String, Object> attributes = new HashMap<>();
+  private Map<String, Object> attributes = new HashMap<>();
 
   /** Define the kind of user : Internal, System, External */
   @NotNull private SecurityUserTypeEnum userType;
@@ -94,18 +92,18 @@ public class SecurityUser extends BaseEntityStrId implements OAuth2User, UserDet
 
   private Boolean isActivated;
 
-  @Builder.Default private VerificationToken verificationToken = new VerificationToken();
+  private VerificationToken verificationToken = new VerificationToken();
 
-  @Builder.Default private PasswordResetToken passwordResetToken = new PasswordResetToken();
+  private PasswordResetToken passwordResetToken = new PasswordResetToken();
 
-  @Builder.Default private RememberMeToken rememberMeToken = new RememberMeToken();
+  private RememberMeToken rememberMeToken = new RememberMeToken();
 
-  @NotNull @Builder.Default private AuthProviderEnum provider = AuthProviderEnum.LOCAL;
+  @NotNull private AuthProviderEnum provider = AuthProviderEnum.LOCAL;
 
   private String providerId;
 
   /** Security roles for this user */
-  @Builder.Default private Set<SecurityRole> roles = new HashSet<>();
+  private Set<SecurityRole> roles = new HashSet<>();
 
   @Override
   @JsonIgnore
@@ -144,7 +142,7 @@ public class SecurityUser extends BaseEntityStrId implements OAuth2User, UserDet
   @Override
   @JsonIgnore
   public boolean isEnabled() {
-    return getIsActive();
+    return this.isActive();
   }
 
   @Override

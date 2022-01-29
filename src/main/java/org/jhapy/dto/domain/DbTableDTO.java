@@ -1,10 +1,8 @@
 package org.jhapy.dto.domain;
 
 import lombok.*;
-import lombok.experimental.SuperBuilder;
 
 @Data
-@SuperBuilder
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)

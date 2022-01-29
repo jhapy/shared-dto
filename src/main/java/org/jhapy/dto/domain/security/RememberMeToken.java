@@ -19,7 +19,6 @@
 package org.jhapy.dto.domain.security;
 
 import lombok.*;
-import lombok.experimental.SuperBuilder;
 import org.jhapy.dto.domain.BaseEntityUUIDId;
 
 import java.util.Date;
@@ -30,7 +29,6 @@ import java.util.Date;
  * @since 2019-07-09
  */
 @Data
-@SuperBuilder
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 @AllArgsConstructor

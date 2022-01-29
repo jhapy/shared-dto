@@ -20,8 +20,10 @@ package org.jhapy.cqrs.query.i18n;
 
 import lombok.*;
 import org.jhapy.cqrs.query.AbstractBaseQuery;
+import org.jhapy.dto.domain.i18n.ElementTrlDTO;
 
 import java.io.Serializable;
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -37,4 +39,12 @@ import java.util.UUID;
 public class GetElementTrlsByElementIdQuery extends AbstractBaseQuery implements Serializable {
 
   private UUID elementId;
+
+  @Data
+  @Builder
+  @AllArgsConstructor
+  @NoArgsConstructor
+  public static class Response {
+    private List<ElementTrlDTO> data;
+  }
 }

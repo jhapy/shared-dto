@@ -18,11 +18,9 @@
 
 package org.jhapy.cqrs.query.i18n;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.jhapy.cqrs.query.AbstractBaseQuery;
+import org.jhapy.dto.domain.i18n.ActionTrlDTO;
 
 import java.io.Serializable;
 
@@ -39,4 +37,12 @@ public class GetActionTrlByNameAndIso3LanguageQuery extends AbstractBaseQuery
     implements Serializable {
   private String name;
   private String iso3Language;
+
+  @Data
+  @Builder
+  @AllArgsConstructor
+  @NoArgsConstructor
+  public static class Response {
+    private ActionTrlDTO data;
+  }
 }

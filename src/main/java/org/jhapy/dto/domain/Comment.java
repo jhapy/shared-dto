@@ -21,8 +21,7 @@ package org.jhapy.dto.domain;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import lombok.experimental.SuperBuilder;
-import org.jhapy.dto.utils.StoredFile;
+import org.jhapy.dto.domain.resource.StoredFileDTO;
 
 import java.io.Serializable;
 import java.util.List;
@@ -36,7 +35,6 @@ import java.util.UUID;
  * @since 2019-03-07
  */
 @Data
-@SuperBuilder
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 public class Comment extends BaseEntityUUIDId implements Serializable {
@@ -45,7 +43,7 @@ public class Comment extends BaseEntityUUIDId implements Serializable {
   private String content;
 
   /** List of attachments attached to the comment */
-  private List<StoredFile> attachments;
+  private List<StoredFileDTO> attachments;
 
   /** In case of a reply, this is the parent comment */
   private Comment parent;

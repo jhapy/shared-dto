@@ -21,12 +21,10 @@ package org.jhapy.dto.utils;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.experimental.SuperBuilder;
 
 import java.io.Serializable;
 
 @Data
-@SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
 public class MapBounds implements Serializable {

@@ -18,14 +18,12 @@
 
 package org.jhapy.dto.domain.user;
 
-import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import lombok.experimental.SuperBuilder;
 import org.apache.commons.lang3.StringUtils;
 import org.jhapy.dto.domain.BaseEntityUUIDId;
-import org.jhapy.dto.utils.StoredFile;
+import org.jhapy.dto.domain.resource.StoredFileDTO;
 
 import java.io.Serializable;
 import java.util.UUID;
@@ -41,7 +39,6 @@ import java.util.UUID;
  * @since 2019-03-06
  */
 @Data
-@SuperBuilder
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 public class BaseUser extends BaseEntityUUIDId implements Serializable {
@@ -58,9 +55,9 @@ public class BaseUser extends BaseEntityUUIDId implements Serializable {
 
   private String nickName;
 
-  @Builder.Default private StoredFile avatar = null;
+  private StoredFileDTO avatar = null;
 
-  @Builder.Default private UUID avatarId = null;
+  private UUID avatarId = null;
 
   public String getFullName() {
     if (StringUtils.isEmpty(fullName)) {

@@ -21,7 +21,6 @@ package org.jhapy.dto.domain.reference;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import lombok.experimental.SuperBuilder;
 import org.jhapy.dto.domain.EntityTranslation;
 
 import java.io.Serializable;
@@ -32,7 +31,6 @@ import java.io.Serializable;
  * @since 2019-03-30
  */
 @Data
-@SuperBuilder
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 public class IntermediateRegionTrlDTO extends EntityTranslation implements Serializable {

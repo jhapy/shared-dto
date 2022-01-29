@@ -19,7 +19,6 @@
 package org.jhapy.dto.registry.actuate;
 
 import lombok.Data;
-import lombok.experimental.SuperBuilder;
 
 /**
  * @author jHapy Lead Dev.
@@ -27,7 +26,6 @@ import lombok.experimental.SuperBuilder;
  * @since 03/06/2020
  */
 @Data
-@SuperBuilder
 public abstract class AbstractHealthIndicator {
 
   public String name;

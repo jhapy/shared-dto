@@ -19,7 +19,6 @@
 package org.jhapy.dto.domain;
 
 import lombok.*;
-import lombok.experimental.SuperBuilder;
 
 import java.io.Serializable;
 import java.time.Instant;
@@ -33,7 +32,6 @@ import java.util.UUID;
  * @since 2019-03-12
  */
 @Data
-@SuperBuilder
 @EqualsAndHashCode
 @AllArgsConstructor
 @NoArgsConstructor

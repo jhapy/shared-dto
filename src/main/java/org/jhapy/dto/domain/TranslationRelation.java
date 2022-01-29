@@ -21,7 +21,6 @@ package org.jhapy.dto.domain;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import lombok.experimental.SuperBuilder;
 
 /**
  * @author jHapy Lead Dev.
@@ -29,7 +28,6 @@ import lombok.experimental.SuperBuilder;
  * @since 10/20/19
  */
 @Data
-@SuperBuilder
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 public class TranslationRelation<S extends BaseEntityWithTrl, T extends EntityTranslation>

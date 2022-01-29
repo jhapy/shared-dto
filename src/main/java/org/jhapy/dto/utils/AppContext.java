@@ -18,6 +18,8 @@
 
 package org.jhapy.dto.utils;
 
+import org.jhapy.dto.domain.resource.StoredFileDTO;
+
 import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
@@ -37,7 +39,7 @@ public class AppContext {
   private Supplier<UUID> currentUserId;
   private Supplier<String> currentSessionIdProvider;
   private Supplier<String> currentIso3LanguageProvider;
-  private Supplier<StoredFile> currentAvatarProvider;
+  private Supplier<StoredFileDTO> currentAvatarProvider;
   private Supplier<LatLng> currentPositionProvider;
   private Supplier<List<UUID>> currentUserActivitiesIds;
   private Supplier<UUID> currentClientIdProvider;
@@ -61,7 +63,7 @@ public class AppContext {
       Supplier<String> currentSessionIdProvider,
       Supplier<String> currentIso3LanguageProvider,
       Supplier<LatLng> currentPositionProvider,
-      Supplier<StoredFile> currentAvatarProvider,
+      Supplier<StoredFileDTO> currentAvatarProvider,
       Supplier<List<UUID>> currentUserActivitiesIds) {
     this.currentUsernameProvider = currentUsernameProvider;
     this.currentUserId = currentUserIdProvider;
@@ -80,7 +82,7 @@ public class AppContext {
       Supplier<String> currentSessionIdProvider,
       Supplier<String> currentIso3LanguageProvider,
       Supplier<LatLng> currentPositionProvider,
-      Supplier<StoredFile> currentAvatarProvider,
+      Supplier<StoredFileDTO> currentAvatarProvider,
       Supplier<List<UUID>> currentUserActivitiesIds,
       Supplier<UUID> currentClientIdProvider,
       Supplier<String> currentMailboxProvider,
@@ -134,7 +136,7 @@ public class AppContext {
     return currentMailboxFullNameProvider == null ? null : currentMailboxFullNameProvider.get();
   }
 
-  public StoredFile getCurrentAvatar() {
+  public StoredFileDTO getCurrentAvatar() {
     return currentAvatarProvider == null ? null : currentAvatarProvider.get();
   }
 

@@ -22,6 +22,6 @@ import java.util.UUID;
 public class SearchQueryResult implements Serializable {
 
   private UUID id;
-  @Builder.Default private List<String> highlight = new ArrayList<>();
+  private List<String> highlight = new ArrayList<>();
   private String score;
 }

@@ -21,7 +21,6 @@ package org.jhapy.dto.utils;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.experimental.SuperBuilder;
 
 /**
  * @author jHapy Lead Dev.
@@ -29,7 +28,6 @@ import lombok.experimental.SuperBuilder;
  * @since 2019-08-19
  */
 @Data
-@SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
 public class MapInfoValue {

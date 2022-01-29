@@ -21,7 +21,6 @@ package org.jhapy.dto.domain.security;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import lombok.experimental.SuperBuilder;
 import org.jhapy.dto.domain.BaseEntityStrId;
 
 import javax.validation.constraints.NotNull;
@@ -36,7 +35,6 @@ import java.util.List;
  * @since 2019-03-09
  */
 @Data
-@SuperBuilder
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 public class SecurityKeycloakGroup extends BaseEntityStrId implements Serializable {

@@ -18,10 +18,8 @@
 
 package org.jhapy.dto.domain;
 
-import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import lombok.experimental.SuperBuilder;
 
 import java.io.Serializable;
 import java.time.Instant;
@@ -33,7 +31,6 @@ import java.util.UUID;
  * @since 2019-03-06
  */
 @Data
-@SuperBuilder
 @EqualsAndHashCode(exclude = {"createdBy", "modifiedBy", "created", "modified"})
 public abstract class BaseRelationshipEntity implements Serializable {
 
@@ -52,5 +49,5 @@ public abstract class BaseRelationshipEntity implements Serializable {
   /** When this record was last updated */
   private Instant modified;
 
-  @Builder.Default private Boolean isNew = Boolean.FALSE;
+  private Boolean isNew = Boolean.FALSE;
 }

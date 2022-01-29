@@ -19,10 +19,7 @@
 package org.jhapy.cqrs.query;
 
 import io.swagger.v3.oas.annotations.media.Schema;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.jhapy.dto.domain.BaseEntity;
 
 import java.io.Serializable;
@@ -45,4 +42,13 @@ public abstract class AbstractCountAnyMatchingQuery<T extends BaseEntity> extend
 
   @Schema(description = "Show inactive records")
   protected Boolean showInactive;
+
+  @Data
+  @Builder
+  @AllArgsConstructor
+  @NoArgsConstructor
+  public static class Response {
+    private Long count;
+    private Long lastEvent;
+  }
 }

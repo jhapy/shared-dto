@@ -21,7 +21,6 @@ package org.jhapy.dto.utils;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.experimental.SuperBuilder;
 
 import java.io.Serializable;
 
@@ -31,7 +30,6 @@ import java.io.Serializable;
  * @since 2019-06-01
  */
 @Data
-@SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
 public class Point implements Serializable {

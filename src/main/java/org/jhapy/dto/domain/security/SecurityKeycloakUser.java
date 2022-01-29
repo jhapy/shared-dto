@@ -19,13 +19,11 @@
 package org.jhapy.dto.domain.security;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import lombok.experimental.SuperBuilder;
 import org.jhapy.dto.domain.BaseEntityStrId;
-import org.jhapy.dto.utils.StoredFile;
+import org.jhapy.dto.domain.resource.StoredFileDTO;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.oauth2.core.user.OAuth2User;
@@ -43,7 +41,6 @@ import java.util.*;
  * @since 2019-03-09
  */
 @Data
-@SuperBuilder
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 public class SecurityKeycloakUser extends BaseEntityStrId
@@ -64,7 +61,7 @@ public class SecurityKeycloakUser extends BaseEntityStrId
 
   private String title;
 
-  private StoredFile picture;
+  private StoredFileDTO picture;
 
   private Boolean isLocal;
 
@@ -77,7 +74,7 @@ public class SecurityKeycloakUser extends BaseEntityStrId
   private String password;
 
   /** Number of consecutive failed login attempt */
-  @Builder.Default private Integer failedLoginAttempts = 0;
+  private Integer failedLoginAttempts = 0;
 
   /** Password last modification date */
   private Instant passwordLastModification;
@@ -94,7 +91,7 @@ public class SecurityKeycloakUser extends BaseEntityStrId
   /** Is the password expired ? */
   private Boolean isCredentialsExpired;
 
-  @Builder.Default private Map<String, Object> attributes = new HashMap<>();
+  private Map<String, Object> attributes = new HashMap<>();
 
   private List<SecurityKeycloakGroup> groups;
 
@@ -109,13 +106,13 @@ public class SecurityKeycloakUser extends BaseEntityStrId
 
   private Boolean isActivated;
 
-  @Builder.Default private VerificationToken verificationToken = new VerificationToken();
+  private VerificationToken verificationToken = new VerificationToken();
 
-  @Builder.Default private PasswordResetToken passwordResetToken = new PasswordResetToken();
+  private PasswordResetToken passwordResetToken = new PasswordResetToken();
 
-  @Builder.Default private RememberMeToken rememberMeToken = new RememberMeToken();
+  private RememberMeToken rememberMeToken = new RememberMeToken();
 
-  @NotNull @Builder.Default private AuthProviderEnum provider = AuthProviderEnum.LOCAL;
+  @NotNull private AuthProviderEnum provider = AuthProviderEnum.LOCAL;
 
   private String providerId;
 
@@ -156,7 +153,7 @@ public class SecurityKeycloakUser extends BaseEntityStrId
   @Override
   @JsonIgnore
   public boolean isEnabled() {
-    return getIsActive();
+    return this.isActive();
   }
 
   @Override
