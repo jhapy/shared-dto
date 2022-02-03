@@ -21,9 +21,7 @@ package org.jhapy.dto.serviceQuery.generic;
 import lombok.*;
 import org.jhapy.dto.serviceQuery.BaseRemoteQuery;
 
-import javax.validation.constraints.NotNull;
 import java.io.Serializable;
-import java.util.UUID;
 
 /**
  * @author jHapy Lead Dev.
@@ -35,7 +33,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
-public class GetBySyncIdQuery extends BaseRemoteQuery implements Serializable {
+public class GetByLongIdQuery extends BaseRemoteQuery implements Serializable {
 
-  @NotNull private UUID syncId;
+  private Long id;
 }
