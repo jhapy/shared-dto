@@ -71,6 +71,7 @@
       <artifactId>springdoc-openapi-ui</artifactId>
       <scope>provided</scope>
     </dependency>
+
   </dependencies>
 
   <build>
